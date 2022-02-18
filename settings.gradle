@@ -1,0 +1,4 @@
+rootProject.name = "EcommerceApp"
+include ':app'
+include ':expandabletextview'
+include ':imagepicker'

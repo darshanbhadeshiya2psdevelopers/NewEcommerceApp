@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.1947463768115942" />
+        <entry key="..\:/EcommerceApp/app/src/main/res/layout/fragment_category.xml" value="0.1947463768115942" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable-v21/bg_search.xml" value="0.21481481481481482" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable-v21/ic_menu_camera.xml" value="0.14166666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable-v24/spinner_all_bg.xml" value="0.2169230769230769" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable/bg_search.xml" value="0.21481481481481482" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable/circle_background.xml" value="0.14166666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable/circular_empty_layout.xml" value="0.2169230769230769" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable/ic_facebook_logo_2021.xml" value="0.2169230769230769" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable/red_bordered_bg.xml" value="0.18055555555555555" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/drawable/side_nav_bar.xml" value="0.14166666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_aboutus.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_add_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_add_bank.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_cart.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_contactus.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_coupons.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_faqactivity.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_filter.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_my_order_details.xml" value="0.27880512091038406" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_order_summary.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_orders.xml" value="0.19010416666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_payment.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_policy.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_pro_image_viewer.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_product_details.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_reviews.xml" value="0.18" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_search.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_select_address.xml" value="0.18" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_setting.xml" value="0.25" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/app_bar_main.xml" value="0.18" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/dialog_order_conform.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/empty_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_addresses.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_bank_accounts.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_brands.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_category.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_compare.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_edit_profile.xml" value="0.2" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_favourite.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_offer.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_orders.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_other_filter_selection.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_price_selection.xml" value="0.18" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_product_detail.xml" value="0.18" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_products.xml" value="0.18" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_reviews.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_search.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_setting.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_sub_category.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/fragment_todays_deal.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_address.xml" value="0.15" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_bank_account.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_brand_select.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_cart.xml" value="0.25" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_category.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_coupon.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_faq.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_favourite.xml" value="0.2" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_filter_list.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_home_category.xml" value="0.75" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_home_latestpro.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_home_myorder.xml" value="0.33" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_home_offer.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_home_proofcat.xml" value="0.10526315789473684" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_home_todaysdeal.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_my_review.xml" value="0.25" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_offer.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_pro_color.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_pro_grid.xml" value="0.22" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_pro_list.xml" value="0.3941798941798942" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_pro_size.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_review.xml" value="0.33" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_select_address.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/item_slider.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/order_cancel_dialog.xml" value="0.25" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/product_cancel_dialog.xml" value="0.2" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/product_rating_dialog.xml" value="0.15" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/layout/subitem_home_proofcat.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/menu/activity_main_drawer.xml" value="0.75" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/EcommerceApp_by_DB/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
+        <entry key="..\:/EcommerceApp_by_DB/imagepicker/src/main/res/drawable/imagepicker_image_placeholder.xml" value="0.10885416666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.1" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_aboutus.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_add_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_contactus.xml" value="0.18" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/app_bar_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/drawable-hdpi/ic_add.xml" value="0.19074074074074074" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/drawable-hdpi/ic_remove.xml" value="0.18" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/drawable/ic_paypal.xml" value="0.1" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/activity_add_address.xml" value="0.1911231884057971" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/activity_cart.xml" value="0.18" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/activity_faqactivity.xml" value="0.1911231884057971" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/activity_main.xml" value="0.19519927536231885" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/activity_order_summary.xml" value="0.25" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/activity_payment.xml" value="0.22" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/app_bar_main.xml" value="0.19519927536231885" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/content_main.xml" value="0.19519927536231885" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_edit_profile.xml" value="0.18704710144927536" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_favourite.xml" value="0.18704710144927536" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_home.xml" value="0.19519927536231885" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_profile.xml" value="0.1911231884057971" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_profile_image.xml" value="0.18704710144927536" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_profile_image_dialog_list_dialog.xml" value="0.18704710144927536" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_profile_image_dialog_list_dialog_item.xml" value="0.33" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/fragment_profile_image_picker.xml" value="0.25" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/item_cart.xml" value="0.38095238095238093" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/item_faq.xml" value="0.1911231884057971" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/item_home_latestpro.xml" value="0.19519927536231885" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/item_home_myorder.xml" value="0.1" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/item_home_proofcat.xml" value="0.19519927536231885" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/item_home_todaysdeal.xml" value="0.19519927536231885" />
+        <entry key="..\:/Work/EcommerceApp_by_DB/app/src/main/res/layout/subitem_home_proofcat.xml" value="0.19519927536231885" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

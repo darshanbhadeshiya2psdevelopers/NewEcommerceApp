@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.SelectAddressActivity">
+    
+    <include layout="@layout/empty_layout"/>
+    
+    <ProgressBar
+        android:id="@+id/progressBar_select_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_select_address"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/deliver_here_btn"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_select_address" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_address_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/deliver_here_btn"
+        android:layout_marginBottom="35dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_address"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="15dp"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_baseline_add_24"
+            android:drawablePadding="5dp"
+            app:drawableTint="@color/colorPrimary" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/deliver_here_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:paddingVertical="12dp"
+        android:text="@string/deliver_here"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.db.newecom">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EcommerceApp">
+        <activity
+            android:name="com.db.newecom.ui.activity.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.Splashscreen">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.db.newecom.ui.activity.ProImageViewerActivity"
+            android:exported="true"
+            android:label="@string/Pro_Preview"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.EcommerceApp.NoActionBar" />
+        <activity
+            android:name="com.db.newecom.ui.activity.MyOrderDetailsActivity"
+            android:exported="true"
+            android:label="@string/order_details"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.EcommerceApp.NoActionBar" />
+        <activity
+            android:name="com.db.newecom.ui.activity.ReviewsActivity"
+            android:exported="true"
+            android:label="@string/reviews"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.ProductDetailsActivity"
+            android:exported="true"
+            android:label="@string/product_details"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.EcommerceApp.NoActionBar" />
+        <activity
+            android:name="com.db.newecom.ui.activity.FilterActivity"
+            android:exported="true"
+            android:label="@string/filters"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.CouponsActivity"
+            android:exported="true"
+            android:label="@string/coupons"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.SelectAddressActivity"
+            android:exported="true"
+            android:label="@string/select_address"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.PaymentActivity"
+            android:exported="true"
+            android:label="@string/payment"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.OrderSummaryActivity"
+            android:exported="true"
+            android:label="@string/order_summary"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.Add_Bank_Activity"
+            android:exported="true"
+            android:label="@string/add_bank_acc"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.Add_Address_Activity"
+            android:exported="true"
+            android:label="@string/add_address"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.PolicyActivity"
+            android:exported="true"
+            android:label="@string/privacy_policy"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.FAQActivity"
+            android:exported="true"
+            android:label="@string/faq"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.ContactusActivity"
+            android:exported="true"
+            android:label="@string/contact_us"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.AboutusActivity"
+            android:exported="true"
+            android:label="@string/about_us"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.RegisterActivity"
+            android:exported="true"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.EcommerceApp.NoActionBar" />
+        <activity
+            android:name="com.db.newecom.ui.activity.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.EcommerceApp.NoActionBar" />
+
+        <activity
+            android:name="com.db.newecom.ui.activity.CartActivity"
+            android:exported="true"
+            android:label="@string/my_cart"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.db.newecom.ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            android:theme="@style/Theme.EcommerceApp.NoActionBar">
+
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

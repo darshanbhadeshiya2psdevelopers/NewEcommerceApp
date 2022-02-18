@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <action
+        android:id="@+id/navigate_to_cart_activity"
+        app:destination="@+id/nav_cart"/>
+
+    <action
+        android:id="@+id/navigate_to_login_activity"
+        app:destination="@+id/login_activity"/>
+
+    <action
+        android:id="@+id/navigate_to_search_fragment"
+        app:destination="@+id/search_fragment"/>
+
+    <action
+        android:id="@+id/navigate_to_subcategory_fragment"
+        app:destination="@+id/subcategory_fragment"/>
+
+    <action
+        android:id="@+id/navigate_to_products_fragment"
+        app:destination="@+id/products_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.db.newecom.ui.fragment.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/navigate_to_search_fragment"
+            app:destination="@+id/search_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_cat"
+        android:name="com.db.newecom.ui.fragment.CategoryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_category">
+
+        <action
+            android:id="@+id/navigate_to_subcategory_fragment"
+            app:destination="@+id/subcategory_fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_deal"
+        android:name="com.db.newecom.ui.fragment.ProductsFragment"
+        android:label="@string/todays_deal"
+        tools:layout="@layout/fragment_products" >
+
+        <argument
+            android:name="title"
+            android:defaultValue="Today's Deal"/>
+
+        <argument
+            android:name="type"
+            android:defaultValue="todays_deal"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_offer"
+        android:name="com.db.newecom.ui.fragment.OfferFragment"
+        android:label="@string/offers"
+        tools:layout="@layout/fragment_offer" />
+
+    <fragment
+        android:id="@+id/nav_compare"
+        android:name="com.db.newecom.ui.fragment.CompareFragment"
+        android:label="@string/compare"
+        tools:layout="@layout/fragment_compare" />
+
+    <activity
+        android:id="@+id/nav_cart"
+        android:name="com.db.newecom.ui.activity.CartActivity"
+        android:label="@string/my_cart"
+        tools:layout="@layout/activity_cart"/>
+
+    <fragment
+        android:id="@+id/nav_wishlist"
+        android:name="com.db.newecom.ui.fragment.FavouriteFragment"
+        android:label="@string/wish_list"
+        tools:layout="@layout/fragment_favourite" />
+
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.db.newecom.ui.fragment.OrdersFragment"
+        android:label="@string/my_orders"
+        tools:layout="@layout/fragment_orders"/>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.db.newecom.ui.fragment.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/navigate_to_order_fragment"
+            app:destination="@+id/nav_orders"/>
+
+        <action
+            android:id="@+id/navigate_to_fav_fragment"
+            app:destination="@+id/nav_wishlist"/>
+
+        <action
+            android:id="@+id/navigate_to_editprofile_fragment"
+            app:destination="@+id/edit_profile_fragment"/>
+
+        <action
+            android:id="@+id/navigate_to_addresses_fragment"
+            app:destination="@+id/addresses_fragment"/>
+
+        <action
+            android:id="@+id/navigate_to_bank_acc_fragment"
+            app:destination="@+id/bank_accounts_fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.db.newecom.ui.fragment.SettingFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_setting"/>
+
+    <fragment
+        android:id="@+id/edit_profile_fragment"
+        android:name="com.db.newecom.ui.fragment.EditProfileFragment"
+        android:label="@string/edit_profile"
+        tools:layout="@layout/fragment_edit_profile"/>
+
+    <fragment
+        android:id="@+id/addresses_fragment"
+        android:name="com.db.newecom.ui.fragment.AddressesFragment"
+        android:label="@string/my_address"
+        tools:layout="@layout/fragment_addresses"/>
+
+    <fragment
+        android:id="@+id/bank_accounts_fragment"
+        android:name="com.db.newecom.ui.fragment.BankAccountsFragment"
+        android:label="@string/my_bank_acc"
+        tools:layout="@layout/fragment_bank_accounts"/>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.db.newecom.ui.fragment.searchFragment"
+        android:label="@string/search_hint"
+        tools:layout="@layout/fragment_search"/>
+
+    <activity
+        android:id="@+id/login_activity"
+        android:name="com.db.newecom.ui.activity.LoginActivity"
+        android:label="@string/login"
+        tools:layout="@layout/activity_login"/>
+
+    <fragment
+        android:id="@+id/subcategory_fragment"
+        android:name="com.db.newecom.ui.fragment.SubCategoryFragment"
+        android:label="@string/subcategory"
+        tools:layout="@layout/fragment_sub_category" />
+
+    <fragment
+        android:id="@+id/products_fragment"
+        android:name="com.db.newecom.ui.fragment.ProductsFragment"
+        android:label="@string/products"
+        tools:layout="@layout/fragment_products"/>
+
+</navigation>

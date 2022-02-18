@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cardview_cart_item"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="7dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:paddingVertical="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:gravity="center_vertical">
+
+        <View
+            android:id="@+id/unavailable_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/unavailable_color"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/pro_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/currently_unavailable"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:paddingVertical="2dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@color/unavailable_txt_bg"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/cart_pro_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/placeholder_img" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cart_pro_img"
+            android:layout_toLeftOf="@+id/pro_delete_btn"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cart_pro_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iphone 13 Pro Max"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_grey"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/cart_pro_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Rs. 1,30,300"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/cart_pro_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Size: M"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Qty:"
+                    android:textSize="15sp"/>
+
+                <ImageButton
+                    android:id="@+id/qty_remove_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:background="@drawable/ic_remove"/>
+
+                <TextView
+                    android:id="@+id/cart_pro_qty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="15sp"
+                    android:maxLength="2"
+                    android:paddingHorizontal="8dp"/>
+
+                <ImageButton
+                    android:id="@+id/qty_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_add"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/pro_delete_btn"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_delete_24"
+            app:tint="@color/medium_grey"/>
+
+        <TextView
+            android:id="@+id/cart_pro_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:text="Rs. 2,60,600"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

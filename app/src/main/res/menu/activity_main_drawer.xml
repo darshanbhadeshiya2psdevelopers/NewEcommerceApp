@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_cat"
+            android:icon="@drawable/ic_baseline_category_24"
+            android:title="@string/category" />
+        <item
+            android:id="@+id/nav_deal"
+            android:icon="@drawable/ic_baseline_whatshot_24"
+            android:title="@string/todays_deal" />
+        <item
+            android:id="@+id/nav_offer"
+            android:icon="@drawable/ic_offer"
+            android:title="@string/offers" />
+
+        <item
+            android:id="@+id/nav_compare"
+            android:icon="@drawable/ic_baseline_compare_arrows_24"
+            android:title="@string/compare" />
+
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/my_cart" />
+        <item
+            android:id="@+id/nav_wishlist"
+            android:icon="@drawable/ic_baseline_favorite_24"
+            android:title="@string/wish_list" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_baseline_shopping_bag_24"
+            android:title="@string/my_orders" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="@string/setting" />
+
+    </group>
+</menu>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/tools"
+    android:background="#EAEAEA"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/empty_layout"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/search_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:paddingHorizontal="2dp"
+                        android:background="@color/colorPrimary">
+
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/searchview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/bg_search"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:queryHint="Search Here" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_cat_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/white"
+                        tools:listitem="@layout/item_home_category"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_home_sliders"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp">
+
+                        <com.db.newecom.Utills.EnchantedViewPager
+                            android:id="@+id/viewPager_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <RelativeLayout
+                            android:id="@+id/rel_indicator_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignBottom="@+id/viewPager_home"
+                            android:background="@color/transparent">
+
+                            <com.rd.PageIndicatorView
+                                android:id="@+id/pageIndicatorView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:piv_animationType="scale"
+                                app:piv_dynamicCount="true"
+                                app:piv_interactiveAnimation="true"
+                                app:piv_selectedColor="@color/colorPrimary"
+                                app:piv_unselectedColor="@color/white"
+                                app:piv_viewPager="@id/viewPager_home"
+                                attrs:piv_padding="2dp"
+                                attrs:piv_radius="2dp" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <!--Offers-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_offer_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        app:elevation="5dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="5dp"
+                            android:layout_marginHorizontal="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/latest_offers"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/home_offer_viewall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="@string/view_all"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp" />
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_offer_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            tools:listitem="@layout/item_home_offer"
+                            tools:itemCount="6"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+                    <!--Orders-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_myorders_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="5dp"
+                            android:layout_marginHorizontal="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/my_orders"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/home_myorder_viewall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="@string/view_all"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp" />
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_myorder_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            tools:listitem="@layout/item_home_myorder"
+                            tools:itemCount="4"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+                    <!--Today's Deal-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_todaysdeal_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="5dp"
+                            android:layout_marginHorizontal="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/todays_deal"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/home_todaysdeal_viewall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="@string/view_all"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp" />
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_todaysdeal_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:spanCount="2"
+                            tools:itemCount="4"
+                            tools:listitem="@layout/item_home_todaysdeal" />
+
+                    </LinearLayout>
+
+                    <!--Brands-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_brands_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="5dp"
+                            android:layout_marginHorizontal="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/brands"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="16sp"/>
+
+                            <!--                        <TextView-->
+                            <!--                            android:layout_width="wrap_content"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_alignParentRight="true"-->
+                            <!--                            android:text="@string/view_all"-->
+                            <!--                            android:textColor="@color/colorPrimary"-->
+                            <!--                            android:textSize="15sp"/>-->
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_brand_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            tools:listitem="@layout/item_home_offer"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+                    <!--Latest Products-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_latest_pro_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="5dp"
+                            android:layout_marginHorizontal="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/latest_products"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/home_latestpro_viewall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="@string/view_all"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp" />
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_latestpro_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginBottom="10dp"
+                            tools:listitem="@layout/item_home_latestpro"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+                    <!--Products of Categories-->
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_proofcat_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="10dp"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_home_proofcat"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

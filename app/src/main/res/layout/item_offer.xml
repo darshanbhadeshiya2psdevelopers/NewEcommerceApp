@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cardview_offer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="7dp"
+    app:cardElevation="3dp"
+    app:cardCornerRadius="5dp">
+
+    <ImageView
+        android:id="@+id/offer_img"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/placeholder_img"
+        android:scaleType="fitXY"/>
+
+</com.google.android.material.card.MaterialCardView>
