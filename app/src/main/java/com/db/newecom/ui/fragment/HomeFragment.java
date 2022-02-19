@@ -183,21 +183,21 @@ public class HomeFragment extends Fragment {
 
         swipeRefreshLayout.setColorSchemeColors(getActivity().getResources().getColor(R.color.dark_blue));
 
-        scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                Rect scrollBounds = new Rect();
-                scrollView.getHitRect(scrollBounds);
-                if (!search_layout.getLocalVisibleRect(scrollBounds) || scrollBounds.height() < search_layout.getHeight()) {
-                    searchVisible = true;
-                    menu.findItem(R.id.action_search).setVisible(true);
-                } else {
-                    searchVisible = false;
-                    menu.findItem(R.id.action_search).setVisible(false);
-                }
-                getActivity().invalidateOptionsMenu();
-            }
-        });
+//        scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+//            @Override
+//            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//                Rect scrollBounds = new Rect();
+//                scrollView.getHitRect(scrollBounds);
+//                if (!search_layout.getLocalVisibleRect(scrollBounds) || scrollBounds.height() < search_layout.getHeight()) {
+//                    searchVisible = true;
+//                    menu.findItem(R.id.action_search).setVisible(true);
+//                } else {
+//                    searchVisible = false;
+//                    menu.findItem(R.id.action_search).setVisible(false);
+//                }
+//                getActivity().invalidateOptionsMenu();
+//            }
+//        });
 
         search_layout.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_search_fragment));
@@ -439,10 +439,10 @@ public class HomeFragment extends Fragment {
 
     }
 
-    @Override
-    public void onPrepareOptionsMenu(@NonNull Menu menu) {
-        this.menu = menu;
-        super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.action_search).setVisible(searchVisible);
-    }
+//    @Override
+//    public void onPrepareOptionsMenu(@NonNull Menu menu) {
+//        this.menu = menu;
+//        super.onPrepareOptionsMenu(menu);
+//        menu.findItem(R.id.action_search).setVisible(searchVisible);
+//    }
 }

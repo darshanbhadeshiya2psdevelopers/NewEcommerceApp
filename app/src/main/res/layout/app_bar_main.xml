@@ -29,17 +29,28 @@
                 app:popupTheme="@style/Theme.EcommerceApp.PopupOverlay" />
 
             <FrameLayout
-                android:id="@+id/cart_btn"
+                android:id="@+id/profile_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true">
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_image_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="1.0dp"
+                    android:padding="1dp"
+                    android:src="@drawable/default_profile"
+                    android:contentDescription="@string/nav_header_desc" />
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_baseline_shopping_cart_24"/>
+                    android:src="@drawable/ic_baseline_shopping_cart_24"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/order_count"
@@ -48,6 +59,7 @@
                     android:layout_gravity="end|top"
                     android:gravity="center"
                     android:background="@drawable/circle_background"
+                    android:backgroundTint="@color/red"
                     android:padding="1.2dp"
                     android:text="99"
                     android:textSize="9.5sp"
@@ -71,11 +83,12 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
         app:backgroundTint="@color/colorPrimary"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

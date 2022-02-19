@@ -15,12 +15,14 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/light_primary">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/side_nav_bar">
+                android:background="@drawable/side_nav_bar"
+                android:backgroundTint="@color/colorPrimary">
 
                 <ImageView
                     android:id="@+id/close_btn"
@@ -263,7 +265,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/signup_msg"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:textColor="@color/colorPrimary"/>
 
                     <TextView
                         android:id="@+id/signup_txt"
@@ -271,7 +274,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:text="@string/signup_txt"
-                        android:textSize="16sp"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
                         android:textColor="@color/colorPrimary"/>
 
                 </LinearLayout>

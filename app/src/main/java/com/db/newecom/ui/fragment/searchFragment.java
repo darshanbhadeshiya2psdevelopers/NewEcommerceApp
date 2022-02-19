@@ -96,13 +96,13 @@ public class searchFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onPrepareOptionsMenu(@NonNull Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        menuitem = menu.findItem(R.id.action_search);
-        if (menuitem!=null)
-            menuitem.setVisible(false);
-    }
+//    @Override
+//    public void onPrepareOptionsMenu(@NonNull Menu menu) {
+//        super.onPrepareOptionsMenu(menu);
+//        menuitem = menu.findItem(R.id.action_search);
+//        if (menuitem!=null)
+//            menuitem.setVisible(false);
+//    }
 
     @Override
     public void onResume() {

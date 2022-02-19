@@ -41,7 +41,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:paddingHorizontal="2dp"
-                        android:background="@color/colorPrimary">
+                        android:background="@color/colorPrimary"
+                        android:visibility="gone">
 
                         <androidx.appcompat.widget.SearchView
                             android:id="@+id/searchview"
@@ -60,6 +61,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        android:paddingTop="5dp"
                         android:background="@color/white"
                         tools:listitem="@layout/item_home_category"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>

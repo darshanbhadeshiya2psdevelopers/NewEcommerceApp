@@ -13,9 +13,9 @@
         android:id="@+id/navigate_to_login_activity"
         app:destination="@+id/login_activity"/>
 
-    <action
-        android:id="@+id/navigate_to_search_fragment"
-        app:destination="@+id/search_fragment"/>
+<!--    <action-->
+<!--        android:id="@+id/navigate_to_search_fragment"-->
+<!--        app:destination="@+id/search_fragment"/>-->
 
     <action
         android:id="@+id/navigate_to_subcategory_fragment"

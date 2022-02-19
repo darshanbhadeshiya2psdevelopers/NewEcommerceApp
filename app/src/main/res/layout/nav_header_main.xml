@@ -16,13 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView_nav"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:civ_border_color="@color/white"
+            app:civ_border_color="@color/colorPrimaryDark"
             app:civ_border_width="1.5dp"
             android:src="@drawable/default_profile"
             android:contentDescription="@string/nav_header_desc" />
@@ -40,7 +41,7 @@
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:text="@string/nav_header_title"
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimary"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -51,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="2"
                 android:ellipsize="end"
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimary"
                 android:text="@string/nav_header_subtitle"
                 android:textSize="14sp"/>
 
