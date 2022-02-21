@@ -317,6 +317,7 @@ public class LoginActivity extends AppCompatActivity {
                         method.editor.putString(method.profileId, loginRP.getUser_id());
                         method.editor.putString(method.userEmail, email);
                         method.editor.putString(method.loginType, normal);
+                        method.editor.putString(method.userName, loginRP.getName());
                         method.editor.commit();
 
                         et_email.setText("");
@@ -392,6 +393,7 @@ public class LoginActivity extends AppCompatActivity {
                             method.editor.putBoolean(method.prefLogin, true);
                             method.editor.putString(method.profileId, registerRP.getUser_id());
                             method.editor.putString(method.userEmail, registerRP.getEmail());
+                            method.editor.putString(method.userName, registerRP.getName());
                             method.editor.putString(method.loginType, type);
                             method.editor.commit();
 

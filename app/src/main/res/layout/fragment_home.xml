@@ -56,6 +56,33 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/light_primary">
+
+                        <TextView
+                            android:id="@+id/welcome_user_msg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="7dp"
+                            android:text="Welcome, Guest..."
+                            android:textSize="15sp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:gravity="center"
+                            android:drawableLeft="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            android:drawablePadding="3dp"
+                            app:drawableTint="@color/colorPrimaryDark"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1.2dp"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </LinearLayout>
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_cat_home"
                         android:layout_width="match_parent"
@@ -115,47 +142,67 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:background="@color/white"
+                        android:background="@drawable/home_bg"
                         app:elevation="5dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginHorizontal="5dp">
 
-                        <RelativeLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
                             android:paddingVertical="5dp"
-                            android:layout_marginHorizontal="10dp">
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/latest_offers"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="16sp"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/latest_offers"
-                                android:textColor="@color/dark_grey"
-                                android:textSize="16sp"/>
-
-                            <TextView
-                                android:id="@+id/home_offer_viewall"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/view_all"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="15sp" />
-
-                        </RelativeLayout>
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_offer_home"
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:layout_marginHorizontal="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="horizontal"
-                            tools:listitem="@layout/item_home_offer"
-                            tools:itemCount="6"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_offer_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:listitem="@layout/item_home_offer"
+                                tools:itemCount="6"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                            <LinearLayout
+                                android:id="@+id/ll_viewall_offer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="65dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:background="@color/view_all_bg"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="5dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@drawable/circle_background"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/view_all"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
 
                     </LinearLayout>
 
@@ -166,46 +213,66 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:background="@color/white"
+                        android:background="@drawable/home_bg"
                         android:layout_marginTop="8dp"
                         android:layout_marginHorizontal="5dp">
 
-                        <RelativeLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
                             android:paddingVertical="5dp"
-                            android:layout_marginHorizontal="10dp">
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/my_orders"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="16sp"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/my_orders"
-                                android:textColor="@color/dark_grey"
-                                android:textSize="16sp"/>
-
-                            <TextView
-                                android:id="@+id/home_myorder_viewall"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/view_all"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="15sp" />
-
-                        </RelativeLayout>
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_myorder_home"
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:layout_marginHorizontal="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="horizontal"
-                            tools:listitem="@layout/item_home_myorder"
-                            tools:itemCount="4"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_myorder_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:listitem="@layout/item_home_myorder"
+                                tools:itemCount="4"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                            <LinearLayout
+                                android:id="@+id/ll_viewall_order"
+                                android:layout_width="wrap_content"
+                                android:layout_height="110dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:background="@color/view_all_bg"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="5dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@drawable/circle_background"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/view_all"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
 
                     </LinearLayout>
 
@@ -216,7 +283,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:background="@color/white"
+                        android:background="@drawable/home_bg"
                         android:layout_marginTop="8dp"
                         android:layout_marginHorizontal="5dp">
 
@@ -234,14 +301,35 @@
                                 android:textColor="@color/dark_grey"
                                 android:textSize="16sp" />
 
-                            <TextView
-                                android:id="@+id/home_todaysdeal_viewall"
+                            <LinearLayout
+                                android:id="@+id/ll_viewall_todaysdeal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/view_all"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="15sp" />
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="3dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_alignParentRight="true">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="7dp"
+                                    android:text="@string/view_all"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/arrow_img"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@drawable/circle_background"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                                    app:tint="@color/white" />
+
+                            </LinearLayout>
 
                         </RelativeLayout>
 
@@ -259,6 +347,75 @@
 
                     </LinearLayout>
 
+                    <!--Latest Products-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_latest_pro_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/home_bg"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingVertical="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/latest_products"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginBottom="10dp">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_latestpro_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:listitem="@layout/item_home_latestpro"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                            <LinearLayout
+                                android:id="@+id/ll_viewall_latestpro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="170dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:background="@color/view_all_bg"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="5dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@drawable/circle_background"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/view_all"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
                     <!--Brands-->
 
                     <LinearLayout
@@ -266,33 +423,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:background="@color/white"
+                        android:background="@drawable/home_bg"
                         android:layout_marginTop="8dp"
                         android:layout_marginHorizontal="5dp">
 
-                        <RelativeLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
                             android:paddingVertical="5dp"
-                            android:layout_marginHorizontal="10dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/brands"
-                                android:textColor="@color/dark_grey"
-                                android:textSize="16sp"/>
-
-                            <!--                        <TextView-->
-                            <!--                            android:layout_width="wrap_content"-->
-                            <!--                            android:layout_height="wrap_content"-->
-                            <!--                            android:layout_alignParentRight="true"-->
-                            <!--                            android:text="@string/view_all"-->
-                            <!--                            android:textColor="@color/colorPrimary"-->
-                            <!--                            android:textSize="15sp"/>-->
-
-                        </RelativeLayout>
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/brands"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="16sp"/>
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_brand_home"
@@ -307,55 +450,6 @@
 
                     </LinearLayout>
 
-                    <!--Latest Products-->
-
-                    <LinearLayout
-                        android:id="@+id/ll_latest_pro_home"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:background="@color/white"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginHorizontal="5dp">
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:paddingVertical="5dp"
-                            android:layout_marginHorizontal="10dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/latest_products"
-                                android:textColor="@color/dark_grey"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/home_latestpro_viewall"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="@string/view_all"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="15sp" />
-
-                        </RelativeLayout>
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_latestpro_home"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_marginBottom="10dp"
-                            tools:listitem="@layout/item_home_latestpro"
-                            android:orientation="horizontal"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-                    </LinearLayout>
-
                     <!--Products of Categories-->
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -363,10 +457,37 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginBottom="10dp"
                         tools:itemCount="3"
                         tools:listitem="@layout/item_home_proofcat"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_explore_cat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/explore_more_categories"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textSize="20sp"/>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/circle_background"
+                            app:backgroundTint="@color/colorPrimary"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:tint="@color/white" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

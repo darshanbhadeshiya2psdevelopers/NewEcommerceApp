@@ -45,6 +45,7 @@ import com.db.newecom.adapters.HomeOfferAdapter;
 import com.db.newecom.adapters.HomeProOfCatAdapter;
 import com.db.newecom.adapters.HomeTodaysDealAdapter;
 import com.db.newecom.adapters.SliderAdapter;
+import com.db.newecom.ui.activity.MainActivity;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -78,7 +79,8 @@ public class HomeFragment extends Fragment {
     private Menu menu;
     private RelativeLayout empty_layout, rl_home_sliders, relIndicator;
     private LinearLayout search_layout, ll_offer_home, ll_myorders_home, ll_todaysdeal_home, ll_brands_home,
-            ll_latest_pro_home;
+            ll_latest_pro_home, ll_viewall_offer, ll_viewall_order, ll_viewall_todaysdeal, ll_viewall_latestpro,
+            ll_explore_cat;
     private NestedScrollView scrollView;
     private SearchView searchview;
     boolean searchVisible = false;
@@ -97,7 +99,7 @@ public class HomeFragment extends Fragment {
     private List<OfferList> offerLists;
 
     private EnchantedViewPager enchantedViewPager;
-    private TextView home_offer_viewall, home_myorder_viewall, home_todaysdeal_viewall, home_latestpro_viewall;
+    private TextView welcome_user_msg;
     private RecyclerView rv_cat_home, rv_offer_home, rv_myorder_home, rv_todaysdeal_home, rv_brand_home,
             rv_latestpro_home, rv_proofcat_home;
     private SliderAdapter sliderAdapter;
@@ -169,6 +171,12 @@ public class HomeFragment extends Fragment {
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_home);
         progressBar = view.findViewById(R.id.progressBar_home);
         empty_layout = view.findViewById(R.id.empty_layout);
+        welcome_user_msg = view.findViewById(R.id.welcome_user_msg);
+        ll_viewall_offer = view.findViewById(R.id.ll_viewall_offer);
+        ll_viewall_order = view.findViewById(R.id.ll_viewall_order);
+        ll_viewall_todaysdeal = view.findViewById(R.id.ll_viewall_todaysdeal);
+        ll_viewall_latestpro = view.findViewById(R.id.ll_viewall_latestpro);
+        ll_explore_cat = view.findViewById(R.id.ll_explore_cat);
         rl_home_sliders = view.findViewById(R.id.rl_home_sliders);
         enchantedViewPager = view.findViewById(R.id.viewPager_home);
         relIndicator = view.findViewById(R.id.rel_indicator_home);
@@ -199,6 +207,11 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
+        MainActivity mainActivity = new MainActivity();
+
+        if (method.isLogin())
+            welcome_user_msg.setText("Welcome, " + method.userName() + "...");
+
         search_layout.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_search_fragment));
         searchview.setOnSearchClickListener(v -> {
@@ -207,24 +220,26 @@ public class HomeFragment extends Fragment {
             Navigation.findNavController(view).navigate(R.id.navigate_to_search_fragment);
         });
 
-        home_offer_viewall = view.findViewById(R.id.home_offer_viewall);
-        home_myorder_viewall = view.findViewById(R.id.home_myorder_viewall);
-        home_todaysdeal_viewall = view.findViewById(R.id.home_todaysdeal_viewall);
-        home_latestpro_viewall = view.findViewById(R.id.home_latestpro_viewall);
-
         Bundle bundle = new Bundle();
-        home_offer_viewall.setOnClickListener(v ->
+
+        ll_viewall_offer.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.nav_offer));
-        home_myorder_viewall.setOnClickListener(v ->
+
+        ll_viewall_order.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.nav_orders));
-        home_todaysdeal_viewall.setOnClickListener(v -> {
+
+        ll_viewall_todaysdeal.setOnClickListener(v -> {
             Navigation.findNavController(view).navigate(R.id.nav_deal);
         });
-        home_latestpro_viewall.setOnClickListener(v -> {
+
+        ll_viewall_latestpro.setOnClickListener(v -> {
             bundle.putString("title", getActivity().getResources().getString(R.string.latest_products));
             bundle.putString("type", "latest_pro");
             Navigation.findNavController(view).navigate(R.id.navigate_to_products_fragment, bundle);
         });
+
+        ll_explore_cat.setOnClickListener(v ->
+                Navigation.findNavController(view).navigate(R.id.nav_cat));
 
         rv_cat_home = view.findViewById(R.id.rv_cat_home);
         rv_offer_home = view.findViewById(R.id.rv_offer_home);

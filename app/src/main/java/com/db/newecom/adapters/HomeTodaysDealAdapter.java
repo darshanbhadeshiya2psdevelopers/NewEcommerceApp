@@ -2,6 +2,7 @@ package com.db.newecom.adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,14 @@ public class HomeTodaysDealAdapter extends RecyclerView.Adapter<HomeTodaysDealAd
                 .into(holder.home_deal_img);
 
         holder.home_deal_pro_name.setText(productLists.get(position).getProduct_title());
+
+        if (productLists.get(position).getProduct_mrp().equals(productLists.get(position).getProduct_sell_price()))
+            holder.home_deal_pro_mrp.setVisibility(View.GONE);
+        else {
+            holder.home_deal_pro_mrp.setPaintFlags(holder.home_deal_pro_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.home_deal_pro_mrp.setText(sign + productLists.get(position).getProduct_mrp());
+        }
+
         holder.home_deal_pro_price.setText(sign + productLists.get(position).getProduct_sell_price());
 
         holder.cardview_todays_deal.setOnClickListener(view ->
@@ -64,7 +73,7 @@ public class HomeTodaysDealAdapter extends RecyclerView.Adapter<HomeTodaysDealAd
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView home_deal_img;
-        private TextView home_deal_pro_name, home_deal_pro_price;
+        private TextView home_deal_pro_name, home_deal_pro_mrp, home_deal_pro_price;
         private MaterialCardView cardview_todays_deal;
 
         public ViewHolder(@NonNull View itemView) {
@@ -73,6 +82,7 @@ public class HomeTodaysDealAdapter extends RecyclerView.Adapter<HomeTodaysDealAd
             cardview_todays_deal = itemView.findViewById(R.id.cardview_todays_deal);
             home_deal_img = itemView.findViewById(R.id.home_deal_img);
             home_deal_pro_name = itemView.findViewById(R.id.home_deal_pro_name);
+            home_deal_pro_mrp = itemView.findViewById(R.id.home_deal_pro_mrp);
             home_deal_pro_price = itemView.findViewById(R.id.home_deal_pro_price);
 
         }

@@ -49,6 +49,7 @@
                     android:layout_gravity="end|top"
                     android:gravity="center"
                     android:background="@drawable/circle_background"
+                    android:backgroundTint="@color/red"
                     android:padding="1.2dp"
                     android:text="99"
                     android:textSize="9.5sp"

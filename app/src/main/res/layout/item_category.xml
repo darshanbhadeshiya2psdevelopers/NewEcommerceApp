@@ -25,7 +25,7 @@
             <ImageView
                 android:id="@+id/category_img"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="85dp"
                 android:src="@drawable/placeholder_img"
                 android:scaleType="fitXY"/>
 

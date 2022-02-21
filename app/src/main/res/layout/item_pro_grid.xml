@@ -86,7 +86,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_alignParentLeft="true"
                     app:cardCornerRadius="5dp"
-                    app:cardBackgroundColor="@color/colorPrimary">
+                    app:cardBackgroundColor="@color/red">
 
                     <TextView
                         android:id="@+id/product_discount_txt"
@@ -145,6 +145,7 @@
                     android:textSize="14sp"
                     android:maxLines="1"
                     android:ellipsize="end"
+                    android:textStyle="bold"
                     android:textColor="@color/colorPrimary"/>
 
                 <TextView

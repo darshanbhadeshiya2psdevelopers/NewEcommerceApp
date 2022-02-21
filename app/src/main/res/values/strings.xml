@@ -275,4 +275,6 @@
     <string name="answer_wrong">Your answer is wrong !!</string>
     <string name="exit_msg">Do you want to exit ?</string>
     <string name="search">Search</string>
+    <string name="explore_more_categories">Explore More Categories</string>
+    <string name="explore">Explore</string>
 </resources>

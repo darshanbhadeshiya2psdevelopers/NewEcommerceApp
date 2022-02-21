@@ -2,11 +2,13 @@ package com.db.newecom.adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -58,8 +60,7 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.home_catpro_name.setText(homeCatSubProLists.get(position).getTitle());
-        holder.home_catpro_view_all.setText("View all Products");
-        holder.home_catpro_view_all.setOnClickListener(view -> {
+        holder.ll_explore.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("title", homeCatSubProLists.get(position).getTitle());
             bundle.putString("cat_id", homeCatSubProLists.get(position).getId());
@@ -90,6 +91,27 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
                 holder.pro1_name.setText(productLists1.get(0).getProduct_title());
                 holder.pro2_name.setText(productLists1.get(1).getProduct_title());
                 holder.pro3_name.setText(productLists1.get(2).getProduct_title());
+
+                if (productLists1.get(0).getProduct_mrp().equals(productLists1.get(0).getProduct_sell_price()))
+                    holder.pro1_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro1_mrp.setPaintFlags(holder.pro1_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro1_mrp.setText(sign + productLists1.get(0).getProduct_mrp());
+                }
+
+                if (productLists1.get(1).getProduct_mrp().equals(productLists1.get(1).getProduct_sell_price()))
+                    holder.pro2_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro2_mrp.setPaintFlags(holder.pro2_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro2_mrp.setText(sign + productLists1.get(1).getProduct_mrp());
+                }
+
+                if (productLists1.get(2).getProduct_mrp().equals(productLists1.get(2).getProduct_sell_price()))
+                    holder.pro3_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro3_mrp.setPaintFlags(holder.pro3_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro3_mrp.setText(sign + productLists1.get(2).getProduct_mrp());
+                }
 
                 holder.pro1_price.setText(sign + productLists1.get(0).getProduct_sell_price());
                 holder.pro2_price.setText(sign + productLists1.get(1).getProduct_sell_price());
@@ -139,6 +161,27 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
                 holder.pro2_name.setText(productLists2.get(1).getProduct_title());
                 holder.pro3_name.setText(productLists2.get(2).getProduct_title());
 
+                if (productLists2.get(0).getProduct_mrp().equals(productLists2.get(0).getProduct_sell_price()))
+                    holder.pro1_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro1_mrp.setPaintFlags(holder.pro1_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro1_mrp.setText(sign + productLists2.get(0).getProduct_mrp());
+                }
+
+                if (productLists2.get(1).getProduct_mrp().equals(productLists2.get(1).getProduct_sell_price()))
+                    holder.pro2_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro2_mrp.setPaintFlags(holder.pro2_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro2_mrp.setText(sign + productLists2.get(1).getProduct_mrp());
+                }
+
+                if (productLists2.get(2).getProduct_mrp().equals(productLists2.get(2).getProduct_sell_price()))
+                    holder.pro3_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro3_mrp.setPaintFlags(holder.pro3_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro3_mrp.setText(sign + productLists2.get(2).getProduct_mrp());
+                }
+
                 holder.pro1_price.setText(sign + productLists2.get(0).getProduct_sell_price());
                 holder.pro2_price.setText(sign + productLists2.get(1).getProduct_sell_price());
                 holder.pro3_price.setText(sign + productLists2.get(2).getProduct_sell_price());
@@ -187,6 +230,27 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
                 holder.pro2_name.setText(productLists3.get(1).getProduct_title());
                 holder.pro3_name.setText(productLists3.get(2).getProduct_title());
 
+                if (productLists3.get(0).getProduct_mrp().equals(productLists3.get(0).getProduct_sell_price()))
+                    holder.pro1_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro1_mrp.setPaintFlags(holder.pro1_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro1_mrp.setText(sign + productLists3.get(0).getProduct_mrp());
+                }
+
+                if (productLists3.get(1).getProduct_mrp().equals(productLists3.get(1).getProduct_sell_price()))
+                    holder.pro2_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro2_mrp.setPaintFlags(holder.pro2_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro2_mrp.setText(sign + productLists3.get(1).getProduct_mrp());
+                }
+
+                if (productLists3.get(2).getProduct_mrp().equals(productLists3.get(2).getProduct_sell_price()))
+                    holder.pro3_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro3_mrp.setPaintFlags(holder.pro3_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro3_mrp.setText(sign + productLists3.get(2).getProduct_mrp());
+                }
+
                 holder.pro1_price.setText(sign + productLists3.get(0).getProduct_sell_price());
                 holder.pro2_price.setText(sign + productLists3.get(1).getProduct_sell_price());
                 holder.pro3_price.setText(sign + productLists3.get(2).getProduct_sell_price());
@@ -233,6 +297,27 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
                 holder.pro1_name.setText(productLists4.get(0).getProduct_title());
                 holder.pro2_name.setText(productLists4.get(1).getProduct_title());
                 holder.pro3_name.setText(productLists4.get(2).getProduct_title());
+
+                if (productLists4.get(0).getProduct_mrp().equals(productLists4.get(0).getProduct_sell_price()))
+                    holder.pro1_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro1_mrp.setPaintFlags(holder.pro1_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro1_mrp.setText(sign + productLists4.get(0).getProduct_mrp());
+                }
+
+                if (productLists4.get(1).getProduct_mrp().equals(productLists4.get(1).getProduct_sell_price()))
+                    holder.pro2_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro2_mrp.setPaintFlags(holder.pro2_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro2_mrp.setText(sign + productLists4.get(1).getProduct_mrp());
+                }
+
+                if (productLists4.get(2).getProduct_mrp().equals(productLists4.get(2).getProduct_sell_price()))
+                    holder.pro3_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro3_mrp.setPaintFlags(holder.pro3_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro3_mrp.setText(sign + productLists4.get(2).getProduct_mrp());
+                }
 
                 holder.pro1_price.setText(sign + productLists4.get(0).getProduct_sell_price());
                 holder.pro2_price.setText(sign + productLists4.get(1).getProduct_sell_price());
@@ -282,6 +367,27 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
                 holder.pro2_name.setText(productLists5.get(1).getProduct_title());
                 holder.pro3_name.setText(productLists5.get(2).getProduct_title());
 
+                if (productLists5.get(0).getProduct_mrp().equals(productLists5.get(0).getProduct_sell_price()))
+                    holder.pro1_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro1_mrp.setPaintFlags(holder.pro1_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro1_mrp.setText(sign + productLists5.get(0).getProduct_mrp());
+                }
+
+                if (productLists5.get(1).getProduct_mrp().equals(productLists5.get(1).getProduct_sell_price()))
+                    holder.pro2_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro2_mrp.setPaintFlags(holder.pro2_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro2_mrp.setText(sign + productLists5.get(1).getProduct_mrp());
+                }
+
+                if (productLists5.get(2).getProduct_mrp().equals(productLists5.get(2).getProduct_sell_price()))
+                    holder.pro3_mrp.setVisibility(View.GONE);
+                else {
+                    holder.pro3_mrp.setPaintFlags(holder.pro3_mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.pro3_mrp.setText(sign + productLists5.get(2).getProduct_mrp());
+                }
+
                 holder.pro1_price.setText(sign + productLists5.get(0).getProduct_sell_price());
                 holder.pro2_price.setText(sign + productLists5.get(1).getProduct_sell_price());
                 holder.pro3_price.setText(sign + productLists5.get(2).getProduct_sell_price());
@@ -318,9 +424,10 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private MaterialCardView product1_cardview, product2_cardview, product3_cardview;
-        private TextView home_catpro_name, home_catpro_view_all, pro1_name, pro1_price, pro2_name, pro2_price,
-                pro3_name, pro3_price;
+        private TextView home_catpro_name, pro1_name, pro1_mrp, pro1_price, pro2_name, pro2_mrp, pro2_price,
+                pro3_name, pro3_mrp, pro3_price;
         private ImageView pro1_img, pro2_img, pro3_img;
+        private LinearLayout ll_explore;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -329,16 +436,19 @@ public class HomeProOfCatAdapter extends RecyclerView.Adapter<HomeProOfCatAdapte
             product2_cardview = itemView.findViewById(R.id.product2_cardview);
             product3_cardview = itemView.findViewById(R.id.product3_cardview);
             home_catpro_name = itemView.findViewById(R.id.home_catpro_name);
-            home_catpro_view_all = itemView.findViewById(R.id.home_catpro_view_all);
             pro1_name = itemView.findViewById(R.id.pro1_name);
             pro2_name = itemView.findViewById(R.id.pro2_name);
             pro3_name = itemView.findViewById(R.id.pro3_name);
+            pro1_mrp = itemView.findViewById(R.id.pro1_mrp);
+            pro2_mrp = itemView.findViewById(R.id.pro2_mrp);
+            pro3_mrp = itemView.findViewById(R.id.pro3_mrp);
             pro1_price = itemView.findViewById(R.id.pro1_price);
             pro2_price = itemView.findViewById(R.id.pro2_price);
             pro3_price = itemView.findViewById(R.id.pro3_price);
             pro1_img = itemView.findViewById(R.id.pro1_img);
             pro2_img = itemView.findViewById(R.id.pro2_img);
             pro3_img = itemView.findViewById(R.id.pro3_img);
+            ll_explore = itemView.findViewById(R.id.ll_explore);
         }
     }
 }

@@ -77,15 +77,15 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         bottomNavigationView = binding.appBarMain.bottomNavbar;
-        LinearLayout nav_header_layout = binding.navView.getHeaderView(0).findViewById(R.id.nav_header_layout);
+        //LinearLayout nav_header_layout = binding.navView.getHeaderView(0).findViewById(R.id.nav_header_layout);
         FrameLayout profile_btn = binding.appBarMain.profileBtn;
 
         progressBar = binding.appBarMain.contentMain.progressBarMain;
         empty_layout = binding.appBarMain.contentMain.empty.emptyLayout;
         rl_main = binding.appBarMain.contentMain.rlMain;
-        user_image = binding.navView.getHeaderView(0).findViewById(R.id.imageView_nav);
-        nav_header_title = binding.navView.getHeaderView(0).findViewById(R.id.header_name_txt);
-        nav_header_subtitle = binding.navView.getHeaderView(0).findViewById(R.id.login_txt);
+//        user_image = binding.navView.getHeaderView(0).findViewById(R.id.imageView_nav);
+//        nav_header_title = binding.navView.getHeaderView(0).findViewById(R.id.header_name_txt);
+//        nav_header_subtitle = binding.navView.getHeaderView(0).findViewById(R.id.login_txt);
         order_count = binding.appBarMain.orderCount;
         user_image_home = binding.appBarMain.userImageHome;
 
@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
                 navController.navigate(R.id.navigate_to_login_activity);
         });
 
-        if (method.isLogin())
-            nav_header_layout.setOnClickListener(view -> {
-                drawer.close();
-                navController.navigate(R.id.nav_profile);
-            });
-        else
-            nav_header_layout.setOnClickListener(view -> navController.navigate(R.id.navigate_to_login_activity));
+//        if (method.isLogin())
+//            nav_header_layout.setOnClickListener(view -> {
+//                drawer.close();
+//                navController.navigate(R.id.nav_profile);
+//            });
+//        else
+//            nav_header_layout.setOnClickListener(view -> navController.navigate(R.id.navigate_to_login_activity));
 
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setVisible(false);
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setBackgroundColor(getResources().getColor(R.color.red));
@@ -192,14 +192,14 @@ public class MainActivity extends AppCompatActivity {
 
                         if (userProfileRP.getSuccess().equals("1")) {
 
-                            Glide.with(MainActivity.this).load(userProfileRP.getUser_image())
-                                    .placeholder(R.drawable.default_profile).into(user_image);
+//                            Glide.with(MainActivity.this).load(userProfileRP.getUser_image())
+//                                    .placeholder(R.drawable.default_profile).into(user_image);
 
                             Glide.with(MainActivity.this).load(userProfileRP.getUser_image())
                                     .placeholder(R.drawable.default_profile).into(user_image_home);
 
-                            nav_header_title.setText(userProfileRP.getUser_name());
-                            nav_header_subtitle.setText(userProfileRP.getUser_email());
+//                            nav_header_title.setText(userProfileRP.getUser_name());
+//                            nav_header_subtitle.setText(userProfileRP.getUser_email());
 
                             if (!userProfileRP.getCart_items().equals("0")){
                                 //order_count.setVisibility(View.VISIBLE);

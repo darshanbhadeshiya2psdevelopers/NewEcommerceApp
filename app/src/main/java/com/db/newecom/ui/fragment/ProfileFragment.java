@@ -78,7 +78,7 @@ public class ProfileFragment extends Fragment {
     private ImageView empty_image, profile_type;
     private ProgressBar progressBar;
     private ScrollView main_scrollview;
-    private CircleImageView user_img;
+    private CircleImageView user_img, imageView;
     private TextView empty_msg, user_name, user_email, user_mobile, all_order_txt, all_wishlist_txt, all_review_txt,
             all_address_txt, all_bank_txt, add_address_txt, add_bank_account_txt, address_user_name,
             address_type, address_mobile, address, bank_name, ifsc, bank_account_no, bank_account_type,
@@ -172,6 +172,10 @@ public class ProfileFragment extends Fragment {
         item_bank_account = view.findViewById(R.id.item_bank_account);
 
         main_scrollview.setVisibility(View.GONE);
+
+        imageView = getActivity().findViewById(R.id.user_image_home);
+
+        imageView.setVisibility(View.GONE);
 
         if (method.isNetworkAvailable(getActivity())) {
             if (method.isLogin()) {
@@ -534,4 +538,9 @@ public class ProfileFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        imageView.setVisibility(View.VISIBLE);
+    }
 }

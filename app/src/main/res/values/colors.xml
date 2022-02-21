@@ -24,6 +24,7 @@
     <color name="yellow">#FFA000</color>
     <color name="snackBar_color">#DD555555</color>
     <color name="unavailable_color">#99FFFFFF</color>
-    <color name="unavailable_txt_bg">#CBFFF1F1</color>
+    <color name="unavailable_txt_bg">#CBF1F6FF</color>
+    <color name="view_all_bg">#CBDFDFDF</color>
 
 </resources>
