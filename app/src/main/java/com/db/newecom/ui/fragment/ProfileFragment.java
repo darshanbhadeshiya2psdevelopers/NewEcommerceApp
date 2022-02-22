@@ -74,15 +74,16 @@ public class ProfileFragment extends Fragment {
 
     private Method method;
     private RelativeLayout empty_layout;
-    private LinearLayout empty_orders, empty_wishlist, empty_reviews;
+    private LinearLayout empty_orders, empty_wishlist, empty_reviews, ll_all_orders, ll_all_wishlist,
+            ll_all_reviews, ll_all_address, ll_all_banks;
     private ImageView empty_image, profile_type;
     private ProgressBar progressBar;
     private ScrollView main_scrollview;
     private CircleImageView user_img, imageView;
-    private TextView empty_msg, user_name, user_email, user_mobile, all_order_txt, all_wishlist_txt, all_review_txt,
-            all_address_txt, all_bank_txt, add_address_txt, add_bank_account_txt, address_user_name,
-            address_type, address_mobile, address, bank_name, ifsc, bank_account_no, bank_account_type,
-            bank_holder_name, bank_holder_mobile, bank_holder_email;
+    private TextView empty_msg, user_name, user_email, user_mobile, add_address_txt, add_bank_account_txt,
+            address_user_name, address_type, address_mobile, address, bank_name, ifsc, bank_account_no,
+            bank_account_type, bank_holder_name, bank_holder_mobile, bank_holder_email, wishlist, reviews,
+            addresses, banks;
     private Button empty_btn, edit_profile_btn, logout_btn;
     private RecyclerView rv_my_order, rv_my_wishlist, rv_my_review;
     private HomeMyOrdersAdapter myOrdersAdapter;
@@ -158,11 +159,16 @@ public class ProfileFragment extends Fragment {
 
         edit_profile_btn = view.findViewById(R.id.edit_profile_btn);
         logout_btn = view.findViewById(R.id.logout_btn);
-        all_order_txt = view.findViewById(R.id.all_order_txt);
-        all_wishlist_txt = view.findViewById(R.id.all_wishlist_txt);
-        all_review_txt = view.findViewById(R.id.all_review_txt);
-        all_address_txt = view.findViewById(R.id.all_address_txt);
-        all_bank_txt = view.findViewById(R.id.all_bank_txt);
+
+        wishlist = view.findViewById(R.id.wishlist);
+        reviews = view.findViewById(R.id.reviews);
+        addresses = view.findViewById(R.id.addresses);
+        banks = view.findViewById(R.id.banks);
+        ll_all_orders = view.findViewById(R.id.ll_all_orders);
+        ll_all_wishlist = view.findViewById(R.id.ll_all_wishlist);
+        ll_all_reviews = view.findViewById(R.id.ll_all_reviews);
+        ll_all_address = view.findViewById(R.id.ll_all_address);
+        ll_all_banks = view.findViewById(R.id.ll_all_banks);
         add_address_txt = view.findViewById(R.id.add_address_txt);
         add_bank_account_txt = view.findViewById(R.id.add_bank_account_txt);
         rv_my_order = view.findViewById(R.id.rv_my_order);
@@ -207,20 +213,20 @@ public class ProfileFragment extends Fragment {
 
         edit_profile_btn.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_editprofile_fragment));
-        all_order_txt.setOnClickListener(v ->
+        ll_all_orders.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_order_fragment));
-        all_wishlist_txt.setOnClickListener(v ->
+        ll_all_wishlist.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_fav_fragment));
-        all_review_txt.setOnClickListener(v ->
+        ll_all_reviews.setOnClickListener(v ->
                 startActivity(new Intent(getActivity(), ReviewsActivity.class)
                         .putExtra("type", "my review")));
-        all_address_txt.setOnClickListener(v ->
+        ll_all_address.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_addresses_fragment));
         item_address.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_addresses_fragment));
         add_address_txt.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_addresses_fragment));
-        all_bank_txt.setOnClickListener(v ->
+        ll_all_banks.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_bank_acc_fragment));
         item_bank_account.setOnClickListener(v ->
                 Navigation.findNavController(view).navigate(R.id.navigate_to_bank_acc_fragment));
@@ -286,29 +292,38 @@ public class ProfileFragment extends Fragment {
 //                                            .putExtra("path", userProfileRP.getUser_image())));
 
                                     user_name.setText(userProfileRP.getUser_name());
-                                    user_email.setText(userProfileRP.getUser_email());
-                                    user_mobile.setText(userProfileRP.getUser_phone());
 
-                                    String stringAddress = getResources().getString(R.string.view_all) + " " + "(" + userProfileRP.getAddress_count() + ")";
-                                    all_address_txt.setText(stringAddress);
+                                    if (userProfileRP.getUser_email().equals(""))
+                                        user_email.setText("");
+                                    else
+                                        user_email.setText("Email: " + userProfileRP.getUser_email());
+
+                                    if (userProfileRP.getUser_phone().equals(""))
+                                        user_mobile.setText("");
+                                    else
+                                        user_mobile.setText("Mobile: " + userProfileRP.getUser_phone());
+
+                                    String stringAddress = getResources().getString(R.string.my_address) + " " + "(" + userProfileRP.getAddress_count() + ")";
+                                    addresses.setText(stringAddress);
                                     if (userProfileRP.getAddress_count().equals("0")) {
                                         item_address.setVisibility(View.GONE);
                                         add_address_txt.setVisibility(View.VISIBLE);
                                     } else {
-                                        all_address_txt.setVisibility(View.VISIBLE);
+                                        ll_all_address.setVisibility(View.VISIBLE);
                                         address_user_name.setText(userProfileRP.getAddress_name());
                                         address_mobile.setText(userProfileRP.getAddress_phone());
                                         address_type.setText(userProfileRP.getAddress_type());
                                         address.setText(userProfileRP.getAddress());
                                     }
 
-                                    String stringBank = getResources().getString(R.string.view_all) + " " + "(" + userProfileRP.getBank_count() + ")";
-                                    all_bank_txt.setText(stringBank);
+                                    String stringBank = getResources().getString(R.string.default_bank_acc) + " " + "(" + userProfileRP.getBank_count() + ")";
+                                    banks.setText(stringBank);
+
                                     if (userProfileRP.getBank_count().equals("0")) {
                                         item_bank_account.setVisibility(View.GONE);
                                         add_bank_account_txt.setVisibility(View.VISIBLE);
                                     } else {
-                                        all_bank_txt.setVisibility(View.VISIBLE);
+                                        ll_all_banks.setVisibility(View.VISIBLE);
                                         bank_name.setText(userProfileRP.getBank_name());
                                         ifsc.setText(userProfileRP.getBank_ifsc());
                                         bank_account_no.setText(userProfileRP.getAccount_no());
@@ -321,7 +336,7 @@ public class ProfileFragment extends Fragment {
                                     if (userProfileRP.getMyOrderLists().size() != 0) {
 
                                         empty_orders.setVisibility(View.GONE);
-                                        all_order_txt.setVisibility(View.VISIBLE);
+                                        ll_all_orders.setVisibility(View.VISIBLE);
                                         rv_my_order.setVisibility(View.VISIBLE);
 
                                         myOrdersAdapter = new HomeMyOrdersAdapter(getActivity(), userProfileRP.getMyOrderLists(), false);
@@ -329,7 +344,7 @@ public class ProfileFragment extends Fragment {
 
                                     } else {
                                         rv_my_order.setVisibility(View.GONE);
-                                        all_order_txt.setVisibility(View.GONE);
+                                        ll_all_orders.setVisibility(View.GONE);
                                         empty_orders.setVisibility(View.VISIBLE);
                                     }
 
@@ -393,9 +408,9 @@ public class ProfileFragment extends Fragment {
                                 if (proRP.getProductLists().size() != 0) {
                                     empty_wishlist.setVisibility(View.GONE);
                                     rv_my_wishlist.setVisibility(View.VISIBLE);
-                                    all_wishlist_txt.setVisibility(View.VISIBLE);
-                                    String wishlistitems = getResources().getString(R.string.view_all) + " " + "(" + proRP.getTotal_products() + ")";
-                                    all_wishlist_txt.setText(wishlistitems);
+                                    ll_all_wishlist.setVisibility(View.VISIBLE);
+                                    String wishlistitems = getResources().getString(R.string.wish_list) + " " + "(" + proRP.getTotal_products() + ")";
+                                    wishlist.setText(wishlistitems);
                                     wishlistItemAdapter = new WishlistItemAdapter(getActivity(), true, proRP.getProductLists());
                                     rv_my_wishlist.setAdapter(wishlistItemAdapter);
 
@@ -446,9 +461,9 @@ public class ProfileFragment extends Fragment {
                                 if (myRatingReviewRP.getMyReviewsLists().size() != 0) {
                                     empty_reviews.setVisibility(View.GONE);
                                     rv_my_review.setVisibility(View.VISIBLE);
-                                    all_review_txt.setVisibility(View.VISIBLE);
-                                    String reviews = getResources().getString(R.string.view_all) + " " + "(" + myRatingReviewRP.getMyReviewsLists().size() + ")";
-                                    all_review_txt.setText(reviews);
+                                    ll_all_reviews.setVisibility(View.VISIBLE);
+                                    String review = getResources().getString(R.string.my_reviews) + " " + "(" + myRatingReviewRP.getMyReviewsLists().size() + ")";
+                                    reviews.setText(review);
 
                                     myReviewAdapter = new MyReviewAdapter(getActivity(), true, myRatingReviewRP.getMyReviewsLists());
                                     rv_my_review.setAdapter(myReviewAdapter);
@@ -538,9 +553,15 @@ public class ProfileFragment extends Fragment {
 
     }
 
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        imageView.setVisibility(View.VISIBLE);
+//    }
+
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void onDestroy() {
+        super.onDestroy();
         imageView.setVisibility(View.VISIBLE);
     }
 }

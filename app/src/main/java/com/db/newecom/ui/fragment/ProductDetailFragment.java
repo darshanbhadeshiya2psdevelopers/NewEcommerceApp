@@ -102,10 +102,10 @@ public class ProductDetailFragment extends Fragment {
     private ReviewAdapter reviewAdapter;
     private TextView pro_detail_name, pro_detail_desc, pro_detail_ratingcount, pro_detail_sell_price,
             pro_detail_original_price, pro_detail_discount, pro_detail_color, add_to_cart_btn, buy_now_btn,
-            view_all_review_txt, pro_detail_overall_rate, pro_status_msg, rate_5_count, rate_4_count, rate_3_count,
-            rate_2_count, rate_1_count, rate_dialog_pro_name, rate_dialog_pro_desc, cart_items;
+            pro_detail_overall_rate, pro_status_msg, rate_5_count, rate_4_count, rate_3_count,
+            rate_2_count, rate_1_count, rate_dialog_pro_name, rate_dialog_pro_desc, cart_items, product_review;
     private RelativeLayout empty_layout, rel_indicator_pro, rl_add_to_compare, rl_add_review;
-    private LinearLayout ll_related_pro_detail, ll_colors, ll_size;
+    private LinearLayout ll_related_pro_detail, ll_colors, ll_size, ll_all_pro_reviews;
     private View view;
     private Dialog dialog;
     private EditText et_rate_dialog_msg;
@@ -176,7 +176,7 @@ public class ProductDetailFragment extends Fragment {
             method.alertBox(getResources().getString(R.string.no_internet_connection));
         }
 
-        view_all_review_txt.setOnClickListener(v ->
+        ll_all_pro_reviews.setOnClickListener(v ->
                 startActivity(new Intent(getActivity(), ReviewsActivity.class)
                         .putExtra("type", "pro review")
                         .putExtra("product_id", product_id)));
@@ -388,8 +388,8 @@ public class ProductDetailFragment extends Fragment {
                                     }
 
                                     String text_feature = "<html><head>"
-                                            + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\")}body{font-family: MyFont;color: " + getResources().getColor(R.color.dark_grey) + "line-height:1.6}"
-                                            + "a {color:" + getResources().getColor(R.color.dark_grey) + "text-decoration:none}"
+                                            + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\");}body{font-family: MyFont;color:#636363;line-height:1.4;}"
+                                            + "a {color:#636363;text-decoration:none}"
                                             + "</style>"
                                             + "<link rel=\"stylesheet\" href=\"" + table_css + "\">"
                                             + "</head>"
@@ -456,10 +456,10 @@ public class ProductDetailFragment extends Fragment {
                                         reviewAdapter = new ReviewAdapter(getActivity(), proDetailRP.getProReviewLists());
                                         rv_review_pro_detail.setAdapter(reviewAdapter);
 
-                                        view_all_review_txt.setText(getResources().getString(R.string.view_all) + " " + "(" + proDetailRP.getProReviewLists().size() + ")");
+                                        product_review.setText(getResources().getString(R.string.product_review) + " " + "(" + proDetailRP.getProReviewLists().size() + ")");
 
                                     } else {
-                                        view_all_review_txt.setVisibility(View.GONE);
+                                        ll_all_pro_reviews.setVisibility(View.GONE);
                                         rv_review_pro_detail.setVisibility(View.GONE);
                                     }
 
@@ -935,7 +935,8 @@ public class ProductDetailFragment extends Fragment {
         pro_detail_original_price = view.findViewById(R.id.pro_detail_original_price);
         add_to_cart_btn = view.findViewById(R.id.add_to_cart_btn);
         buy_now_btn = view.findViewById(R.id.buy_now_btn);
-        view_all_review_txt = view.findViewById(R.id.view_all_review_txt);
+        ll_all_pro_reviews = view.findViewById(R.id.ll_all_pro_reviews);
+        product_review = view.findViewById(R.id.product_review_txt);
         rl_add_to_compare = view.findViewById(R.id.rl_add_to_compare);
         rl_add_review = view.findViewById(R.id.rl_add_review);
 

@@ -39,7 +39,7 @@
                         android:layout_marginRight="36dp"
                         android:layout_toLeftOf="@+id/headerIndicator"
                         android:text="@string/app_name"
-                        android:textColor="@color/dark_grey"
+                        android:textColor="@color/colorPrimaryDark"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -51,7 +51,7 @@
                         android:layout_alignParentRight="true"
                         android:adjustViewBounds="true"
                         android:layout_gravity="center_vertical|end"
-                        app:tint="@color/dark_grey"
+                        app:tint="@color/colorPrimaryDark"
                         app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
 
                 </RelativeLayout>
@@ -62,14 +62,14 @@
                 android:id="@+id/expansionLayout_faq_adapter"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:layout_margin="10dp"
-                android:background="@drawable/bordered_bg">
+                android:layout_margin="10dp">
 
                 <TextView
                     android:id="@+id/faq_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
+                    android:padding="5dp"
+                    android:lineSpacingExtra="3dp"
                     android:text="@string/app_name"
                     android:textColor="@color/dark_grey"/>
 

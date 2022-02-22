@@ -89,17 +89,15 @@
 
                         <TextView
                             android:id="@+id/fav_product_rating_count"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
                             android:layout_marginLeft="5dp"
-                            android:background="@color/green"
-                            android:ellipsize="end"
-                            android:maxLines="1"
-                            android:paddingHorizontal="2dp"
-                            android:paddingVertical="1dp"
+                            android:gravity="center"
+                            android:background="@drawable/circle_background"
+                            android:backgroundTint="@color/green"
                             android:text="50"
                             android:textColor="@color/white"
-                            android:textSize="12sp" />
+                            android:textSize="11.5sp" />
 
                     </LinearLayout>
 

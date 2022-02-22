@@ -23,7 +23,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_toLeftOf="@+id/cart_btn"
+                android:layout_toLeftOf="@+id/profile_btn"
                 android:layout_marginRight="3dp"
                 android:background="@color/colorPrimary"
                 app:popupTheme="@style/Theme.EcommerceApp.PopupOverlay" />
@@ -45,26 +45,6 @@
                     android:padding="1dp"
                     android:src="@drawable/default_profile"
                     android:contentDescription="@string/nav_header_desc" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_baseline_shopping_cart_24"
-                    android:visibility="gone"/>
-
-                <TextView
-                    android:id="@+id/order_count"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="end|top"
-                    android:gravity="center"
-                    android:background="@drawable/circle_background"
-                    android:backgroundTint="@color/red"
-                    android:padding="1.2dp"
-                    android:text="99"
-                    android:textSize="9.5sp"
-                    android:textColor="@color/white"
-                    android:visibility="gone"/>
 
             </FrameLayout>
 

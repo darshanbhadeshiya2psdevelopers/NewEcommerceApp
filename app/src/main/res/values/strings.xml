@@ -36,7 +36,7 @@
     <string name="enter_cpass">Enter Confirm Password</string>
     <string name="enter_mobile">Enter Mobile No.</string>
     <string name="register">Register</string>
-    <string name="log_in_with">Log in With</string>
+    <string name="log_in_with">Sign in Using</string>
     <string name="enter_email_fpass">Enter Registered Email</string>
     <string name="send_mail">Send Email</string>
     <string name="fpass_txt">Enter your registered email id and we will send you a new password to login</string>

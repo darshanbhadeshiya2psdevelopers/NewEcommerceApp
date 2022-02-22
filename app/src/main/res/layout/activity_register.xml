@@ -14,12 +14,14 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/light_primary">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/side_nav_bar">
+                android:background="@drawable/side_nav_bar"
+                android:backgroundTint="@color/colorPrimary">
 
                 <ImageView
                     android:id="@+id/close_btn"
@@ -80,10 +82,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/signup_txt"
+                        android:text="@string/register"
                         android:textSize="26sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimaryDark"/>
+
+                    <View
+                        android:layout_width="180dp"
+                        android:layout_height="1.2dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_marginTop="8dp"/>
 
                     <EditText
                         android:id="@+id/et_name"
@@ -147,11 +155,13 @@
 
                     <Button
                         android:id="@+id/register_btn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/register"
+                        android:layout_marginHorizontal="30dp"
+                        android:text="@string/signup_txt"
                         android:textSize="16sp"
+                        android:textAllCaps="false"
                         android:paddingHorizontal="25dp"
                         app:cornerRadius="7dp"/>
 
@@ -165,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cardview2"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
@@ -173,30 +183,33 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/register_txt3"
+                        android:textStyle="bold"
                         android:textSize="16sp"/>
 
                     <TextView
                         android:id="@+id/login_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
                         android:text="@string/login"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorPrimary"/>
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
                 <View
-                    android:layout_width="110dp"
+                    android:layout_width="120dp"
                     android:layout_height="2dp"
                     android:background="@color/colorPrimary"
-                    android:layout_marginTop="15dp"/>
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 

@@ -22,10 +22,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingHorizontal="16dp"
-                android:paddingVertical="20dp"
+                android:paddingVertical="25dp"
                 android:background="@drawable/side_nav_bar"
                 android:text="@string/contactus_title"
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 

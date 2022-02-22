@@ -53,11 +53,11 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private ImageView close_btn, google_btn, facebook_btn;
+    private ImageView close_btn;
     private EditText et_email, et_password, et_fpass_email;
-    private Button login_btn, fpass_btn;
-    private TextView signup_txt, forgetpass_txt, back_to_login;
-    private LinearLayout login_ll, forgetpass_ll;
+    private Button login_btn, fpass_btn, signUp_btn;
+    private TextView forgetpass_txt, back_to_login;
+    private LinearLayout login_ll, forgetpass_ll, ll_social_logins, ll_google_btn, ll_fb_btn;
     private Method method;
     private String email, password, femail;
     private GoogleSignInClient mGoogleSignInClient;
@@ -79,13 +79,14 @@ public class LoginActivity extends AppCompatActivity {
         et_fpass_email = findViewById(R.id.et_fpass_email);
         login_btn = findViewById(R.id.login_btn);
         fpass_btn = findViewById(R.id.fpass_btn);
-        google_btn = findViewById(R.id.google_btn);
-        facebook_btn = findViewById(R.id.facebook_btn);
-        signup_txt = findViewById(R.id.signup_txt);
+        signUp_btn = findViewById(R.id.signUp_btn);
         forgetpass_txt = findViewById(R.id.forgetpass_txt);
         back_to_login = findViewById(R.id.back_to_login);
         login_ll = findViewById(R.id.login_ll);
         forgetpass_ll = findViewById(R.id.forgetpass_ll);
+        ll_social_logins = findViewById(R.id.ll_social_logins);
+        ll_google_btn = findViewById(R.id.ll_google_btn);
+        ll_fb_btn = findViewById(R.id.ll_fb_btn);
 
         pref = getSharedPreferences(myPreference, 0);
         editor = pref.edit();
@@ -94,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
         method = new Method(LoginActivity.this);
 
         close_btn.setOnClickListener(view -> onBackPressed());
-        signup_txt.setOnClickListener(view -> {
+        signUp_btn.setOnClickListener(view -> {
             startActivity(new Intent(this, RegisterActivity.class));
             finish();
         });
@@ -141,12 +142,12 @@ public class LoginActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        google_btn.setOnClickListener(view -> gogglelogin());
+        ll_google_btn.setOnClickListener(view -> gogglelogin());
 
         callbackManager = CallbackManager.Factory.create();
 
-        facebook_btn.setOnClickListener(view -> {
-            if (view == facebook_btn) {
+        ll_fb_btn.setOnClickListener(view -> {
+            if (view == ll_fb_btn) {
                 LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("email"));
             }
         });
@@ -172,11 +173,13 @@ public class LoginActivity extends AppCompatActivity {
         forgetpass_txt.setOnClickListener(view -> {
             login_ll.setVisibility(View.GONE);
             forgetpass_ll.setVisibility(View.VISIBLE);
+            ll_social_logins.setVisibility(View.GONE);
         });
 
         back_to_login.setOnClickListener(view -> {
             login_ll.setVisibility(View.VISIBLE);
             forgetpass_ll.setVisibility(View.GONE);
+            ll_social_logins.setVisibility(View.VISIBLE);
         });
 
     }

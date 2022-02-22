@@ -52,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private Method method;
     private ProgressBar progressBar;
     private RelativeLayout empty_layout, rl_main;
-    private CircleImageView user_image, user_image_home;
-    private TextView nav_header_title, nav_header_subtitle, order_count;
+    private CircleImageView user_image_home;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     public static Toolbar toolbar;
@@ -77,16 +76,10 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         bottomNavigationView = binding.appBarMain.bottomNavbar;
-        //LinearLayout nav_header_layout = binding.navView.getHeaderView(0).findViewById(R.id.nav_header_layout);
-        FrameLayout profile_btn = binding.appBarMain.profileBtn;
 
         progressBar = binding.appBarMain.contentMain.progressBarMain;
         empty_layout = binding.appBarMain.contentMain.empty.emptyLayout;
         rl_main = binding.appBarMain.contentMain.rlMain;
-//        user_image = binding.navView.getHeaderView(0).findViewById(R.id.imageView_nav);
-//        nav_header_title = binding.navView.getHeaderView(0).findViewById(R.id.header_name_txt);
-//        nav_header_subtitle = binding.navView.getHeaderView(0).findViewById(R.id.login_txt);
-        order_count = binding.appBarMain.orderCount;
         user_image_home = binding.appBarMain.userImageHome;
 
 
@@ -102,20 +95,12 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-        profile_btn.setOnClickListener(view -> {
+        user_image_home.setOnClickListener(view -> {
             if (method.isLogin())
                 navController.navigate(R.id.nav_profile);
             else
                 navController.navigate(R.id.navigate_to_login_activity);
         });
-
-//        if (method.isLogin())
-//            nav_header_layout.setOnClickListener(view -> {
-//                drawer.close();
-//                navController.navigate(R.id.nav_profile);
-//            });
-//        else
-//            nav_header_layout.setOnClickListener(view -> navController.navigate(R.id.navigate_to_login_activity));
 
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setVisible(false);
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setBackgroundColor(getResources().getColor(R.color.red));
@@ -128,9 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.search_fragment:
                     navController.navigate(R.id.search_fragment);
                     break;
-//                case R.id.nav_cat:
-//                    navController.navigate(R.id.nav_cat);
-//                    break;
                 case R.id.nav_wishlist:
                     navController.navigate(R.id.nav_wishlist);
                     break;
@@ -163,12 +145,9 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe
     public void geString(Events.CartItem cartItem){
         if (cartItem.getCart_item().equals("0")) {
-            order_count.setVisibility(View.GONE);
             bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setVisible(false);
         }
         else {
-            //order_count.setVisibility(View.VISIBLE);
-            order_count.setText(cartItem.getCart_item());
             bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setVisible(true);
             bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setNumber(Integer.parseInt(cartItem.getCart_item()));
         }
@@ -192,18 +171,10 @@ public class MainActivity extends AppCompatActivity {
 
                         if (userProfileRP.getSuccess().equals("1")) {
 
-//                            Glide.with(MainActivity.this).load(userProfileRP.getUser_image())
-//                                    .placeholder(R.drawable.default_profile).into(user_image);
-
                             Glide.with(MainActivity.this).load(userProfileRP.getUser_image())
                                     .placeholder(R.drawable.default_profile).into(user_image_home);
 
-//                            nav_header_title.setText(userProfileRP.getUser_name());
-//                            nav_header_subtitle.setText(userProfileRP.getUser_email());
-
                             if (!userProfileRP.getCart_items().equals("0")){
-                                //order_count.setVisibility(View.VISIBLE);
-                                order_count.setText(userProfileRP.getCart_items());
                                 bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setVisible(true);
                                 bottomNavigationView.getOrCreateBadge(R.id.nav_cart)
                                         .setNumber(Integer.parseInt(userProfileRP.getCart_items()));
@@ -281,21 +252,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//
-//        this.menu = menu;
-//        MenuItem item = menu.findItem(R.id.action_search);
-//        item.setOnMenuItemClickListener(menuItem -> {
-//            navController.navigate(R.id.navigate_to_search_fragment);
-//            return false;
-//        });
-//
-//        return super.onCreateOptionsMenu(menu);
-//    }
 
     @Override
     public boolean onSupportNavigateUp() {

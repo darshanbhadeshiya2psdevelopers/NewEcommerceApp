@@ -103,8 +103,8 @@ public class PolicyActivity extends AppCompatActivity {
                         String encoding = "utf-8";
 
                         String text = "<html><head>"
-                                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\")}body{font-family: MyFont;color: " + getResources().getColor(R.color.dark_grey) + "line-height:1.6}"
-                                + "a {color:" + getResources().getColor(R.color.dark_grey) + "text-decoration:none}"
+                                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\");}body{font-family: MyFont;color:#636363;line-height:1.3;}"
+                                + "a {color:#1968C8;}"
                                 + "</style></head>"
                                 + "<body>"
                                 + policyRP.getContent()

@@ -148,10 +148,10 @@ public class CompareFragment extends Fragment {
         webView2.setFocusable(false);
         webView2.getSettings().setDefaultTextEncodingName("UTF-8");
 
-        webView1.setBackgroundColor(Color.TRANSPARENT);
-        webView1.setFocusableInTouchMode(false);
-        webView1.setFocusable(false);
-        webView1.getSettings().setDefaultTextEncodingName("UTF-8");
+        webView3.setBackgroundColor(Color.TRANSPARENT);
+        webView3.setFocusableInTouchMode(false);
+        webView3.setFocusable(false);
+        webView3.getSettings().setDefaultTextEncodingName("UTF-8");
 
         if (method.isNetworkAvailable(getActivity())) {
             if (method.isLogin()) {
@@ -275,8 +275,8 @@ public class CompareFragment extends Fragment {
         }
 
         String text = "<html><head>"
-                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\")}body{font-family: MyFont;color: " + getResources().getColor(R.color.grey) + "line-height:1.6}"
-                + "a {color:" + getResources().getColor(R.color.grey) + "text-decoration:none}"
+                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\");}body{font-family: MyFont;color:#363636;line-height:1.4;}"
+                + "a {color:#363636;text-decoration:none;}"
                 + "</style></head>"
                 + "<body>"
                 + compareProLists.get(0).getProduct_desc()
@@ -325,8 +325,8 @@ public class CompareFragment extends Fragment {
         }
 
         String text = "<html><head>"
-                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\")}body{font-family: MyFont;color: " + getResources().getColor(R.color.grey) + "line-height:1.6}"
-                + "a {color:" + getResources().getColor(R.color.grey) + "text-decoration:none}"
+                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\");}body{font-family: MyFont;color:#363636;line-height:1.4;}"
+                + "a {color:#363636;text-decoration:none;}"
                 + "</style></head>"
                 + "<body>"
                 + compareProLists.get(1).getProduct_desc()
@@ -375,8 +375,8 @@ public class CompareFragment extends Fragment {
         }
 
         String text = "<html><head>"
-                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\")}body{font-family: MyFont;color: " + getResources().getColor(R.color.grey) + "line-height:1.6}"
-                + "a {color:" + getResources().getColor(R.color.grey) + "text-decoration:none}"
+                + "<style type=\"text/css\">@font-face {font-family: MyFont;src: url(\"file:///android_asset/fonts/poppins_medium.ttf\");}body{font-family: MyFont;color:#363636;line-height:1.4;}"
+                + "a {color:#363636;text-decoration:none;}"
                 + "</style></head>"
                 + "<body>"
                 + compareProLists.get(2).getProduct_desc()

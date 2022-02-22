@@ -26,5 +26,6 @@
     <color name="unavailable_color">#99FFFFFF</color>
     <color name="unavailable_txt_bg">#CBF1F6FF</color>
     <color name="view_all_bg">#CBDFDFDF</color>
+    <color name="red2">#F45C5D</color>
 
 </resources>

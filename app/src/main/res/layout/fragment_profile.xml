@@ -84,9 +84,9 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:gravity="center_horizontal"
-                    android:maxLines="1"
+                    android:maxLines="2"
                     android:paddingHorizontal="20dp"
-                    android:text="darshanbhadeshiya@gmail.com"
+                    android:text="Email: darshanbhadeshiya@gmail.com"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -100,7 +100,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="1"
                     android:paddingHorizontal="20dp"
-                    android:text="+917016974471"
+                    android:text="Mobile: +917016974471"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -115,6 +115,8 @@
                     android:text="@string/edit_profile"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
+                    android:drawableRight="@drawable/ic_baseline_edit_24"
+                    app:drawableTint="@color/white"
                     app:backgroundTint="@color/colorPrimary"
                     app:cornerRadius="7dp" />
 
@@ -130,46 +132,34 @@
                 app:cardElevation="5dp"
                 app:cardCornerRadius="10dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="top"
-                    android:layout_marginVertical="10dp">
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginVertical="5dp">
 
                     <TextView
                         android:id="@+id/my_orders"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
                         android:text="@string/my_orders"
                         android:textSize="18sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/all_order_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:text="@string/view_all"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="gone"/>
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"/>
 
                     <View
                         android:id="@+id/hr_line1"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@+id/my_orders"
                         android:layout_marginTop="12dp"
-                        android:background="@color/grey" />
+                        android:background="@color/colorPrimaryDark" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_my_order"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/hr_line1"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:nestedScrollingEnabled="false"
@@ -185,7 +175,6 @@
                         android:id="@+id/empty_orders"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_below="@+id/hr_line1"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
@@ -210,7 +199,35 @@
 
                     </LinearLayout>
 
-                </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_all_orders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:text="@string/view_all"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/circle_background"
+                            android:backgroundTint="@color/light_primary"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:tint="@color/colorPrimaryDark" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -224,46 +241,34 @@
                 app:cardElevation="5dp"
                 app:cardCornerRadius="10dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="top"
-                    android:layout_marginVertical="10dp">
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginVertical="5dp">
 
                     <TextView
                         android:id="@+id/wishlist"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
                         android:text="@string/wish_list"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/all_wishlist_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:text="@string/view_all"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="gone"/>
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"/>
 
                     <View
                         android:id="@+id/hr_line3"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@+id/wishlist"
                         android:layout_marginTop="12dp"
-                        android:background="@color/grey"/>
+                        android:background="@color/colorPrimaryDark"/>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_my_wishlist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/hr_line3"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:nestedScrollingEnabled="false"
@@ -279,7 +284,6 @@
                         android:id="@+id/empty_wishlist"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_below="@+id/hr_line3"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
@@ -304,7 +308,35 @@
 
                     </LinearLayout>
 
-                </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_all_wishlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:text="@string/view_all"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/circle_background"
+                            android:backgroundTint="@color/light_primary"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:tint="@color/colorPrimaryDark" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -318,46 +350,34 @@
                 app:cardElevation="5dp"
                 app:cardCornerRadius="10dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="top"
-                    android:layout_marginVertical="10dp">
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginVertical="5dp">
 
                     <TextView
                         android:id="@+id/reviews"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
                         android:text="@string/my_reviews"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/all_review_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:text="@string/view_all"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="gone"/>
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"/>
 
                     <View
                         android:id="@+id/hr_line5"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@+id/reviews"
                         android:layout_marginTop="12dp"
-                        android:background="@color/grey"/>
+                        android:background="@color/colorPrimaryDark"/>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_my_review"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/hr_line5"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:nestedScrollingEnabled="false"
@@ -373,7 +393,6 @@
                         android:id="@+id/empty_reviews"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:layout_below="@+id/hr_line5"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
@@ -398,7 +417,35 @@
 
                     </LinearLayout>
 
-                </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_all_reviews"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:text="@string/view_all"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/circle_background"
+                            android:backgroundTint="@color/light_primary"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:tint="@color/colorPrimaryDark" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -412,46 +459,34 @@
                 app:cardElevation="5dp"
                 app:cardCornerRadius="10dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="top"
-                    android:layout_marginVertical="10dp">
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginVertical="5dp">
 
                     <TextView
                         android:id="@+id/addresses"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
                         android:text="@string/my_address"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/all_address_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:text="@string/view_all"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="gone"/>
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark" />
 
                     <View
                         android:id="@+id/hr_line2"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@+id/addresses"
                         android:layout_marginTop="12dp"
-                        android:background="@color/grey" />
+                        android:background="@color/colorPrimaryDark" />
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/item_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/hr_line2"
                         android:layout_marginHorizontal="12dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="5dp"
@@ -527,14 +562,41 @@
                         android:id="@+id/add_address_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/hr_line2"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:maxLines="4"
                         android:text="Add Address"
                         android:visibility="gone"/>
 
-                </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_all_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:text="@string/view_all"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/circle_background"
+                            android:backgroundTint="@color/light_primary"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:tint="@color/colorPrimaryDark" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -548,46 +610,34 @@
                 app:cardElevation="5dp"
                 app:cardCornerRadius="10dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="top"
-                    android:layout_marginVertical="10dp">
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginVertical="5dp">
 
                     <TextView
                         android:id="@+id/banks"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
                         android:text="@string/default_bank_acc"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/all_bank_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10dp"
-                        android:text="@string/view_all"
-                        android:textColor="@color/colorPrimary"
-                        android:visibility="gone"/>
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"/>
 
                     <View
                         android:id="@+id/hr_line4"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@+id/banks"
                         android:layout_marginTop="12dp"
-                        android:background="@color/grey"/>
+                        android:background="@color/colorPrimaryDark"/>
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/item_bank_account"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/hr_line4"
                         android:layout_marginHorizontal="12dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="5dp"
@@ -838,14 +888,41 @@
                         android:id="@+id/add_bank_account_txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/hr_line4"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginTop="5dp"
                         android:maxLines="4"
                         android:text="Add Bank Account"
                         android:visibility="gone"/>
 
-                </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_all_banks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:text="@string/view_all"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/circle_background"
+                            android:backgroundTint="@color/light_primary"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:tint="@color/colorPrimaryDark" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
