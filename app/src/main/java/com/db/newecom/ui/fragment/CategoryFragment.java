@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -48,7 +49,7 @@ public class CategoryFragment extends Fragment {
     private String mParam2;
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
     private TextView empty_msg;
     private RecyclerView rv_category;
@@ -95,7 +96,7 @@ public class CategoryFragment extends Fragment {
         method = new Method(getActivity());
 
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_cat);
-        progressBar = view.findViewById(R.id.progressBar_cat);
+        progressBar = view.findViewById(R.id.ll_progress_cat);
         empty_layout = view.findViewById(R.id.empty_layout);
         empty_msg = view.findViewById(R.id.empty_msg);
         rv_category = view.findViewById(R.id.rv_category);

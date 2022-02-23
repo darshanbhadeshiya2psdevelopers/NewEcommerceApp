@@ -78,28 +78,37 @@
                     app:backgroundTint="@color/white"
                     app:tint="@color/grey" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/product_discount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/product_discount_txt"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_alignParentLeft="true"
-                    app:cardCornerRadius="5dp"
-                    app:cardBackgroundColor="@color/red">
+                    android:background="@drawable/circle_background"
+                    app:backgroundTint="#EA1010"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:textSize="11sp"
+                    android:text="10% off"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
 
-                    <TextView
-                        android:id="@+id/product_discount_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:textSize="13sp"
-                        android:text="10% off"
-                        android:maxLines="1"
-                        android:ellipsize="end"
-                        android:textColor="@color/white" />
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/product_discount"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    app:cardCornerRadius="5dp"-->
+<!--                    app:cardBackgroundColor="@color/red">-->
 
-                </com.google.android.material.card.MaterialCardView>
+<!--                    -->
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
 
             </RelativeLayout>
 

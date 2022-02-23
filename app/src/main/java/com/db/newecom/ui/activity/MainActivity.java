@@ -50,7 +50,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout, rl_main;
     private CircleImageView user_image_home;
     private AppBarConfiguration mAppBarConfiguration;
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         bottomNavigationView = binding.appBarMain.bottomNavbar;
 
-        progressBar = binding.appBarMain.contentMain.progressBarMain;
+        progressBar = binding.appBarMain.contentMain.llProgressMain;
         empty_layout = binding.appBarMain.contentMain.empty.emptyLayout;
         rl_main = binding.appBarMain.contentMain.rlMain;
         user_image_home = binding.appBarMain.userImageHome;

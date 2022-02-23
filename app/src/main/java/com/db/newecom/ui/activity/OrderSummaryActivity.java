@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
 import com.db.newecom.Model.CartList;
@@ -46,13 +47,13 @@ import retrofit2.Response;
 public class OrderSummaryActivity extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private ProgressDialog progressDialog;
     private RelativeLayout empty_layout, rl_layout, you_save_view;
     private TextView address_user_name, address_type, address_mobile, address, total_amount, you_save,
             delivery_charge, amount_payable, total_amount_payable, total_cart_items, empty_msg;
     private LinearLayout ll_address;
-    private ImageView empty_img;
+    private LottieAnimationView empty_animation;
     private RecyclerView rv_order_summary;
     private CartAdapter cartAdapter;
     private List<CartList> cartLists;
@@ -84,7 +85,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
         productId = intent.getStringExtra("product_id");
         productSize = intent.getStringExtra("product_size");
 
-        progressBar = findViewById(R.id.progressBar_order_sum);
+        progressBar = findViewById(R.id.ll_progress_order_sum);
         empty_layout = findViewById(R.id.empty_layout);
         rl_layout = findViewById(R.id.rl_layout);
         address_user_name = findViewById(R.id.address_user_name);
@@ -100,7 +101,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
         total_amount_payable = findViewById(R.id.total_amount_payable);
         total_cart_items = findViewById(R.id.total_cart_items);
         empty_msg = findViewById(R.id.empty_msg);
-        empty_img = findViewById(R.id.empty_image);
+        empty_animation = findViewById(R.id.empty_animation);
         empty_btn = findViewById(R.id.empty_btn);
         change_address_btn = findViewById(R.id.change_address_btn);
         rv_order_summary = findViewById(R.id.rv_order_summary);
@@ -119,7 +120,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
                 empty_layout.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
                 empty_msg.setText(getResources().getString(R.string.login_msg));
-                empty_img.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_login_24));
+                empty_animation.setAnimation("login.json");
                 empty_btn.setVisibility(View.VISIBLE);
                 empty_btn.setText(getResources().getString(R.string.go_to_login));
                 empty_btn.setOnClickListener(view ->

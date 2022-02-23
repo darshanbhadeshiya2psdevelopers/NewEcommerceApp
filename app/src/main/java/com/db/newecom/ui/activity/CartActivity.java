@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
 import com.db.newecom.Model.CartList;
@@ -27,6 +28,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -45,9 +47,9 @@ import retrofit2.Response;
 public class CartActivity extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout, rl_cart_main;
-    private ImageView empty_image;
+    private LottieAnimationView empty_animation;
     private TextView empty_msg, total_amount, delivery_charge, amount_payable,
             total_amount_payable, total_cart_items;
     private Button empty_btn, confirm_btn;
@@ -71,10 +73,10 @@ public class CartActivity extends AppCompatActivity {
         cartLists = new ArrayList<>();
         sign = ConstantApi.currency + " ";
 
-        progressBar = findViewById(R.id.progressBar_cart);
+        progressBar = findViewById(R.id.ll_progress_cart);
         empty_layout = findViewById(R.id.empty_layout);
         rl_cart_main = findViewById(R.id.rl_cart_main);
-        empty_image = findViewById(R.id.empty_image);
+        empty_animation = findViewById(R.id.empty_animation);
         empty_msg = findViewById(R.id.empty_msg);
         empty_btn = findViewById(R.id.empty_btn);
         total_amount = findViewById(R.id.total_amount);
@@ -85,6 +87,8 @@ public class CartActivity extends AppCompatActivity {
         confirm_btn = findViewById(R.id.confirm_btn);
         rv_cart = findViewById(R.id.rv_cart);
 
+        empty_animation.setAnimation("empty_cart.json");
+
         if (method.isNetworkAvailable(this)) {
             if (method.isLogin()) {
                 cart(method.userId());
@@ -93,7 +97,7 @@ public class CartActivity extends AppCompatActivity {
                 empty_layout.setVisibility(View.VISIBLE);
                 rl_cart_main.setVisibility(View.GONE);
                 progressBar.setVisibility(View.GONE);
-                empty_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_login_24));
+                empty_animation.setAnimation("login.json");
                 empty_msg.setText(getResources().getString(R.string.login_msg));
                 empty_btn.setVisibility(View.VISIBLE);
                 empty_btn.setText(getResources().getString(R.string.go_to_login));
@@ -117,7 +121,6 @@ public class CartActivity extends AppCompatActivity {
             rl_cart_main.setVisibility(View.GONE);
             progressBar.setVisibility(View.GONE);
             empty_layout.setVisibility(View.VISIBLE);
-            empty_image.setImageResource(R.drawable.ic_outline_add_shopping_cart_24);
             empty_msg.setText(R.string.empty_cart);
             empty_btn.setVisibility(View.VISIBLE);
             empty_btn.setOnClickListener(view -> {
@@ -256,7 +259,6 @@ public class CartActivity extends AppCompatActivity {
                             } else {
                                 progressBar.setVisibility(View.GONE);
                                 empty_layout.setVisibility(View.VISIBLE);
-                                empty_image.setImageResource(R.drawable.ic_outline_add_shopping_cart_24);
                                 empty_msg.setText(R.string.empty_cart);
                                 empty_btn.setVisibility(View.VISIBLE);
                                 empty_btn.setOnClickListener(view -> {
@@ -288,7 +290,6 @@ public class CartActivity extends AppCompatActivity {
                         } else {
                             progressBar.setVisibility(View.GONE);
                             empty_layout.setVisibility(View.VISIBLE);
-                            empty_image.setImageResource(R.drawable.ic_outline_add_shopping_cart_24);
                             empty_msg.setText(cartRP.getMsg());
                             empty_btn.setVisibility(View.VISIBLE);
                             empty_btn.setOnClickListener(view -> {

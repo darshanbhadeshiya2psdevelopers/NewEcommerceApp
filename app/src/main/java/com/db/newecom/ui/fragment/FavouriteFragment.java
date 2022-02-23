@@ -13,10 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
 import com.db.newecom.Model.ProductList;
@@ -60,9 +62,9 @@ public class FavouriteFragment extends Fragment {
     private Method method;
     private RecyclerView rv_my_wishlist_all;
     private WishlistItemAdapter wishlistItemAdapter;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
-    private ImageView empty_image;
+    private LottieAnimationView empty_animation;
     private TextView empty_msg, cart_items;
     private Button empty_btn;
     private List<ProductList> productLists;
@@ -109,13 +111,14 @@ public class FavouriteFragment extends Fragment {
         productLists = new ArrayList<>();
 
         rv_my_wishlist_all = view.findViewById(R.id.rv_my_wishlist_all);
-        progressBar = view.findViewById(R.id.progressBar_wishlist);
+        progressBar = view.findViewById(R.id.ll_progress_wishlist);
         empty_layout = view.findViewById(R.id.empty_layout);
-        empty_image = view.findViewById(R.id.empty_image);
+        empty_animation = view.findViewById(R.id.empty_animation);
         empty_msg = view.findViewById(R.id.empty_msg);
         empty_btn = view.findViewById(R.id.empty_btn);
         cart_items = getActivity().findViewById(R.id.order_count);
 
+        empty_animation.setAnimation("wishlist.json");
 
         if (method.isNetworkAvailable(getActivity())) {
             if (method.isLogin()) {
@@ -124,7 +127,7 @@ public class FavouriteFragment extends Fragment {
                 progressBar.setVisibility(View.GONE);
                 rv_my_wishlist_all.setVisibility(View.GONE);
                 empty_layout.setVisibility(View.VISIBLE);
-                empty_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_login_24));
+                empty_animation.setAnimation("login.json");
                 empty_msg.setText(getActivity().getResources().getString(R.string.login_msg));
                 empty_btn.setVisibility(View.VISIBLE);
                 empty_btn.setText(getResources().getString(R.string.go_to_login));
@@ -185,7 +188,6 @@ public class FavouriteFragment extends Fragment {
 
                                     rv_my_wishlist_all.setVisibility(View.GONE);
                                     empty_layout.setVisibility(View.VISIBLE);
-                                    empty_image.setImageResource(R.drawable.ic_baseline_favorite_24);
                                     empty_msg.setText(R.string.empty_wishlist);
                                     empty_btn.setVisibility(View.VISIBLE);
                                     empty_btn.setOnClickListener(v -> getActivity().onBackPressed());

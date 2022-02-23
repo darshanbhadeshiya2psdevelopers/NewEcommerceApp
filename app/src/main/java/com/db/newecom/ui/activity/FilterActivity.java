@@ -48,7 +48,7 @@ public class FilterActivity extends AppCompatActivity {
 
     private Method method;
     private Menu menu;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
     private LinearLayout ll_filter_main, ll_sortby;
     private RecyclerView rv_sortby, rv_filter;
@@ -78,7 +78,7 @@ public class FilterActivity extends AppCompatActivity {
 
         filterLists = new ArrayList<>();
 
-        progressBar = findViewById(R.id.progressBar_filter);
+        progressBar = findViewById(R.id.ll_progress_filter);
         empty_layout = findViewById(R.id.empty_layout);
         ll_filter_main = findViewById(R.id.ll_filter_main);
         ll_sortby = findViewById(R.id.ll_sortby);

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -50,7 +51,7 @@ public class OtherFilterSelectionFragment extends Fragment {
     private String filterType, search, id;
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout rl_other_filter;
     private EditText search_other;
     private TextView no_data;
@@ -98,7 +99,7 @@ public class OtherFilterSelectionFragment extends Fragment {
 
         method = new Method(getActivity());
 
-        progressBar = view.findViewById(R.id.progressbar_filter3);
+        progressBar = view.findViewById(R.id.ll_progress_filter3);
         no_data = view.findViewById(R.id.tv_no_data);
         rl_other_filter = view.findViewById(R.id.rl_other_filter);
         search_other = view.findViewById(R.id.search_other);

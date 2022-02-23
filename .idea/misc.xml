@@ -104,23 +104,52 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable/home_bg.xml" value="0.1" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.1" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable/side_nav_bar.xml" value="0.12" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_aboutus.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_aboutus.xml" value="0.26141078838174275" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_add_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_add_bank.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_cart.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_contactus.xml" value="0.18" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_coupons.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_faqactivity.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_filter.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_my_order_details.xml" value="0.15" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_product_details.xml" value="0.5" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_order_summary.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_payment.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_policy.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_pro_image_viewer.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_product_details.xml" value="0.25" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/app_bar_main.xml" value="0.22" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_reviews.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_select_address.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/app_bar_main.xml" value="0.2" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/cod_confirm_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/dialog_order_conform.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/empty_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_addresses.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_bank_accounts.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_brand_selection.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_category.xml" value="0.15" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_compare.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_edit_profile.xml" value="0.18" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_favourite.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_home.xml" value="0.19938962360122076" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_offer.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_orders.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_other_filter_selection.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_price_selection.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_product_detail.xml" value="0.22" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_products.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_profile.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_profile_image_picker.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_search.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_setting.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_sub_category.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_bank_account.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_brand_select.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_cart.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_category.xml" value="0.20416666666666666" />
@@ -138,7 +167,7 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_my_review.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_offer.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_pro_color.xml" value="0.20416666666666666" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_pro_grid.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_pro_grid.xml" value="0.17696629213483145" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_pro_list.xml" value="0.25" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_pro_size.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_review.xml" value="0.20416666666666666" />

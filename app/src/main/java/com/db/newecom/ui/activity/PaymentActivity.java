@@ -46,7 +46,7 @@ import retrofit2.Response;
 public class PaymentActivity extends AppCompatActivity implements PaymentResultListener {
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private ProgressDialog progressDialog;
     private RelativeLayout rl_layout, empty_layout;
     private RadioGroup radioGroup_payments;
@@ -80,7 +80,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         method = new Method(this);
         progressDialog = new ProgressDialog(this);
 
-        progressBar = findViewById(R.id.progressBar_payment);
+        progressBar = findViewById(R.id.ll_progress_payment);
         rl_layout = findViewById(R.id.rl_layout);
         empty_layout = findViewById(R.id.empty_layout);
         radioGroup_payments = findViewById(R.id.radioGroup_payments);

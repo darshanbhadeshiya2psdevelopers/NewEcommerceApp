@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -54,7 +55,7 @@ public class BankAccountsFragment extends Fragment {
     private Method method;
     private RelativeLayout empty_layout;
     private TextView empty_msg;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private CardView add_bank_btn;
     private RecyclerView rv_bank_accounts;
     private BankAccountAdapter bankAccountAdapter;
@@ -101,7 +102,7 @@ public class BankAccountsFragment extends Fragment {
 
         empty_layout = view.findViewById(R.id.empty_layout);
         empty_msg = view.findViewById(R.id.empty_msg);
-        progressBar = view.findViewById(R.id.progressBar_myBank_fragment);
+        progressBar = view.findViewById(R.id.ll_progress_myBank_fragment);
         add_bank_btn = view.findViewById(R.id.add_bank_btn);
         rv_bank_accounts = view.findViewById(R.id.rv_bank_accounts);
 

@@ -167,7 +167,7 @@
     <fragment
         android:id="@+id/products_fragment"
         android:name="com.db.newecom.ui.fragment.ProductsFragment"
-        android:label="@string/products"
+        android:label="@string/products_title"
         tools:layout="@layout/fragment_products"/>
 
 </navigation>

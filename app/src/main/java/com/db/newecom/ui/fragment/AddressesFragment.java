@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -54,9 +55,8 @@ public class AddressesFragment extends Fragment {
     private String mParam2;
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
-    private ImageView empty_image;
     private TextView empty_msg;
     private RecyclerView rv_addresses;
     private AddressAdapter addressAdapter;
@@ -102,9 +102,8 @@ public class AddressesFragment extends Fragment {
         GlobalBus.getBus().register(this);
 
         method = new Method(getActivity());
-        progressBar = view.findViewById(R.id.progressBar_myAdd_fragment);
+        progressBar = view.findViewById(R.id.ll_progress_myAdd_fragment);
         empty_layout = view.findViewById(R.id.empty_layout);
-        empty_image = view.findViewById(R.id.empty_image);
         empty_msg = view.findViewById(R.id.empty_msg);
         rv_addresses = view.findViewById(R.id.rv_addresses);
         add_address_btn = view.findViewById(R.id.add_address_btn);

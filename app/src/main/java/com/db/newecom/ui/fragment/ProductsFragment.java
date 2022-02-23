@@ -68,7 +68,7 @@ public class ProductsFragment extends Fragment {
             search, catId, subCatId, filterId = "0", brandIds = "", sizes = "", sortBy = "",
             preMin = "", preMax = "";
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
     private TextView empty_msg, total_products;
     private boolean isGridOption = true, isFilter = false;
@@ -132,7 +132,7 @@ public class ProductsFragment extends Fragment {
         productLists = new ArrayList<>();
 
         swipeRefreshLayout = view.findViewById(R.id.rf_layout_pro);
-        progressBar = view.findViewById(R.id.progressBar_products);
+        progressBar = view.findViewById(R.id.ll_progress_products);
         ll_products_main = view.findViewById(R.id.ll_products_main);
         empty_layout = view.findViewById(R.id.empty_layout);
         empty_msg = view.findViewById(R.id.empty_msg);

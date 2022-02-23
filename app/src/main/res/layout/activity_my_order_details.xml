@@ -67,11 +67,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <ProgressBar
-        android:id="@+id/progressBar_order_details"
+    <LinearLayout
+        android:id="@+id/ll_progress_order_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_fileName="loading_animation.json"/>
+
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/scrollview_order"

@@ -49,7 +49,7 @@ public class PriceSelectionFragment extends Fragment {
 
     private Method method;
     private String sign;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private CrystalRangeSeekbar rangeSeekBar;
     private TextView textViewMin, textViewMax;
     private LinearLayout ll_price_main;
@@ -100,7 +100,7 @@ public class PriceSelectionFragment extends Fragment {
         sign = ConstantApi.currency;
 
         ll_price_main = view.findViewById(R.id.ll_price_main);
-        progressBar = view.findViewById(R.id.progressbar_filter1);
+        progressBar = view.findViewById(R.id.ll_progress_filter1);
         textViewMin = view.findViewById(R.id.min_price);
         textViewMax = view.findViewById(R.id.max_price);
         rangeSeekBar = view.findViewById(R.id.rangeSeekBar);

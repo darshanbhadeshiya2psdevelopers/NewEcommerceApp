@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -41,8 +42,9 @@ import retrofit2.Response;
 public class ReviewsActivity extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar, rate_progress_1, rate_progress_2, rate_progress_3, rate_progress_4, rate_progress_5;
+    private ProgressBar rate_progress_1, rate_progress_2, rate_progress_3, rate_progress_4, rate_progress_5;
     private RelativeLayout empty_layout;
+    private LinearLayout progressBar;
     private String type, product_id;
     private MaterialCardView cardview_all_rate;
     private RecyclerView rv_reviews;
@@ -67,7 +69,7 @@ public class ReviewsActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        progressBar = findViewById(R.id.progressBar_reviews);
+        progressBar = findViewById(R.id.ll_progress_reviews);
         empty_layout = findViewById(R.id.empty_layout);
         scrollview_main = findViewById(R.id.scrollview_main);
         cardview_all_rate = findViewById(R.id.cardview_all_rate);

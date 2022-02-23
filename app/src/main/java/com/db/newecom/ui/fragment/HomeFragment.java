@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private Menu menu;
     private RelativeLayout empty_layout, rl_home_sliders, relIndicator;
     private LinearLayout search_layout, ll_offer_home, ll_myorders_home, ll_todaysdeal_home, ll_brands_home,
@@ -169,7 +169,7 @@ public class HomeFragment extends Fragment {
         offerLists = new ArrayList<>();
 
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_home);
-        progressBar = view.findViewById(R.id.progressBar_home);
+        progressBar = view.findViewById(R.id.ll_progress_home);
         empty_layout = view.findViewById(R.id.empty_layout);
         welcome_user_msg = view.findViewById(R.id.welcome_user_msg);
         ll_viewall_offer = view.findViewById(R.id.ll_viewall_offer);

@@ -85,7 +85,7 @@ public class ProductDetailFragment extends Fragment {
     private String title, product_id, sign, tagData = "data_app", size, review_msg;
 
     private Method method;
-    private ProgressBar progressBar, rate_progress_1, rate_progress_2, rate_progress_3,
+    private ProgressBar rate_progress_1, rate_progress_2, rate_progress_3,
             rate_progress_4, rate_progress_5;
     private ProgressDialog progressDialog;
     private int columnWidth, productSize_position = 0;
@@ -105,7 +105,7 @@ public class ProductDetailFragment extends Fragment {
             pro_detail_overall_rate, pro_status_msg, rate_5_count, rate_4_count, rate_3_count,
             rate_2_count, rate_1_count, rate_dialog_pro_name, rate_dialog_pro_desc, cart_items, product_review;
     private RelativeLayout empty_layout, rel_indicator_pro, rl_add_to_compare, rl_add_review;
-    private LinearLayout ll_related_pro_detail, ll_colors, ll_size, ll_all_pro_reviews;
+    private LinearLayout progressBar, ll_related_pro_detail, ll_colors, ll_size, ll_all_pro_reviews;
     private View view;
     private Dialog dialog;
     private EditText et_rate_dialog_msg;
@@ -897,7 +897,7 @@ public class ProductDetailFragment extends Fragment {
 
     private void init(View view) {
 
-        progressBar = view.findViewById(R.id.progressBar_proDetail);
+        progressBar = view.findViewById(R.id.ll_progress_proDetail);
         rate_progress_1 = view.findViewById(R.id.rate_progress_1);
         rate_progress_2 = view.findViewById(R.id.rate_progress_2);
         rate_progress_3 = view.findViewById(R.id.rate_progress_3);

@@ -71,7 +71,7 @@ import retrofit2.Response;
 public class MyOrderDetailsActivity extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout, rl_add_review;
     private ScrollView scrollView_main;
     private Toolbar toolbar;
@@ -200,7 +200,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
 
     private void initializeIDs() {
 
-        progressBar = findViewById(R.id.progressBar_order_details);
+        progressBar = findViewById(R.id.ll_progress_order_details);
         empty_layout = findViewById(R.id.empty_layout);
         scrollView_main= findViewById(R.id.scrollview_order);
         order_count = findViewById(R.id.order_count);

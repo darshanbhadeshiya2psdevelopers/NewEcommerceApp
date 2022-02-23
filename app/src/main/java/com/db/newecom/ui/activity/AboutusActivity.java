@@ -35,7 +35,7 @@ import retrofit2.Response;
 public class AboutusActivity extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
     private LinearLayout ll_about_main;
     private ImageView app_logo, about_fb, about_insta, about_twitter, about_yt;
@@ -53,7 +53,7 @@ public class AboutusActivity extends AppCompatActivity {
         }
         method = new Method(AboutusActivity.this);
 
-        progressBar = findViewById(R.id.progressBar_about);
+        progressBar = findViewById(R.id.ll_progress_about);
         empty_layout = findViewById(R.id.empty_layout);
         ll_about_main = findViewById(R.id.ll_about_main);
         app_logo = findViewById(R.id.app_logo);

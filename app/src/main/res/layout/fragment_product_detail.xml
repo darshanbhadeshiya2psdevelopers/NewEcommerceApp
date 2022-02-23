@@ -10,11 +10,21 @@
 
     <include layout="@layout/empty_layout" />
 
-    <ProgressBar
-        android:id="@+id/progressBar_proDetail"
+    <LinearLayout
+        android:id="@+id/ll_progress_proDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_fileName="loading_animation.json"/>
+
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/main_scrollview"
@@ -170,7 +180,7 @@
                         android:text="Rs. 1,30,000"
                         android:textColor="@color/red"
                         android:textStyle="bold"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/pro_detail_original_price"
@@ -181,7 +191,7 @@
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:text="Rs. 1,45,000"
-                        android:textSize="13sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/pro_detail_discount"
@@ -194,7 +204,7 @@
                         android:text="10% off"
                         android:textStyle="bold"
                         android:textColor="@color/green"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -368,9 +378,10 @@
                     android:layout_centerInParent="true"
                     android:drawableRight="@drawable/ic_baseline_compare_arrows_24"
                     android:drawablePadding="5dp"
+                    app:drawableTint="@color/colorPrimaryDark"
                     android:gravity="center"
                     android:text="@string/add_to_compare"
-                    android:textColor="@color/dark_grey"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -421,9 +432,10 @@
                     android:layout_centerInParent="true"
                     android:drawableRight="@drawable/ic_baseline_star_rate_24"
                     android:drawablePadding="5dp"
+                    app:drawableTint="@color/colorPrimaryDark"
                     android:gravity="center"
                     android:text="@string/rate_product"
-                    android:textColor="@color/dark_grey"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 

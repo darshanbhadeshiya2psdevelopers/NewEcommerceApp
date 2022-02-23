@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -47,7 +48,7 @@ public class SelectAddressActivity extends AppCompatActivity {
     private Method method;
     private OnClickSend onClickSend;
     private String addressId;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private ProgressDialog progressDialog;
     private RelativeLayout empty_layout;
     private RecyclerView rv_select_address;
@@ -75,7 +76,7 @@ public class SelectAddressActivity extends AppCompatActivity {
 
         addressItemLists = new ArrayList<>();
 
-        progressBar = findViewById(R.id.progressBar_select_add);
+        progressBar = findViewById(R.id.ll_progress_select_add);
         empty_layout = findViewById(R.id.empty_layout);
         empty_msg = findViewById(R.id.empty_msg);
         rv_select_address = findViewById(R.id.rv_select_address);

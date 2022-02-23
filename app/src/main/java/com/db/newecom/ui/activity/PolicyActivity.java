@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
@@ -31,7 +32,7 @@ public class PolicyActivity extends AppCompatActivity {
     private RelativeLayout empty_layout;
     private String policy_type;
     private WebView webView;
-    private ProgressBar progressBar_policy;
+    private LinearLayout progressBar_policy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class PolicyActivity extends AppCompatActivity {
 
         webView = findViewById(R.id.policy_webview);
         empty_layout = findViewById(R.id.empty_layout);
-        progressBar_policy = findViewById(R.id.progressBar_policy);
+        progressBar_policy = findViewById(R.id.ll_progress_policy);
 
         webView.setVisibility(View.GONE);
 

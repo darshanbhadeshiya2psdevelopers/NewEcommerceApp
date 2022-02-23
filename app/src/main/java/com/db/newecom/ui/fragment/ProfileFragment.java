@@ -23,6 +23,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
@@ -76,8 +77,9 @@ public class ProfileFragment extends Fragment {
     private RelativeLayout empty_layout;
     private LinearLayout empty_orders, empty_wishlist, empty_reviews, ll_all_orders, ll_all_wishlist,
             ll_all_reviews, ll_all_address, ll_all_banks;
-    private ImageView empty_image, profile_type;
-    private ProgressBar progressBar;
+    private LottieAnimationView empty_animation;
+    private ImageView profile_type;
+    private LinearLayout progressBar;
     private ScrollView main_scrollview;
     private CircleImageView user_img, imageView;
     private TextView empty_msg, user_name, user_email, user_mobile, add_address_txt, add_bank_account_txt,
@@ -132,14 +134,14 @@ public class ProfileFragment extends Fragment {
 
         empty_layout = view.findViewById(R.id.empty_layout);
         main_scrollview = view.findViewById(R.id.main_scrollview);
-        empty_image = view.findViewById(R.id.empty_image);
+        empty_animation = view.findViewById(R.id.empty_animation);
         empty_msg = view.findViewById(R.id.empty_msg);
         empty_btn = view.findViewById(R.id.empty_btn);
         empty_orders = view.findViewById(R.id.empty_orders);
         empty_wishlist = view.findViewById(R.id.empty_wishlist);
         empty_reviews = view.findViewById(R.id.empty_reviews);
 
-        progressBar = view.findViewById(R.id.progressBar_profile);
+        progressBar = view.findViewById(R.id.ll_progress_profile);
         user_img = view.findViewById(R.id.user_img);
         user_name = view.findViewById(R.id.user_name);
         user_email = view.findViewById(R.id.user_email);
@@ -198,7 +200,7 @@ public class ProfileFragment extends Fragment {
             } else {
                 empty_layout.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
-                empty_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_login_24));
+                empty_animation.setAnimation("login.json");
                 empty_msg.setText(getActivity().getResources().getString(R.string.login_msg));
                 empty_btn.setText(getResources().getString(R.string.go_to_login));
                 empty_btn.setVisibility(View.VISIBLE);
@@ -304,12 +306,12 @@ public class ProfileFragment extends Fragment {
                                         user_mobile.setText("Mobile: " + userProfileRP.getUser_phone());
 
                                     String stringAddress = getResources().getString(R.string.my_address) + " " + "(" + userProfileRP.getAddress_count() + ")";
-                                    addresses.setText(stringAddress);
                                     if (userProfileRP.getAddress_count().equals("0")) {
                                         item_address.setVisibility(View.GONE);
                                         add_address_txt.setVisibility(View.VISIBLE);
                                     } else {
                                         ll_all_address.setVisibility(View.VISIBLE);
+                                        addresses.setText(stringAddress);
                                         address_user_name.setText(userProfileRP.getAddress_name());
                                         address_mobile.setText(userProfileRP.getAddress_phone());
                                         address_type.setText(userProfileRP.getAddress_type());
@@ -317,13 +319,13 @@ public class ProfileFragment extends Fragment {
                                     }
 
                                     String stringBank = getResources().getString(R.string.default_bank_acc) + " " + "(" + userProfileRP.getBank_count() + ")";
-                                    banks.setText(stringBank);
 
                                     if (userProfileRP.getBank_count().equals("0")) {
                                         item_bank_account.setVisibility(View.GONE);
                                         add_bank_account_txt.setVisibility(View.VISIBLE);
                                     } else {
                                         ll_all_banks.setVisibility(View.VISIBLE);
+                                        banks.setText(stringBank);
                                         bank_name.setText(userProfileRP.getBank_name());
                                         ifsc.setText(userProfileRP.getBank_ifsc());
                                         bank_account_no.setText(userProfileRP.getAccount_no());

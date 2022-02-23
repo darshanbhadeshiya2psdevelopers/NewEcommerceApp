@@ -66,7 +66,7 @@ public class EditProfileFragment extends Fragment {
 
     private Method method;
     private ProgressDialog progressDialog;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
     private LinearLayout edit_profile_layout, change_pass_layout;
     private TextView change_pass_txt;
@@ -120,7 +120,7 @@ public class EditProfileFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
 
         empty_layout = view.findViewById(R.id.empty_layout);
-        progressBar = view.findViewById(R.id.progressBar_edit_profile);
+        progressBar = view.findViewById(R.id.ll_progress_edit_profile);
         edit_profile_layout = view.findViewById(R.id.edit_profile_layout);
         change_pass_layout = view.findViewById(R.id.change_pass_layout);
         change_pass_txt = view.findViewById(R.id.change_pass_txt);

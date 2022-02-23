@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -54,7 +55,7 @@ public class BrandSelectionFragment extends Fragment {
     private String filter_type, search, id;
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout rl_brand_filter;
     private EditText search_brand;
     private List<BrandFilterList> brandFilterLists;
@@ -104,7 +105,7 @@ public class BrandSelectionFragment extends Fragment {
         method = new Method(getActivity());
         brandFilterLists = new ArrayList<>();
 
-        progressBar = view.findViewById(R.id.progressbar_filter2);
+        progressBar = view.findViewById(R.id.ll_progress_filter2);
         no_data = view.findViewById(R.id.tv_no_data);
         rl_brand_filter = view.findViewById(R.id.rl_brand_filter);
         search_brand = view.findViewById(R.id.search_brand);

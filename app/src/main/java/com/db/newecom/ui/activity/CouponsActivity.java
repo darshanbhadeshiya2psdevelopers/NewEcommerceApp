@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,7 +40,7 @@ import retrofit2.Response;
 public class CouponsActivity extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private List<CouponsList> couponsLists;
     private RelativeLayout empty_layout;
     private TextView empty_msg;
@@ -65,7 +66,7 @@ public class CouponsActivity extends AppCompatActivity {
         cartIds = getIntent().getStringExtra("cart_ids");
         type = getIntent().getStringExtra("type");
 
-        progressBar = findViewById(R.id.progressBar_coupon);
+        progressBar = findViewById(R.id.ll_progress_coupon);
         empty_layout = findViewById(R.id.empty_layout);
         empty_msg = findViewById(R.id.empty_msg);
         rv_coupon = findViewById(R.id.rv_coupons);

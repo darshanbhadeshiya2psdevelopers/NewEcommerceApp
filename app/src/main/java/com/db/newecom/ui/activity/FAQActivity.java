@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
@@ -31,7 +32,7 @@ public class FAQActivity extends AppCompatActivity {
     private Method method;
     private String type;
     private RecyclerView rv_faq;
-    private ProgressBar progressBar_faq;
+    private LinearLayout progressBar_faq;
     private RelativeLayout empty_layout;
     private Button empty_btn;
     private FaqAdapter faqAdapter;
@@ -49,7 +50,7 @@ public class FAQActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        progressBar_faq = findViewById(R.id.progressBar_faq);
+        progressBar_faq = findViewById(R.id.ll_progress_faq);
         empty_layout = findViewById(R.id.empty_layout);
         rv_faq = findViewById(R.id.rv_faq);
 

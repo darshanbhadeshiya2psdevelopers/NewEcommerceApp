@@ -23,6 +23,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
@@ -70,10 +71,11 @@ public class CompareFragment extends Fragment {
     private Method method;
     private View view;
     private RelativeLayout empty_layout;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private ProgressDialog progressDialog;
     private ScrollView scrollView;
-    private ImageView empty_image, compare_pro_img1, compare_pro_img2, compare_pro_img3;
+    private LottieAnimationView empty_animation;
+    private ImageView compare_pro_img1, compare_pro_img2, compare_pro_img3;
     private TextView empty_msg, compare_pro_name1, compare_pro_name2, compare_pro_name3, compare_pro_price1,
             compare_pro_price2, compare_pro_price3, availability1, availability2, availability3, color_1,
             color_2, color_3, brand_1, brand_2, brand_3, cart_items;
@@ -129,7 +131,7 @@ public class CompareFragment extends Fragment {
 
         initialize(view);
 
-        empty_image.setImageResource(R.drawable.ic_baseline_compare_arrows_24);
+        empty_animation.setAnimation("compare.json");
         empty_msg.setText(R.string.empty_compare);
         empty_btn.setVisibility(View.GONE);
 
@@ -160,7 +162,7 @@ public class CompareFragment extends Fragment {
                 progressBar.setVisibility(View.GONE);
                 empty_layout.setVisibility(View.VISIBLE);
                 empty_msg.setText(getActivity().getResources().getString(R.string.login_msg));
-                empty_image.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_baseline_login_24));
+                empty_animation.setAnimation("login.json");
                 empty_btn.setVisibility(View.VISIBLE);
                 empty_btn.setText(getActivity().getResources().getString(R.string.go_to_login));
                 empty_btn.setOnClickListener(view1 -> {
@@ -601,13 +603,13 @@ public class CompareFragment extends Fragment {
 
         cart_items = getActivity().findViewById(R.id.order_count);
 
+        empty_animation = view.findViewById(R.id.empty_animation);
         empty_layout = view.findViewById(R.id.empty_layout);
-        empty_image = view.findViewById(R.id.empty_image);
         empty_msg = view.findViewById(R.id.empty_msg);
         empty_btn = view.findViewById(R.id.empty_btn);
 
         scrollView = view.findViewById(R.id.scrollview_compare);
-        progressBar = view.findViewById(R.id.progressBar_compare);
+        progressBar = view.findViewById(R.id.ll_progress_compare);
 
         ll_add_pro = view.findViewById(R.id.ll_add_pro);
         ll_compare_pro = view.findViewById(R.id.ll_compare_pro);

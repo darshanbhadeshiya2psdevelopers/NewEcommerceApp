@@ -13,11 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
 import com.db.newecom.R;
@@ -50,9 +52,9 @@ public class OrdersFragment extends Fragment {
     private String mParam2;
 
     private Method method;
-    private ProgressBar progressBar;
+    private LinearLayout progressBar;
     private RelativeLayout empty_layout;
-    private ImageView empty_image;
+    private LottieAnimationView empty_animation;
     private TextView empty_msg;
     private Button empty_btn;
     private RecyclerView rv_order;
@@ -99,16 +101,16 @@ public class OrdersFragment extends Fragment {
         method = new Method(getActivity());
 
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_myOrder);
-        progressBar = view.findViewById(R.id.progressBar_orders);
+        progressBar = view.findViewById(R.id.ll_progress_orders);
         empty_layout = view.findViewById(R.id.empty_layout);
-        empty_image = view.findViewById(R.id.empty_image);
+        empty_animation = view.findViewById(R.id.empty_animation);
         empty_msg = view.findViewById(R.id.empty_msg);
         empty_btn = view.findViewById(R.id.empty_btn);
         rv_order = view.findViewById(R.id.rv_order);
 
         swipeRefreshLayout.setColorSchemeColors(getActivity().getResources().getColor(R.color.dark_blue));
 
-        empty_image.setImageResource(R.drawable.ic_baseline_shopping_bag_24);
+        empty_animation.setAnimation("no_orders.json");
         empty_msg.setText(R.string.empty_order);
         empty_btn.setVisibility(View.VISIBLE);
         empty_btn.setOnClickListener(v -> getActivity().onBackPressed());
@@ -121,7 +123,7 @@ public class OrdersFragment extends Fragment {
             else {
                 progressBar.setVisibility(View.GONE);
                 empty_layout.setVisibility(View.VISIBLE);
-                empty_image.setImageDrawable(getActivity().getDrawable(R.drawable.ic_baseline_login_24));
+                empty_animation.setAnimation("login.json");
                 empty_msg.setText(getActivity().getResources().getString(R.string.login_msg));
                 empty_btn.setVisibility(View.VISIBLE);
                 empty_btn.setText("go to login");
@@ -149,7 +151,7 @@ public class OrdersFragment extends Fragment {
                 else {
                     progressBar.setVisibility(View.GONE);
                     empty_layout.setVisibility(View.VISIBLE);
-                    empty_image.setImageDrawable(getActivity().getDrawable(R.drawable.ic_baseline_login_24));
+                    empty_animation.setAnimation("login.json");
                     empty_msg.setText(getActivity().getResources().getString(R.string.login_msg));
                     empty_btn.setVisibility(View.VISIBLE);
                     empty_btn.setText("go to login");

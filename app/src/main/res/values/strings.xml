@@ -98,7 +98,7 @@
     <string name="district">Enter District (Optional)</string>
     <string name="city">Enter City</string>
     <string name="pinCode">Enter Pincode/Zipcode</string>
-    <string name="address_type">Address Type</string>
+    <string name="address_type">Select Address Type</string>
     <string name="radio_home_txt">Home (All day delivery)</string>
     <string name="radio_office_txt">Office (Delivery between 10 AM - 5 PM)</string>
     <string name="enter_bank_name">Enter Bank Name</string>
@@ -277,4 +277,5 @@
     <string name="search">Search</string>
     <string name="explore_more_categories">Explore More Categories</string>
     <string name="explore">Explore</string>
+    <string name="products_title">Products</string>
 </resources>
