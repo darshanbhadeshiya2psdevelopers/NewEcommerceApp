@@ -28,7 +28,6 @@
         android:id="@+id/ll_filter_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/cardview_apply_filter"
         android:orientation="vertical">
 
         <LinearLayout
@@ -41,11 +40,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="12dp"
                 android:text="@string/sort_by"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/colorPrimaryDark"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_sortby"
@@ -94,32 +93,46 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_apply_filter"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        app:cardElevation="20dp">
+        android:layout_marginBottom="25dp"
+        app:cardElevation="20dp"
+        app:cardBackgroundColor="@color/colorPrimary">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="15dp"
-            android:gravity="center_vertical">
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingVertical="5dp"-->
+<!--            android:paddingHorizontal="15dp"-->
+<!--            android:gravity="center_vertical">-->
 
-            <Button
+<!--            <Button-->
+<!--                android:id="@+id/apply_btn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:paddingHorizontal="40dp"-->
+<!--                android:text="@string/apply"-->
+<!--                android:textSize="13sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:cornerRadius="7dp"-->
+<!--                android:enabled="false"/>-->
+
+            <TextView
                 android:id="@+id/apply_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="10dp"
-                android:paddingHorizontal="40dp"
+                android:gravity="center"
+                android:paddingVertical="10dp"
                 android:text="@string/apply"
-                android:textSize="13sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:cornerRadius="7dp"
-                android:enabled="false"/>
+                android:textColor="@color/white"/>
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
     </com.google.android.material.card.MaterialCardView>
 

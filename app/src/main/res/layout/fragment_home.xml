@@ -116,13 +116,10 @@
                             android:id="@+id/rel_indicator_home"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
+                            android:layout_marginHorizontal="10dp"
                             android:layout_marginBottom="10dp"
-                            android:paddingTop="3dp"
-                            android:paddingBottom="3dp"
-                            android:paddingStart="8dp"
-                            android:paddingEnd="8dp"
+                            android:paddingVertical="3dp"
+                            android:paddingHorizontal="8dp"
                             android:layout_centerHorizontal="true"
                             android:layout_alignBottom="@+id/viewPager_home"
                             android:background="@color/transparent">
@@ -153,18 +150,18 @@
                         android:orientation="vertical"
                         android:background="@drawable/home_bg"
                         app:elevation="5dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="3dp"
                         android:layout_marginHorizontal="5dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:paddingVertical="5dp"
-                            android:layout_marginHorizontal="10dp"
-                            android:text="@string/latest_offers"
-                            android:textColor="@color/dark_grey"
-                            android:textSize="16sp"/>
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:paddingVertical="5dp"-->
+<!--                            android:layout_marginHorizontal="10dp"-->
+<!--                            android:text="@string/latest_offers"-->
+<!--                            android:textColor="@color/dark_grey"-->
+<!--                            android:textSize="17sp"/>-->
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -234,7 +231,7 @@
                             android:layout_marginHorizontal="10dp"
                             android:text="@string/my_orders"
                             android:textColor="@color/dark_grey"
-                            android:textSize="16sp"/>
+                            android:textSize="17sp"/>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -308,7 +305,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/todays_deal"
                                 android:textColor="@color/dark_grey"
-                                android:textSize="16sp" />
+                                android:textSize="17sp" />
 
                             <LinearLayout
                                 android:id="@+id/ll_viewall_todaysdeal"
@@ -375,7 +372,7 @@
                             android:layout_marginHorizontal="10dp"
                             android:text="@string/latest_products"
                             android:textColor="@color/dark_grey"
-                            android:textSize="16sp" />
+                            android:textSize="17sp" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -444,7 +441,7 @@
                             android:layout_marginHorizontal="10dp"
                             android:text="@string/brands"
                             android:textColor="@color/dark_grey"
-                            android:textSize="16sp"/>
+                            android:textSize="17sp"/>
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_brand_home"

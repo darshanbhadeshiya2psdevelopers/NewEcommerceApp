@@ -59,32 +59,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Iphone 13 Pro Max"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/dark_grey"
-                android:maxLines="1"
+                android:maxLines="2"
                 android:ellipsize="end"/>
 
             <TextView
                 android:id="@+id/cart_pro_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:text="Rs. 1,30,300"
-                android:textSize="15sp"/>
+                android:textSize="14.5sp"
+                android:textColor="@color/green"/>
 
-            <TextView
-                android:id="@+id/cart_pro_size"
+            <LinearLayout
+                android:id="@+id/ll_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Size: M"
-                android:textSize="15sp"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Size : "
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cart_pro_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="M"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -92,7 +108,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Qty:"
-                    android:textSize="15sp"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <ImageButton
                     android:id="@+id/qty_remove_btn"
@@ -106,7 +123,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
                     android:maxLength="2"
                     android:paddingHorizontal="8dp"/>
 
@@ -127,7 +144,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_baseline_delete_24"
-            app:tint="@color/medium_grey"/>
+            app:tint="@color/dark_grey" />
 
         <TextView
             android:id="@+id/cart_pro_total"
@@ -137,7 +154,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginRight="5dp"
             android:text="Rs. 2,60,600"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 

@@ -62,6 +62,26 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <TextView
+        android:id="@+id/tv_order_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_bar"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Order ID - ORDERID12345"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/light_primary"/>
+
+    <View
+        android:id="@+id/hr_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_order_id"
+        android:background="@color/colorPrimaryDark" />
+
     <include layout="@layout/empty_layout"
         android:layout_below="@+id/app_bar"
         android:layout_width="match_parent"
@@ -87,7 +107,7 @@
         android:id="@+id/scrollview_order"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/app_bar"
+        android:layout_below="@+id/hr_line"
         android:scrollbars="none">
 
         <LinearLayout
@@ -99,41 +119,24 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="3dp">
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/tv_order_id"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="10dp"
-                        android:textStyle="bold"
-                        android:text="Order ID - ORDERID12345"
-                        android:textSize="16sp"
-                        android:textColor="@color/red" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
-
                     <RelativeLayout
                         android:id="@+id/rl_order_product"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:padding="10dp">
 
                         <ImageView
                             android:id="@+id/order_pro_img1"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="85dp"
+                            android:layout_height="85dp"
                             android:layout_alignParentLeft="true"
                             android:layout_marginTop="5dp"
                             android:contentDescription="@string/app_name"
@@ -149,10 +152,10 @@
 
                             <TextView
                                 android:id="@+id/order_pro_name1"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:ellipsize="end"
-                                android:maxLines="1"
+                                android:maxLines="2"
                                 android:text="Raymond Men's Shirt"
                                 android:textColor="@color/dark_grey"
                                 android:textSize="16sp"
@@ -162,28 +165,30 @@
                                 android:id="@+id/order_pro_desc1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="4dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
                                 android:text="Color : Black, Size : XL"
-                                android:textSize="14sp"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/order_pro_qty1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Quantity : 2"
+                                android:textSize="13sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/order_pro_price1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="4dp"
                                 android:text="Rs. 1299"
                                 android:textColor="@color/green"
-                                android:textSize="20sp" />
-
-                            <TextView
-                                android:id="@+id/order_pro_qty1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="Quantity : 2"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
+                                android:textSize="18sp" />
 
                         </LinearLayout>
 
@@ -197,7 +202,7 @@
                 android:id="@+id/rl_add_review"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@drawable/home_bg"
                 android:layout_marginTop="5dp"
                 android:paddingVertical="13dp"
                 android:visibility="gone">
@@ -208,9 +213,10 @@
                     android:layout_centerInParent="true"
                     android:drawableRight="@drawable/ic_baseline_star_rate_24"
                     android:drawablePadding="5dp"
+                    app:drawableTint="@color/colorPrimaryDark"
                     android:gravity="center"
                     android:text="@string/rate_product"
-                    android:textColor="@color/dark_grey"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -220,7 +226,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="3dp">
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -228,13 +234,19 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
+                        android:gravity="center"
                         android:text="@string/order_status"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="@color/dark_grey" />
+                        android:textColor="@color/colorPrimary" />
+
+                    <View
+                        android:background="@color/grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
 
                     <RelativeLayout
                         android:layout_marginHorizontal="20dp"
@@ -426,14 +438,14 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
-                android:background="@color/white" />
+                android:background="@drawable/home_bg" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView_otheritems_in_order"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                app:cardCornerRadius="3dp">
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -441,12 +453,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="10dp"
+                        android:padding="10dp"
+                        android:gravity="center"
                         android:text="@string/other_item_in_this_order"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -477,7 +487,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="3dp">
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -485,12 +495,10 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="10dp"
+                        android:padding="10dp"
+                        android:gravity="center"
                         android:text="@string/delivery_address"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -506,8 +514,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginHorizontal="10dp"
                         android:maxLines="1"
                         android:ellipsize="end"
                         android:textSize="16sp"
@@ -516,62 +523,90 @@
                         android:textColor="@color/dark_grey" />
 
                     <TextView
-                        android:id="@+id/tv_address_user_email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:maxLines="1"
-                        android:ellipsize="end"
-                        android:textSize="14sp"
-                        android:text="abcdef@gmail.com"
-                        android:textColor="@color/dark_grey" />
-
-                    <TextView
                         android:id="@+id/tv_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="test, Test Address, abc Road, Xyz City - 123456"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginHorizontal="10dp"
                         android:maxLines="2"
                         android:ellipsize="end"
                         android:textSize="14sp"
                         android:textColor="@color/dark_grey" />
 
-                    <TextView
-                        android:id="@+id/tv_address_user_mobile"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="+91 7016974471"
+                        android:orientation="horizontal"
                         android:layout_marginTop="5dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:textSize="14sp"
-                        android:textColor="@color/dark_grey" />
+                        android:layout_marginHorizontal="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:text="Email : "
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey" />
+
+                        <TextView
+                            android:id="@+id/tv_address_user_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="14sp"
+                            android:text="abcdef@gmail.com"
+                            android:textColor="@color/dark_grey" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:text="Mobile : "
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_grey" />
+
+                        <TextView
+                            android:id="@+id/tv_address_user_mobile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+91 7016974471"
+                            android:textSize="14sp"
+                            android:textColor="@color/dark_grey" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:cardCornerRadius="3dp">
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="5dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
+                        android:gravity="center"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:text="@string/payment_details"
@@ -780,7 +815,7 @@
                 android:id="@+id/cardView_cancel_order_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="3dp"
+                app:cardCornerRadius="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp">
 
@@ -790,12 +825,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
+                        android:padding="10dp"
+                        android:gravity="center"
                         android:textSize="16sp"
                         android:text="@string/order_cancelled"
                         android:textStyle="bold"

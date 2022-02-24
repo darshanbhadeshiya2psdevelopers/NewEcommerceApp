@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -116,9 +117,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 .into(holder.cart_pro_img);
 
         if (!cartLists.get(position).getProduct_size().equals(""))
-            holder.cart_pro_size.setText("Size :" + " " + cartLists.get(position).getProduct_size());
+            holder.cart_pro_size.setText(cartLists.get(position).getProduct_size());
         else
-            holder.cart_pro_size.setVisibility(View.GONE);
+            holder.ll_size.setVisibility(View.GONE);
 
         if (cartLists.get(position).getOriginal_sell_price().equals("0.00"))
             holder.cart_pro_price.setText(sign + cartLists.get(position).getOriginal_price());
@@ -325,6 +326,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         private ImageView cart_pro_img, pro_delete_btn;
         private TextView cart_pro_name, cart_pro_price, cart_pro_size, cart_pro_qty, cart_pro_total, pro_status;
         private ImageButton qty_remove_btn, qty_add_btn;
+        private LinearLayout ll_size;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -336,6 +338,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             pro_delete_btn = itemView.findViewById(R.id.pro_delete_btn);
             cart_pro_name = itemView.findViewById(R.id.cart_pro_name);
             cart_pro_price = itemView.findViewById(R.id.cart_pro_price);
+            ll_size = itemView.findViewById(R.id.ll_size);
             cart_pro_size = itemView.findViewById(R.id.cart_pro_size);
             cart_pro_qty = itemView.findViewById(R.id.cart_pro_qty);
             cart_pro_total = itemView.findViewById(R.id.cart_pro_total);

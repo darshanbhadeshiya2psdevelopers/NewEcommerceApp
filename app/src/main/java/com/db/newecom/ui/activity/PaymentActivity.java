@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -48,7 +49,8 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
     private Method method;
     private LinearLayout progressBar;
     private ProgressDialog progressDialog;
-    private RelativeLayout rl_layout, empty_layout;
+    private FrameLayout rl_layout;
+    private RelativeLayout empty_layout;
     private RadioGroup radioGroup_payments;
     private RadioButton razorpay, cash_on_delivery;
     private TextView empty_msg, total_amount, total_items, total_amount_payable, amount_payable, total_items_2,

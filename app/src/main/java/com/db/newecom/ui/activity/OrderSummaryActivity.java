@@ -28,6 +28,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -49,7 +50,8 @@ public class OrderSummaryActivity extends AppCompatActivity {
     private Method method;
     private LinearLayout progressBar;
     private ProgressDialog progressDialog;
-    private RelativeLayout empty_layout, rl_layout, you_save_view;
+    private RelativeLayout empty_layout, you_save_view;
+    private FrameLayout rl_layout;
     private TextView address_user_name, address_type, address_mobile, address, total_amount, you_save,
             delivery_charge, amount_payable, total_amount_payable, total_cart_items, empty_msg;
     private LinearLayout ll_address;

@@ -45,7 +45,8 @@
                 android:paddingVertical="5dp"
                 android:text="Products"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                android:textSize="18sp"
+                android:background="@color/light_primary"
                 android:textColor="@color/colorPrimary"/>
 
             <LinearLayout

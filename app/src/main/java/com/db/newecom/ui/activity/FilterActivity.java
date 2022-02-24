@@ -33,6 +33,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +53,7 @@ public class FilterActivity extends AppCompatActivity {
     private RelativeLayout empty_layout;
     private LinearLayout ll_filter_main, ll_sortby;
     private RecyclerView rv_sortby, rv_filter;
-    private Button apply_btn;
+    private TextView apply_btn;
     private FilterListAdapter filterListAdapter;
     private SortByAdapter sortByAdapter;
     private String sortBy;

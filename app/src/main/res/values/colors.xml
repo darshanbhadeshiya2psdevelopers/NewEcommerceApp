@@ -17,7 +17,7 @@
     <color name="grey">#DADADA</color>
     <color name="dark_grey">#636363</color>
     <color name="medium_grey">#9A9A9A</color>
-    <color name="light_primary">#D0E5FF</color>
+    <color name="light_primary">#D7E9FF</color>
     <color name="transparent">#00000000</color>
     <color name="background_color">#EBEBEB</color>
     <color name="rating_color">#FFC942</color>
@@ -27,5 +27,6 @@
     <color name="unavailable_txt_bg">#CBF1F6FF</color>
     <color name="view_all_bg">#CBDFDFDF</color>
     <color name="red2">#F45C5D</color>
+    <color name="transparent_primary">#DCC9E1FD</color>
 
 </resources>

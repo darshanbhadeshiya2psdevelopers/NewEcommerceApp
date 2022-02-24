@@ -55,6 +55,7 @@
             android:layout_below="@+id/ll_search_filter"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
+            android:paddingBottom="80dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_filter_select" />
@@ -69,8 +70,8 @@
         android:layout_centerInParent="true">
 
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_fileName="loading_animation.json"/>

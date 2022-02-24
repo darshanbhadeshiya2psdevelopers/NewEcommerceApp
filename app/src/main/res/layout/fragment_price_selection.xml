@@ -96,8 +96,8 @@
         android:layout_centerInParent="true">
 
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_fileName="loading_animation.json"/>

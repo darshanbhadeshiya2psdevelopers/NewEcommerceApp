@@ -27,6 +27,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -48,7 +49,8 @@ public class CartActivity extends AppCompatActivity {
 
     private Method method;
     private LinearLayout progressBar;
-    private RelativeLayout empty_layout, rl_cart_main;
+    private FrameLayout rl_cart_main;
+    private RelativeLayout empty_layout;
     private LottieAnimationView empty_animation;
     private TextView empty_msg, total_amount, delivery_charge, amount_payable,
             total_amount_payable, total_cart_items;

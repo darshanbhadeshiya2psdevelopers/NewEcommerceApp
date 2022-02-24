@@ -103,7 +103,7 @@
                     android:elevation="5dp"
                     android:src="@drawable/ic_baseline_share_24"
                     app:backgroundTint="@color/white"
-                    app:tint="@color/grey" />
+                    app:tint="@color/colorPrimary" />
 
             </RelativeLayout>
 
@@ -769,7 +769,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:background="@color/unavailable_txt_bg"
+                android:background="@color/transparent_primary"
                 android:text="@string/currently_unavailable"
                 android:textStyle="bold"
                 android:textSize="18sp"
