@@ -111,15 +111,15 @@
                     android:textStyle="bold"
                     android:textSize="13sp" />
 
-                <TextView
-                    android:id="@+id/pro2_mrp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:text="Rs. 1,30,300"
-                    android:textSize="11.5sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/pro2_mrp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:ellipsize="end"-->
+<!--                    android:text="Rs. 1,30,300"-->
+<!--                    android:textSize="11.5sp" />-->
 
                 <TextView
                     android:id="@+id/pro2_price"
@@ -172,15 +172,15 @@
                     android:textColor="@color/dark_grey"
                     android:textSize="13sp" />
 
-                <TextView
-                    android:id="@+id/pro3_mrp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:text="Rs. 1,30,300"
-                    android:textSize="11.5sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/pro3_mrp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:ellipsize="end"-->
+<!--                    android:text="Rs. 1,30,300"-->
+<!--                    android:textSize="11.5sp" />-->
 
                 <TextView
                     android:id="@+id/pro3_price"

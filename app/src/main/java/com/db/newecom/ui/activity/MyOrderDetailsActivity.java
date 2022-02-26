@@ -79,13 +79,13 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
     private RelativeLayout rl_order_product, rl_discount, rl_paymentID;
     private RecyclerView rv_other_pro;
     private HomeMyOrdersAdapter ordersAdapter;
-    private Button invoice_download_btn, cancel_order_btn, claim_order_btn, claim_pro_btn,
+    private Button invoice_download_btn, cancel_return_order_btn, claim_order_btn, claim_pro_btn,
             dialog_cancel_pro_btn, dialog_cancel_order_btn, rate_dialog_btn;
     private TextView order_count, tv_order_id, order_pro_name1, order_pro_desc1, order_pro_price1, order_pro_qty1,
             tv_placed_status, tv_packed_status, tv_packed_status_dt, tv_shipped_status, tv_shipped_status_dt,
             tv_delivered_status, tv_delivered_status_dt, tv_address_username, tv_address_user_email, tv_address,
             tv_address_user_mobile, tv_total_amount, tv_discount, discount, tv_delivery_charge, tv_amount_payable,
-            tv_payment_mode, payment_id, tv_payment_id, tv_cancel_reason, tv_refundStatus, cancel_this_pro,
+            tv_payment_mode, payment_id, tv_payment_id, tv_cancel_reason, tv_refundStatus, cancel_return_this_pro,
             rate_dialog_pro_name, rate_dialog_pro_desc;
     private RatingBar rate_dialog_ratingbar;
     private ImageView order_pro_img1, pro_img, rate_dialog_pro_image;
@@ -140,7 +140,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
         cart_btn.setOnClickListener(view ->
                 startActivity(new Intent(this, CartActivity.class)));
 
-        cancel_order_btn.setOnClickListener(v -> dialog.show());
+        cancel_return_order_btn.setOnClickListener(v -> dialog.show());
 
     }
 
@@ -238,8 +238,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
         rl_paymentID = findViewById(R.id.rl_paymentID);
         rv_other_pro = findViewById(R.id.rv_other_pro);
         invoice_download_btn = findViewById(R.id.invoice_download_btn);
-        cancel_this_pro = findViewById(R.id.cancel_this_pro);
-        cancel_order_btn = findViewById(R.id.cancel_order_btn);
+        cancel_return_this_pro = findViewById(R.id.cancel_return_this_pro);
+        cancel_return_order_btn = findViewById(R.id.cancel_return_order_btn);
         claim_pro_btn = findViewById(R.id.claim_pro_btn);
         claim_order_btn = findViewById(R.id.claim_order_btn);
         order_pro_img1 = findViewById(R.id.order_pro_img1);
@@ -462,11 +462,11 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                             if (myOrderDetailRP.getCancel_product().equals("true") &&
                                     myOrderDetailRP.getOrder_other_items_status().equals("true")) {
                                 //cardView_cancel_order_detail.setVisibility(View.GONE);
-                                cancel_order_btn.setVisibility(View.VISIBLE);
+                                cancel_return_order_btn.setVisibility(View.VISIBLE);
 
                             } else {
                                 //cardView_cancel_order_detail.setVisibility(View.VISIBLE);
-                                cancel_order_btn.setVisibility(View.GONE);
+                                cancel_return_order_btn.setVisibility(View.GONE);
                             }
 
 //                            if (myOrderDetailRP.getCancel_order_amt().equals("")) {
@@ -477,14 +477,14 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
 //                            }
 
                             if (myOrderDetailRP.getCancel_product().equals("true")) {
-                                cancel_this_pro.setVisibility(View.VISIBLE);
+                                cancel_return_this_pro.setVisibility(View.VISIBLE);
                             } else {
-                                cancel_this_pro.setVisibility(View.GONE);
+                                cancel_return_this_pro.setVisibility(View.GONE);
                             }
                             if (myOrderDetailRP.getOrder_other_items_status().equals("true")) {
-                                cancel_order_btn.setVisibility(View.VISIBLE);
+                                cancel_return_order_btn.setVisibility(View.VISIBLE);
                             } else {
-                                cancel_order_btn.setVisibility(View.GONE);
+                                cancel_return_order_btn.setVisibility(View.GONE);
                             }
 
                             if (myOrderDetailRP.getIs_claim().equals("true")) {
@@ -539,7 +539,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                                         }
                                     }).check());
 
-                            cancel_order_btn.setOnClickListener(view -> {
+                            cancel_return_order_btn.setOnClickListener(view -> {
                                 if (myOrderDetailRP.getBank_status().equals("1"))
                                     dialog.show();
                                 else
@@ -549,7 +549,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                             dialog_cancel_order_btn.setOnClickListener(view ->
                                     cancelProOrOrder(myOrderDetailRP.getOrder_id(), method.userId(), "0", myOrderDetailRP.getBank_id()));
 
-                            cancel_this_pro.setOnClickListener(view -> {
+                            cancel_return_this_pro.setOnClickListener(view -> {
                                 if (myOrderDetailRP.getBank_status().equals("1"))
                                     dialog2.show();
                                 else
@@ -663,7 +663,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                                 Events.CancelOrder cancelOrder = new Events.CancelOrder(productId, orderUniqueId, "", cancelOrderProRP.getMyOrderLists());
                                 GlobalBus.getBus().post(cancelOrder);
 
-                                Toast.makeText(MyOrderDetailsActivity.this, cancelOrderProRP.getMsg(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MyOrderDetailsActivity.this, cancelOrderProRP.getMsg(), Toast.LENGTH_LONG).show();
                             } else {
                                 method.alertBox(cancelOrderProRP.getMsg());
                             }

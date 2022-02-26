@@ -116,7 +116,7 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_filter.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_my_order_details.xml" value="0.24091778202676864" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_my_order_details.xml" value="0.21" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_order_summary.xml" value="0.2" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_payment.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_policy.xml" value="0.10104166666666667" />
@@ -132,7 +132,7 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/dialog_order_conform.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/empty_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_addresses.xml" value="0.20416666666666666" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_bank_accounts.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_bank_accounts.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_brand_selection.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_category.xml" value="0.15" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_compare.xml" value="0.22" />
@@ -147,7 +147,7 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_products.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_profile.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_profile_image_picker.xml" value="0.20416666666666666" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_search.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_setting.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_sub_category.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_address.xml" value="0.20416666666666666" />
@@ -173,8 +173,10 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_pro_list.xml" value="0.25" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_pro_size.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_review.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_search_cat.xml" value="0.33" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_select_address.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_slider.xml" value="0.20416666666666666" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_sub_category.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/nav_header_main.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/order_cancel_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/product_cancel_dialog.xml" value="0.20416666666666666" />

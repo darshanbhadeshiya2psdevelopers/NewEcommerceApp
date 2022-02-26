@@ -428,7 +428,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/cancel_this_pro"
+                android:id="@+id/cancel_return_this_pro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -916,7 +916,7 @@
                 app:drawableTint="@color/colorPrimary" />
 
             <Button
-                android:id="@+id/cancel_order_btn"
+                android:id="@+id/cancel_return_order_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

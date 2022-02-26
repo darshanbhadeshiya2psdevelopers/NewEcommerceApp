@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
         splash_layout.animate()
                 .translationY(splash_layout.getHeight())
                 .alpha(1f)
-                .setDuration(3000);
+                .setDuration(4000);
 
         new Handler().postDelayed(new Runnable() {
             @Override

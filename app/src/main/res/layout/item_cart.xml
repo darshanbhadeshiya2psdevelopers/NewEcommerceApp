@@ -72,7 +72,8 @@
                 android:layout_marginTop="4dp"
                 android:text="Rs. 1,30,300"
                 android:textSize="14.5sp"
-                android:textColor="@color/green"/>
+                android:textColor="@color/green"
+                android:textStyle="bold"/>
 
             <LinearLayout
                 android:id="@+id/ll_size"
