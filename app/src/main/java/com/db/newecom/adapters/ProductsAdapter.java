@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
@@ -42,19 +44,22 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
+public class ProductsAdapter extends RecyclerView.Adapter {
 
     private Method method;
     private Activity activity;
-    private String Type;
+    private boolean isGird;
     private List<ProductList> productLists;
     private String sign;
     private ProgressDialog progressDialog;
 
-    public ProductsAdapter(Activity activity, String Type, List<ProductList> productLists) {
+    private final int VIEW_TYPE_LOADING = 0;
+    private final int VIEW_TYPE_ITEM = 1;
+
+    public ProductsAdapter(Activity activity, List<ProductList> productLists, boolean isGird) {
         this.activity = activity;
-        this.Type = Type;
         this.productLists = productLists;
+        this.isGird = isGird;
         method = new Method(activity);
         sign = ConstantApi.currency + " ";
         progressDialog = new ProgressDialog(activity);
@@ -62,92 +67,115 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        if (viewType == 0){
-            View view = LayoutInflater.from(activity).inflate(R.layout.item_pro_grid, parent, false);
-            return new ViewHolder(view);
-        }
-        else if (viewType == 1){
-            View view = LayoutInflater.from(activity).inflate(R.layout.item_pro_list, parent, false);
-            return new ViewHolder(view);
+        if (viewType == VIEW_TYPE_ITEM) {
+            if (isGird) {
+                View view = LayoutInflater.from(activity).inflate(R.layout.item_pro_grid, parent, false);
+                return new ViewHolder(view);
+            } else {
+                View view = LayoutInflater.from(activity).inflate(R.layout.item_pro_list, parent, false);
+                return new ViewHolder(view);
+            }
+        } else if (viewType == VIEW_TYPE_LOADING) {
+            View v = LayoutInflater.from(activity).inflate(R.layout.item_progress, parent, false);
+            return new ProgressViewHolder(v);
         }
         return null;
+
+//        if (viewType == 0){
+//            View view = LayoutInflater.from(activity).inflate(R.layout.item_pro_grid, parent, false);
+//            return new ViewHolder(view);
+//        }
+//        else if (viewType == 1){
+//            View view = LayoutInflater.from(activity).inflate(R.layout.item_pro_list, parent, false);
+//            return new ViewHolder(view);
+//        }
+//        else if (viewType == 2){
+//            View v = LayoutInflater.from(activity).inflate(R.layout.item_progress, parent, false);
+//            return new ProgressViewHolder(v);
+//        }
+//        return null;
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        holder.pro_cardview.setOnClickListener(view ->
-                activity.startActivity(new Intent(activity, ProductDetailsActivity.class)
-                        .putExtra("title",productLists.get(position).getProduct_title())
-                        .putExtra("product_id", productLists.get(position).getId())));
+        if (holder.getItemViewType() == VIEW_TYPE_ITEM) {
 
-        Glide.with(activity).load(productLists.get(position).getProduct_image())
-                .placeholder(R.drawable.placeholder_img)
-                .into(holder.pro_img);
+            final ViewHolder viewHolder = (ViewHolder) holder;
 
-        holder.pro_name.setText(productLists.get(position).getProduct_title());
-        holder.pro_short_desc.setText(productLists.get(position).getProduct_desc());
+            viewHolder.pro_cardview.setOnClickListener(view ->
+                    activity.startActivity(new Intent(activity, ProductDetailsActivity.class)
+                            .putExtra("title",productLists.get(position).getProduct_title())
+                            .putExtra("product_id", productLists.get(position).getId())));
 
-        if (productLists.get(position).getYou_save().equals("0.00")) {
-            holder.pro_selling_price.setText(sign + productLists.get(position).getProduct_mrp());
-            holder.pro_original_price.setVisibility(View.GONE);
-            holder.pro_offer_applied.setVisibility(View.GONE);
+            Glide.with(activity).load(productLists.get(position).getProduct_image())
+                    .placeholder(R.drawable.placeholder_img)
+                    .into(viewHolder.pro_img);
+
+            viewHolder.pro_name.setText(productLists.get(position).getProduct_title());
+            viewHolder.pro_short_desc.setText(productLists.get(position).getProduct_desc());
+
+            if (productLists.get(position).getYou_save().equals("0.00")) {
+                viewHolder.pro_selling_price.setText(sign + productLists.get(position).getProduct_mrp());
+                viewHolder.pro_original_price.setVisibility(View.GONE);
+                viewHolder.pro_offer_applied.setVisibility(View.GONE);
+            }
+            else {
+                viewHolder.pro_original_price.setPaintFlags(
+                        viewHolder.pro_original_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG
+                );
+                viewHolder.pro_selling_price.setText(sign + productLists.get(position).getProduct_sell_price());
+                viewHolder.pro_original_price.setText(sign + productLists.get(position).getProduct_mrp());
+                viewHolder.pro_offer_applied.setText(productLists.get(position).getYou_save_per());
+            }
+
+            if (productLists.get(position).getProduct_qty().equals("0")) {
+                viewHolder.out_of_stock_txt.setVisibility(View.VISIBLE);
+                viewHolder.out_of_stock_txt.bringToFront();
+                viewHolder.out_of_stock_txt.setText(activity.getResources().getString(R.string.out_of_stock));
+            }
+
+            if (productLists.get(position).getProduct_status().equals("0")){
+                viewHolder.unavailable_txt.setVisibility(View.VISIBLE);
+                viewHolder.unavailable_view.setVisibility(View.VISIBLE);
+                viewHolder.out_of_stock_txt.setVisibility(View.GONE);
+                viewHolder.unavailable_view.bringToFront();
+                viewHolder.unavailable_txt.bringToFront();
+                viewHolder.product_save_btn.bringToFront();
+                viewHolder.unavailable_txt.setText(activity.getResources().getString(R.string.currently_unavailable));
+
+            }
+
+            if (!isGird) {
+                viewHolder.ratingBar.setRating(Float.parseFloat(productLists.get(position).getRate_avg()));
+                viewHolder.pro_rating_count.setText(productLists.get(position).getTotal_rate());
+            }
+
+            if (productLists.get(position).getIs_favorite().equals("1"))
+                viewHolder.product_save_btn.setImageTintList(ColorStateList.valueOf(activity.getResources().getColor(R.color.red)));
+            else
+                viewHolder.product_save_btn.setImageTintList(ColorStateList.valueOf(activity.getResources().getColor(R.color.grey)));
+
+            viewHolder.product_save_btn.setOnClickListener(v -> {
+
+                if (method.isNetworkAvailable(activity)){
+                    if (method.isLogin())
+                        favourite(method.userId(), productLists.get(position).getId(), viewHolder);
+                    else {
+                        Method.login(true);
+                        activity.startActivity(new Intent(activity, LoginActivity.class));
+                    }
+                }else
+                    Toast.makeText(activity,
+                            activity.getResources().getString(R.string.no_internet_connection),
+                            Toast.LENGTH_SHORT).show();
+
+            });
+
         }
-        else {
-            holder.pro_original_price.setPaintFlags(
-                    holder.pro_original_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG
-            );
-            holder.pro_selling_price.setText(sign + productLists.get(position).getProduct_sell_price());
-            holder.pro_original_price.setText(sign + productLists.get(position).getProduct_mrp());
-            holder.pro_offer_applied.setText(productLists.get(position).getYou_save_per());
-        }
-
-        if (productLists.get(position).getProduct_qty().equals("0")) {
-            holder.out_of_stock_txt.setVisibility(View.VISIBLE);
-            holder.out_of_stock_txt.bringToFront();
-            holder.out_of_stock_txt.setText(activity.getResources().getString(R.string.out_of_stock));
-        }
-
-        if (productLists.get(position).getProduct_status().equals("0")){
-            holder.unavailable_txt.setVisibility(View.VISIBLE);
-            holder.unavailable_view.setVisibility(View.VISIBLE);
-            holder.out_of_stock_txt.setVisibility(View.GONE);
-            holder.unavailable_view.bringToFront();
-            holder.unavailable_txt.bringToFront();
-            holder.product_save_btn.bringToFront();
-            holder.unavailable_txt.setText(activity.getResources().getString(R.string.currently_unavailable));
-
-        }
-
-        if (holder.getItemViewType() == 1) {
-            holder.ratingBar.setRating(Float.parseFloat(productLists.get(position).getRate_avg()));
-            holder.pro_rating_count.setText(productLists.get(position).getTotal_rate());
-        }
-
-        if (productLists.get(position).getIs_favorite().equals("1"))
-            holder.product_save_btn.setImageTintList(ColorStateList.valueOf(activity.getResources().getColor(R.color.red)));
-        else
-            holder.product_save_btn.setImageTintList(ColorStateList.valueOf(activity.getResources().getColor(R.color.grey)));
-
-        holder.product_save_btn.setOnClickListener(v -> {
-
-            if (method.isNetworkAvailable(activity)){
-                if (method.isLogin())
-                    favourite(method.userId(), productLists.get(position).getId(), holder);
-                else {
-                    Method.login(true);
-                    activity.startActivity(new Intent(activity, LoginActivity.class));
-                }
-            }else
-                Toast.makeText(activity,
-                        activity.getResources().getString(R.string.no_internet_connection),
-                        Toast.LENGTH_SHORT).show();
-
-        });
-
     }
 
     private void favourite(String userId, String id, @NonNull ViewHolder holder) {
@@ -209,15 +237,24 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return productLists.size();
+        if (productLists.size() != 0) {
+            return productLists.size() + 1;
+        } else {
+            return productLists.size();
+        }
+    }
+
+    public void hideHeader() {
+        ProgressViewHolder.progress_pro_item.setVisibility(View.GONE);
+    }
+
+    private boolean isHeader(int position) {
+        return position == productLists.size();
     }
 
     @Override
     public int getItemViewType(int position) {
-        int viewtype = 0;
-        if (Type.equals("list"))
-            viewtype = 1;
-        return viewtype;
+        return isHeader(position) ? VIEW_TYPE_LOADING : VIEW_TYPE_ITEM;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -246,6 +283,15 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             pro_rating_count = itemView.findViewById(R.id.product_rating_count);
             ratingBar = itemView.findViewById(R.id.product_rating_bar);
             product_save_btn = itemView.findViewById(R.id.product_save_btn);
+        }
+    }
+
+    public static class ProgressViewHolder extends RecyclerView.ViewHolder {
+        public static LottieAnimationView progress_pro_item;
+
+        public ProgressViewHolder(View v) {
+            super(v);
+            progress_pro_item = v.findViewById(R.id.progress_pro_item);
         }
     }
 }
