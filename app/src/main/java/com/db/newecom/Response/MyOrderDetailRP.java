@@ -144,6 +144,15 @@ public class MyOrderDetailRP implements Serializable {
     @SerializedName("cart_items")
     private String cart_items;
 
+    @SerializedName("is_return_button")
+    private String is_return_button;
+
+    @SerializedName("return_pay")
+    private String return_pay;
+
+    @SerializedName("return_reason")
+    private String return_reason;
+
     public String getStatus() {
         return status;
     }
@@ -322,5 +331,17 @@ public class MyOrderDetailRP implements Serializable {
 
     public String getCart_items() {
         return cart_items;
+    }
+
+    public String getIs_return_button() {
+        return is_return_button;
+    }
+
+    public String getReturn_pay() {
+        return return_pay;
+    }
+
+    public String getReturn_reason() {
+        return return_reason;
     }
 }

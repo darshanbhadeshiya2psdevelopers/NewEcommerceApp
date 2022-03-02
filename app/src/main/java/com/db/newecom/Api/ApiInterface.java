@@ -44,6 +44,7 @@ import com.db.newecom.Response.RazorPayRP;
 import com.db.newecom.Response.RegisterRP;
 import com.db.newecom.Response.RemoveCartRP;
 import com.db.newecom.Response.RemoveCouponRP;
+import com.db.newecom.Response.ReturnOrderRP;
 import com.db.newecom.Response.SizeFilterRP;
 import com.db.newecom.Response.SubCategoryRP;
 import com.db.newecom.Response.UpdateCartRP;
@@ -343,6 +344,11 @@ public interface ApiInterface {
     @POST("order_or_product_cancel")
     @FormUrlEncoded
     Call<CancelOrderProRP> cancelOrderORProduct(@Field("data") String data);
+
+    //Return order
+    @POST("return_order")
+    @FormUrlEncoded
+    Call<ReturnOrderRP> returnOrder(@Field("data") String data);
 
     //Claim order and product
     @POST("claim_refund")

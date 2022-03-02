@@ -279,4 +279,7 @@
     <string name="explore">Explore</string>
     <string name="products_title">Products</string>
     <string name="browse_categories">Browse Categories</string>
+    <string name="returned">Returned</string>
+    <string name="return_this_order">Return This Order</string>
+    <string name="return_order_msg">Are you sure to return this Order?</string>
 </resources>

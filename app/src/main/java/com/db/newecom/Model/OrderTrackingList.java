@@ -24,6 +24,9 @@ public class OrderTrackingList implements Serializable {
     @SerializedName("is_delivered")
     private String is_delivered;
 
+    @SerializedName("is_return")
+    private String is_return;
+
     public String getId() {
         return id;
     }
@@ -72,4 +75,11 @@ public class OrderTrackingList implements Serializable {
         this.is_delivered = is_delivered;
     }
 
+    public String getIs_return() {
+        return is_return;
+    }
+
+    public void setIs_return(String is_return) {
+        this.is_return = is_return;
+    }
 }

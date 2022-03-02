@@ -308,6 +308,22 @@
                                 android:background="@drawable/circle_background"
                                 android:backgroundTint="@color/grey" />
 
+                            <View
+                                android:id="@+id/line_return_status"
+                                android:layout_width="3dp"
+                                android:layout_height="47dp"
+                                android:background="@color/grey"
+                                android:backgroundTint="@color/red"
+                                android:visibility="gone"/>
+
+                            <View
+                                android:id="@+id/round_return_status"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@drawable/circle_background"
+                                android:backgroundTint="@color/red"
+                                android:visibility="gone"/>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -416,6 +432,34 @@
                                     android:maxLines="1"
                                     android:text=""
                                     android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="25dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_return_status"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text="@string/returned"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:visibility="gone"/>
+
+                                <TextView
+                                    android:id="@+id/tv_return_status_dt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:text=""
+                                    android:textSize="14sp"
+                                    android:visibility="gone"/>
 
                             </LinearLayout>
 
@@ -812,7 +856,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardView_cancel_order_detail"
+                android:id="@+id/cardView_cancel_return_order_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="5dp"
@@ -825,6 +869,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/order_cancel_return_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
@@ -857,7 +902,7 @@
                             android:textColor="@color/dark_grey" />
 
                         <TextView
-                            android:id="@+id/tv_cancel_reason"
+                            android:id="@+id/tv_cancel_return_reason"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -916,7 +961,22 @@
                 app:drawableTint="@color/colorPrimary" />
 
             <Button
-                android:id="@+id/cancel_return_order_btn"
+                android:id="@+id/return_order_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="20dp"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                app:backgroundTint="@color/colorPrimary"
+                android:text="@string/return_this_order"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:drawableRight="@drawable/ic_baseline_shopping_bag_24"
+                app:drawableTint="@color/white"/>
+
+            <Button
+                android:id="@+id/cancel_order_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
