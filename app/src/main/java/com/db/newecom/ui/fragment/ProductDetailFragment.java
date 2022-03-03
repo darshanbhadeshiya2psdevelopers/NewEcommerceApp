@@ -80,9 +80,10 @@ public class ProductDetailFragment extends Fragment {
     private static final String ARG_PARAM1 = "title";
     private static final String ARG_PARAM2 = "product_id";
     private static final String ARG_PARAM3 = "pro_size_position";
+    private static final String ARG_PARAM4 = "slug";
 
     // TODO: Rename and change types of parameters
-    private String title, product_id, sign, tagData = "data_app", size, review_msg;
+    private String title, product_id, slug, sign, tagData = "data_app", size, review_msg;
 
     private Method method;
     private ProgressBar rate_progress_1, rate_progress_2, rate_progress_3,
@@ -126,12 +127,13 @@ public class ProductDetailFragment extends Fragment {
      * @return A new instance of fragment ProductDetailFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProductDetailFragment newInstance(String param1, String param2, int param3) {
+    public static ProductDetailFragment newInstance(String param1, String param2, int param3, String param4) {
         ProductDetailFragment fragment = new ProductDetailFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         args.putInt(ARG_PARAM3, param3);
+        args.putString(ARG_PARAM4, param4);
         fragment.setArguments(args);
         return fragment;
     }
@@ -143,6 +145,7 @@ public class ProductDetailFragment extends Fragment {
             title = getArguments().getString(ARG_PARAM1);
             product_id = getArguments().getString(ARG_PARAM2);
             productSize_position = getArguments().getInt(ARG_PARAM3);
+            slug = getArguments().getString(ARG_PARAM4);
         }
     }
 
@@ -164,9 +167,9 @@ public class ProductDetailFragment extends Fragment {
 
         if (method.isNetworkAvailable(getActivity())) {
             if (method.isLogin()) {
-                detail(method.userId(), product_id);
+                detail(method.userId(), product_id, slug);
             } else {
-                detail("0", product_id);
+                detail("0", product_id, slug);
             }
         } else {
             progressBar.setVisibility(View.GONE);
@@ -258,9 +261,9 @@ public class ProductDetailFragment extends Fragment {
 
         if (method.isNetworkAvailable(getActivity())) {
             if (method.isLogin()) {
-                detail(method.userId(), product_id);
+                detail(method.userId(), product_id, slug);
             } else {
-                detail("0", product_id);
+                detail("0", product_id, slug);
             }
         } else {
             progressBar.setVisibility(View.GONE);
@@ -271,7 +274,7 @@ public class ProductDetailFragment extends Fragment {
         }
     }
 
-    private void detail(String userId, String product_id) {
+    private void detail(String userId, String product_id, String slug) {
 
         if (getActivity() != null) {
 
@@ -282,6 +285,7 @@ public class ProductDetailFragment extends Fragment {
             JsonObject jsObj = (JsonObject) new Gson().toJsonTree(new API(getActivity()));
             jsObj.addProperty("user_id", userId);
             jsObj.addProperty("id", product_id);
+            jsObj.addProperty("slug", slug);
             ApiInterface apiService = ApiClient.getRetrofit().create(ApiInterface.class);
             Call<ProDetailRP> call = apiService.getProDetail(API.toBase64(jsObj.toString()));
             call.enqueue(new Callback<ProDetailRP>() {
@@ -434,7 +438,7 @@ public class ProductDetailFragment extends Fragment {
                                     if (proDetailRP.getIs_size().equals("1")){
                                         if (proDetailRP.getProSizeLists().size() != 0){
                                             ll_size.setVisibility(View.VISIBLE);
-                                            productSizeAdapter = new ProductSizeAdapter(getActivity(), proDetailRP.getProSizeLists(), productSize_position, title, product_id);
+                                            productSizeAdapter = new ProductSizeAdapter(getActivity(), proDetailRP.getProSizeLists(), productSize_position, title, product_id, slug);
                                             rv_size_pro_detail.setAdapter(productSizeAdapter);
 
                                             size = proDetailRP.getProSizeLists().get(productSize_position).getProduct_size();
@@ -507,7 +511,14 @@ public class ProductDetailFragment extends Fragment {
                                     rate_dialog_pro_name.setText(proDetailRP.getProduct_title());
                                     rate_dialog_pro_desc.setText(proDetailRP.getProduct_desc());
 
-                                    rl_add_review.setOnClickListener(v -> dialog.show());
+                                    rl_add_review.setOnClickListener(v -> {
+                                        if (method.isLogin())
+                                            dialog.show();
+                                        else {
+                                            Method.login(true);
+                                            startActivity(new Intent(getActivity(), LoginActivity.class));
+                                        }
+                                    });
 
                                     rate_dialog_btn.setOnClickListener(v ->
                                         submitRatingReview(method.userId(), product_id));

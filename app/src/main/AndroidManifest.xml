@@ -51,7 +51,20 @@
             android:exported="true"
             android:label="@string/product_details"
             android:screenOrientation="nosensor"
-            android:theme="@style/Theme.EcommerceApp.NoActionBar" />
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.EcommerceApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="2psdevelopers.com"
+                    android:pathPrefix="/cake/product/" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.db.newecom.ui.activity.FilterActivity"
             android:exported="true"

@@ -171,6 +171,38 @@ public class OrdersFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        progressBar.setVisibility(View.VISIBLE);
+        rv_order.setVisibility(View.GONE);
+
+        if (method.isNetworkAvailable(getActivity())){
+
+            if (method.isLogin()){
+                getAllOrders(method.userId());
+            }
+            else {
+                progressBar.setVisibility(View.GONE);
+                empty_layout.setVisibility(View.VISIBLE);
+                empty_animation.setAnimation("login.json");
+                empty_msg.setText(getActivity().getResources().getString(R.string.login_msg));
+                empty_btn.setVisibility(View.VISIBLE);
+                empty_btn.setText("go to login");
+                empty_btn.setOnClickListener(v -> startActivity(new Intent(getActivity(), LoginActivity.class)));
+                rv_order.setVisibility(View.GONE);
+            }
+
+        }
+        else {
+            progressBar.setVisibility(View.GONE);
+            empty_layout.setVisibility(View.VISIBLE);
+            rv_order.setVisibility(View.GONE);
+            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void getAllOrders(String userId) {
 
         if (getActivity() != null) {

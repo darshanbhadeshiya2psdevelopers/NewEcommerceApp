@@ -9,6 +9,7 @@ import com.db.newecom.R;
 import com.db.newecom.ui.fragment.ProductDetailFragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -40,15 +41,40 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cart_btn.setOnClickListener(view ->
                 startActivity(new Intent(this, CartActivity.class)));
 
+        // ATTENTION: This was auto-generated to handle app links.
+        handleIntent();
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleIntent();
+    }
+
+    private void handleIntent() {
+        Intent appLinkIntent = getIntent();
+        String appLinkAction = appLinkIntent.getAction();
+        Uri appLinkData = appLinkIntent.getData();
+        if (appLinkData != null){
+            String slug = appLinkData.getLastPathSegment();
+            getdata(slug,"", "");
+        }else
+            getdata("", title, product_id);
+    }
+
+    private void getdata(String slug, String title, String product_id){
+
         Bundle bundle = new Bundle();
         bundle.putString("title", title);
         bundle.putString("product_id", product_id);
+        bundle.putString("slug", slug);
 
         Fragment fragment = new ProductDetailFragment();
         fragment.setArguments(bundle);
 
         getSupportFragmentManager().beginTransaction().add(R.id.framelayout_for_pro_detail, fragment).commit();
-
     }
 
     @Override

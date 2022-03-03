@@ -298,6 +298,36 @@ public class Events {
     }
 
     //Event used to update status my order list
+    public static class ReturnOrder {
+
+        private String productId, orderUniqueId, type;
+        private List<MyOrders> myOrderLists;
+
+        public ReturnOrder(String productId, String orderUniqueId, String type, List<MyOrders> myOrderLists) {
+            this.productId = productId;
+            this.orderUniqueId = orderUniqueId;
+            this.type = type;
+            this.myOrderLists = myOrderLists;
+        }
+
+        public String getProductId() {
+            return productId;
+        }
+
+        public String getOrderUniqueId() {
+            return orderUniqueId;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public List<MyOrders> getMyOrderLists() {
+            return myOrderLists;
+        }
+    }
+
+    //Event used to update status my order list
     public static class ClaimOrder {
 
         private String productId, orderUniqueId;

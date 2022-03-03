@@ -150,6 +150,9 @@ public class MyOrderDetailRP implements Serializable {
     @SerializedName("return_pay")
     private String return_pay;
 
+    @SerializedName("pickup_status")
+    private String pickup_status;
+
     @SerializedName("return_reason")
     private String return_reason;
 
@@ -339,6 +342,10 @@ public class MyOrderDetailRP implements Serializable {
 
     public String getReturn_pay() {
         return return_pay;
+    }
+
+    public String getPickup_status() {
+        return pickup_status;
     }
 
     public String getReturn_reason() {

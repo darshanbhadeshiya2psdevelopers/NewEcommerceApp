@@ -282,4 +282,6 @@
     <string name="returned">Returned</string>
     <string name="return_this_order">Return This Order</string>
     <string name="return_order_msg">Are you sure to return this Order?</string>
+    <string name="pickup_status">Pickup Status</string>
+    <string name="downloading">Downloading...</string>
 </resources>

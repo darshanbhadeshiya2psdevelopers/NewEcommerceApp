@@ -72,7 +72,7 @@ import retrofit2.Response;
 public class MyOrderDetailsActivity extends AppCompatActivity {
 
     private Method method;
-    private LinearLayout progressBar;
+    private LinearLayout progressBar, ll_pickup_status;
     private RelativeLayout empty_layout, rl_add_review;
     private ScrollView scrollView_main;
     private Toolbar toolbar;
@@ -87,7 +87,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
             tv_delivered_status, tv_delivered_status_dt, tv_address_username, tv_address_user_email, tv_address,
             tv_address_user_mobile, tv_total_amount, tv_discount, discount, tv_delivery_charge, tv_amount_payable,
             tv_payment_mode, payment_id, tv_payment_id, tv_cancel_return_reason, tv_refundStatus, cancel_return_this_pro,
-            rate_dialog_pro_name, rate_dialog_pro_desc, tv_return_status, tv_return_status_dt,
+            rate_dialog_pro_name, rate_dialog_pro_desc, tv_return_status, tv_return_status_dt, tv_pickup_status,
             order_cancel_return_title, cancel_dialog_title, cancel_dialog_msg;
     private RatingBar rate_dialog_ratingbar;
     private ImageView order_pro_img1, pro_img, rate_dialog_pro_image;
@@ -124,6 +124,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
 
         scrollView_main.setVisibility(View.GONE);
         cardView_cancel_return_order_detail.setVisibility(View.GONE);
+        invoice_download_btn.setVisibility(View.GONE);
+        rl_add_review.setVisibility(View.GONE);
 
         if (method.isNetworkAvailable(this)) {
             if (method.isLogin()) {
@@ -159,6 +161,13 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
         scrollView_main.setVisibility(View.GONE);
         empty_layout.setVisibility(View.GONE);
         orderDetail(method.userId(), cancelOrder.getProductId(), cancelOrder.getOrderUniqueId());
+    }
+
+    @Subscribe
+    public void geString(Events.ReturnOrder returnOrder) {
+        scrollView_main.setVisibility(View.GONE);
+        empty_layout.setVisibility(View.GONE);
+        orderDetail(method.userId(), returnOrder.getProductId(), returnOrder.getOrderUniqueId());
     }
 
     @Subscribe
@@ -259,6 +268,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
         round_return_status = findViewById(R.id.round_return_status);
         cardView_otheritems_in_order = findViewById(R.id.cardView_otheritems_in_order);
         cardView_cancel_return_order_detail = findViewById(R.id.cardView_cancel_return_order_detail);
+        ll_pickup_status = findViewById(R.id.ll_pickup_status);
+        tv_pickup_status = findViewById(R.id.tv_pickup_status);
         rl_add_review = findViewById(R.id.rl_add_review);
 
         dialog1 = new Dialog(this);
@@ -434,6 +445,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                                 line_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 round_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 tv_delivered_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
+                                invoice_download_btn.setVisibility(View.VISIBLE);
+                                rl_add_review.setVisibility(View.VISIBLE);
                             }
                             else if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Cancelled")) {
                                 line_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
@@ -450,6 +463,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                                 tv_shipped_status_dt.setVisibility(View.GONE);
                                 tv_delivered_status.setVisibility(View.GONE);
                                 tv_delivered_status_dt.setVisibility(View.GONE);
+                                tv_cancel_return_reason.setText(myOrderDetailRP.getReason());
+                                tv_refundStatus.setText(myOrderDetailRP.getRefund_status());
 
                             }
                             else if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Returned")){
@@ -461,34 +476,32 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                                 line_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 round_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 tv_delivered_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
-
+                                cardView_cancel_return_order_detail.setVisibility(View.VISIBLE);
+                                invoice_download_btn.setVisibility(View.VISIBLE);
                                 line_return_status.setVisibility(View.VISIBLE);
                                 round_return_status.setVisibility(View.VISIBLE);
+                                ll_pickup_status.setVisibility(View.VISIBLE);
                                 tv_return_status.setVisibility(View.VISIBLE);
                                 tv_return_status_dt.setVisibility(View.VISIBLE);
-                                rl_add_review.setVisibility(View.GONE);
-                                cardView_cancel_return_order_detail.setVisibility(View.VISIBLE);
                                 tv_return_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
                                 order_cancel_return_title.setText("Order Returned");
                                 tv_cancel_return_reason.setText(myOrderDetailRP.getReturn_reason());
+                                tv_pickup_status.setText(myOrderDetailRP.getPickup_status());
                                 tv_refundStatus.setText(myOrderDetailRP.getReturn_pay());
                             }
 
-                            if (myOrderDetailRP.getCurrent_order_status().equals("true")) {
-                                invoice_download_btn.setVisibility(View.VISIBLE);
-                                rl_add_review.setVisibility(View.VISIBLE);
-//                                viewRating.setVisibility(View.VISIBLE);
-//                                relRating.setVisibility(View.VISIBLE);
-//                                ratingView.setRating(Float.parseFloat(myOrderDetailRP.getMy_rating()));
-                            } else {
-                                invoice_download_btn.setVisibility(View.GONE);
-                                rl_add_review.setVisibility(View.GONE);
-//                                viewRating.setVisibility(View.GONE);
-//                                relRating.setVisibility(View.GONE);
-                            }
-
-                            tv_cancel_return_reason.setText(myOrderDetailRP.getReason());
-                            tv_refundStatus.setText(myOrderDetailRP.getRefund_status());
+//                            if (myOrderDetailRP.getCurrent_order_status().equals("true")) {
+//                                invoice_download_btn.setVisibility(View.VISIBLE);
+//                                rl_add_review.setVisibility(View.VISIBLE);
+////                                viewRating.setVisibility(View.VISIBLE);
+////                                relRating.setVisibility(View.VISIBLE);
+////                                ratingView.setRating(Float.parseFloat(myOrderDetailRP.getMy_rating()));
+//                            } else {
+//                                invoice_download_btn.setVisibility(View.GONE);
+//                                rl_add_review.setVisibility(View.GONE);
+////                                viewRating.setVisibility(View.GONE);
+////                                relRating.setVisibility(View.GONE);
+//                            }
 
                             if (myOrderDetailRP.getCancel_product().equals("true") &&
                                     myOrderDetailRP.getOrder_other_items_status().equals("true")) {
@@ -512,11 +525,11 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                             } else {
                                 cancel_return_this_pro.setVisibility(View.GONE);
                             }
-                            if (myOrderDetailRP.getOrder_other_items_status().equals("true")) {
-                                cancel_order_btn.setVisibility(View.VISIBLE);
-                            } else {
-                                cancel_order_btn.setVisibility(View.GONE);
-                            }
+//                            if (myOrderDetailRP.getOrder_other_items_status().equals("true")) {
+//                                cancel_order_btn.setVisibility(View.VISIBLE);
+//                            } else {
+//                                cancel_order_btn.setVisibility(View.GONE);
+//                            }
 
                             if (myOrderDetailRP.getIs_claim().equals("true")) {
                                 claim_pro_btn.setVisibility(View.VISIBLE);
@@ -592,8 +605,13 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                                     startActivity(new Intent(MyOrderDetailsActivity.this, Add_Bank_Activity.class));
                             });
 
-                            dialog_cancel_order_btn.setOnClickListener(view ->
-                                    cancelProOrOrder(myOrderDetailRP.getOrder_id(), method.userId(), "0", myOrderDetailRP.getBank_id()));
+                            dialog_cancel_order_btn.setOnClickListener(v -> {
+                                if (myOrderDetailRP.getIs_return_button().equals("0"))
+                                    cancelProOrOrder(myOrderDetailRP.getOrder_id(), method.userId(), "0", myOrderDetailRP.getBank_id());
+                                else
+                                    ReturnOrder(myOrderDetailRP.getOrder_id(), method.userId(), myOrderDetailRP.getBank_id());
+                            });
+                                    //cancelProOrOrder(myOrderDetailRP.getOrder_id(), method.userId(), "0", myOrderDetailRP.getBank_id()));
 
                             cancel_return_this_pro.setOnClickListener(view -> {
                                 if (myOrderDetailRP.getBank_status().equals("1"))
@@ -605,10 +623,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                             rate_dialog_ratingbar.setRating(Integer.parseInt(myOrderDetailRP.getMy_rating()));
 
                             dialog_cancel_pro_btn.setOnClickListener(view -> {
-                                if (myOrderDetailRP.getIs_return_button().equals("0"))
-                                    cancelProOrOrder(myOrderDetailRP.getOrder_id(), method.userId(), productId, myOrderDetailRP.getBank_id());
-                                else
-                                    Toast.makeText(MyOrderDetailsActivity.this, "Return Dialog Open", Toast.LENGTH_SHORT).show();
+                                cancelProOrOrder(myOrderDetailRP.getOrder_id(), method.userId(), productId, myOrderDetailRP.getBank_id());
                             });
 
                             rl_add_review.setOnClickListener(v -> dialog1.show());
@@ -706,8 +721,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                         if (ReturnOrderRP.getStatus().equals("1")) {
 
                             if (ReturnOrderRP.getSuccess().equals("1")) {
-                                Events.CancelOrder cancelOrder = new Events.CancelOrder(productId, orderUniqueId, "", ReturnOrderRP.getMyOrderLists());
-                                GlobalBus.getBus().post(cancelOrder);
+                                Events.ReturnOrder returnOrder = new Events.ReturnOrder(productId, orderUniqueId, "", ReturnOrderRP.getMyOrderLists());
+                                GlobalBus.getBus().post(returnOrder);
 
                                 Toast.makeText(MyOrderDetailsActivity.this, ReturnOrderRP.getMsg(), Toast.LENGTH_LONG).show();
                             } else {
@@ -718,12 +733,10 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                             method.alertBox(ReturnOrderRP.getMessage());
                         }
                         dialog.dismiss();
-                        dialog2.dismiss();
 
                     } catch (Exception e) {
                         Log.d(ConstantApi.exceptionError, e.toString());
                         dialog.dismiss();
-                        dialog2.dismiss();
                         method.alertBox(getResources().getString(R.string.failed_try_again));
                     }
 
@@ -897,7 +910,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
     public void downloadInvoice(String id, String file_path) {
 
         progressDialog.show();
-        progressDialog.setMessage(getResources().getString(R.string.loading));
+        progressDialog.setMessage(getResources().getString(R.string.downloading));
         progressDialog.setCancelable(false);
 
         try {
@@ -925,6 +938,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                     Log.e("TAG", "=============onFailure===============");
                     e.printStackTrace();
                     Log.d("error_downloading", e.toString());
+                    Toast.makeText(MyOrderDetailsActivity.this, "Error_downloading..!!", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
 

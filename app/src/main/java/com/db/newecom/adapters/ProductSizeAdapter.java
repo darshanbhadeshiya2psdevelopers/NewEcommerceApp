@@ -24,15 +24,16 @@ public class ProductSizeAdapter extends RecyclerView.Adapter<ProductSizeAdapter.
     private Activity activity;
     private List<ProSizeList> proSizeLists;
     private int lastSelectedPosition;
-    private String title, product_id;
+    private String title, product_id, slug;
 
     public ProductSizeAdapter(Activity activity, List<ProSizeList> proSizeLists, int lastSelectedPosition,
-                              String title, String product_id) {
+                              String title, String product_id, String slug) {
         this.activity = activity;
         this.proSizeLists = proSizeLists;
         this.lastSelectedPosition = lastSelectedPosition;
         this.title = title;
         this.product_id = product_id;
+        this.slug = slug;
     }
 
     @NonNull
@@ -82,6 +83,7 @@ public class ProductSizeAdapter extends RecyclerView.Adapter<ProductSizeAdapter.
                 bundle.putInt("pro_size_position", lastSelectedPosition);
                 bundle.putString("title", title);
                 bundle.putString("product_id", product_id);
+                bundle.putString("slug", slug);
                 Fragment fragment = new ProductDetailFragment();
                 fragment.setArguments(bundle);
                 AppCompatActivity activity1 = (AppCompatActivity) activity;
