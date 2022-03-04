@@ -59,7 +59,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
     private RecyclerView rv_order_summary;
     private CartAdapter cartAdapter;
     private List<CartList> cartLists;
-    private String sign, type, productId, productSize, couponId, addressId;
+    private String sign, type, productId, productSize, couponId, addressId, amt_payable;
     private boolean isCartEmpty = false;
     private Button confirm_btn, change_address_btn, apply_coupon_btn, remove_coupon_btn, empty_btn;
 
@@ -144,6 +144,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
         total_amount.setText(sign + couponCodeAmount.getPrice());
         total_amount_payable.setText(sign + couponCodeAmount.getPayable_amt());
         amount_payable.setText(sign + couponCodeAmount.getPayable_amt());
+        amt_payable = couponCodeAmount.getPayable_amt();
         if (couponCodeAmount.getYou_save_msg().equals("")) {
             you_save.setVisibility(View.GONE);
             you_save_view.setVisibility(View.GONE);
@@ -176,6 +177,8 @@ public class OrderSummaryActivity extends AppCompatActivity {
             total_cart_items.setText(item);
             total_amount.setText(sign + updateCartOrderSum.getPrice());
             amount_payable.setText(sign + updateCartOrderSum.getPayable_amt());
+
+            amt_payable = updateCartOrderSum.getPayable_amt();
 
             if (method.isNumeric(updateCartOrderSum.getDelivery_charge())) {
                 delivery_charge.setText("+ " + sign + updateCartOrderSum.getDelivery_charge());
@@ -276,6 +279,8 @@ public class OrderSummaryActivity extends AppCompatActivity {
                             amount_payable.setText(sign + orderSummaryRP.getPayable_amt());
                             total_amount_payable.setText(sign + orderSummaryRP.getPayable_amt());
 
+                            amt_payable = orderSummaryRP.getPayable_amt();
+
                             if (orderSummaryRP.getYou_save_msg().equals("")) {
                                 you_save.setVisibility(View.GONE);
                                 you_save_view.setVisibility(View.GONE);
@@ -331,7 +336,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
                                         .putExtra("coupon_id", couponId)
                                         .putExtra("cart_ids", orderSummaryRP.getCart_ids())
                                         .putExtra("address_id", addressId)
-                                        .putExtra("total", orderSummaryRP.getPayable_amt()));
+                                        .putExtra("total", amt_payable));
                             });
 
                         } else {
@@ -398,6 +403,8 @@ public class OrderSummaryActivity extends AppCompatActivity {
                             amount_payable.setText(sign + removeCouponRP.getPayable_amt());
                             total_amount_payable.setText(sign + removeCouponRP.getPayable_amt());
 
+                            amt_payable = removeCouponRP.getPayable_amt();
+
                             if (removeCouponRP.getYou_save_msg().equals("")) {
                                 you_save.setVisibility(View.GONE);
                                 you_save_view.setVisibility(View.GONE);
@@ -454,6 +461,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
+        removeCoupon(method.userId(), couponId);
         onBackPressed();
         return true;
     }

@@ -36,6 +36,7 @@ import com.db.newecom.Api.ApiClient;
 import com.db.newecom.Api.ApiInterface;
 import com.db.newecom.R;
 import com.db.newecom.Response.AddToCartRP;
+import com.db.newecom.Response.AppRP;
 import com.db.newecom.Response.DataRP;
 import com.db.newecom.Response.FavouriteRP;
 import com.db.newecom.Response.IsAddRP;
@@ -54,6 +55,7 @@ import com.db.newecom.adapters.ReviewAdapter;
 import com.db.newecom.ui.activity.Add_Address_Activity;
 import com.db.newecom.ui.activity.CartActivity;
 import com.db.newecom.ui.activity.LoginActivity;
+import com.db.newecom.ui.activity.MainActivity;
 import com.db.newecom.ui.activity.OrderSummaryActivity;
 import com.db.newecom.ui.activity.ReviewsActivity;
 import com.google.android.material.card.MaterialCardView;
@@ -167,8 +169,10 @@ public class ProductDetailFragment extends Fragment {
 
         if (method.isNetworkAvailable(getActivity())) {
             if (method.isLogin()) {
+                appDetail(method.userId());
                 detail(method.userId(), product_id, slug);
             } else {
+                appDetail("0");
                 detail("0", product_id, slug);
             }
         } else {
@@ -272,6 +276,46 @@ public class ProductDetailFragment extends Fragment {
             bottom_btns_cardview.setVisibility(View.GONE);
             method.alertBox(getResources().getString(R.string.no_internet_connection));
         }
+    }
+
+    private void appDetail(String userId) {
+
+        JsonObject jsObj = (JsonObject) new Gson().toJsonTree(new API(getActivity()));
+        jsObj.addProperty("user_id", userId);
+        ApiInterface apiService = ApiClient.getRetrofit().create(ApiInterface.class);
+        Call<AppRP> call = apiService.getAppData(API.toBase64(jsObj.toString()));
+        call.enqueue(new Callback<AppRP>() {
+            @Override
+            public void onResponse(Call<AppRP> call, Response<AppRP> response) {
+
+                try {
+                    AppRP appRP = response.body();
+                    assert appRP != null;
+
+                    if (appRP.getStatus().equals("1")) {
+
+                        ConstantApi.currency = appRP.getApp_currency_code();
+
+                        sign = appRP.getApp_currency_code() + " ";
+
+                    } else {
+                        method.alertBox(appRP.getMessage());
+                    }
+                }
+                catch (Exception e){
+                    Log.d(ConstantApi.exceptionError, e.toString());
+                    Toast.makeText(getActivity(), getResources().getString(R.string.something_wrong),
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AppRP> call, Throwable t) {
+                Log.e(ConstantApi.failApi, t.toString());
+                method.alertBox(getResources().getString(R.string.failed_try_again));
+            }
+        });
+
     }
 
     private void detail(String userId, String product_id, String slug) {
