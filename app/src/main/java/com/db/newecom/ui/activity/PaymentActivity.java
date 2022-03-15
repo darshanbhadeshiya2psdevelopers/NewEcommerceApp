@@ -80,7 +80,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         sign = ConstantApi.currency + " ";
 
         method = new Method(this);
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
 
         progressBar = findViewById(R.id.ll_progress_payment);
         rl_layout = findViewById(R.id.rl_layout);

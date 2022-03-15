@@ -62,7 +62,7 @@ public class ProductsAdapter extends RecyclerView.Adapter {
         this.isGird = isGird;
         method = new Method(activity);
         sign = ConstantApi.currency + " ";
-        progressDialog = new ProgressDialog(activity);
+        progressDialog = new ProgressDialog(activity, R.style.ProgressDialogStyle);
     }
 
     @NonNull

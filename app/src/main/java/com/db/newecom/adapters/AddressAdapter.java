@@ -113,7 +113,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
     private void deleteAddress(String id, String userId, int position) {
 
-        ProgressDialog progressDialog = new ProgressDialog(activity);
+        ProgressDialog progressDialog = new ProgressDialog(activity, R.style.ProgressDialogStyle);
         progressDialog.show();
         progressDialog.setMessage(activity.getResources().getString(R.string.processing));
         progressDialog.setCancelable(false);

@@ -159,7 +159,7 @@ public class ProductDetailFragment extends Fragment {
 
         GlobalBus.getBus().register(this);
         method = new Method(getActivity());
-        progressDialog = new ProgressDialog(getActivity());
+        progressDialog = new ProgressDialog(getActivity(), R.style.ProgressDialogStyle);
         sign = ConstantApi.currency + " ";
 
         init(view);

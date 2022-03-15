@@ -126,7 +126,7 @@ public class CompareFragment extends Fragment {
 
         GlobalBus.getBus().register(this);
         method = new Method(getActivity());
-        progressDialog = new ProgressDialog(getActivity());
+        progressDialog = new ProgressDialog(getActivity(), R.style.ProgressDialogStyle);
         sign = ConstantApi.currency + " ";
 
         initialize(view);
@@ -464,7 +464,7 @@ public class CompareFragment extends Fragment {
 
         if (getActivity() != null){
 
-            ProgressDialog progressDialog = new ProgressDialog(getActivity());
+            ProgressDialog progressDialog = new ProgressDialog(getActivity(), R.style.ProgressDialogStyle);
             progressDialog.show();
             progressDialog.setMessage(getActivity().getResources().getString(R.string.processing));
             progressDialog.setCancelable(false);

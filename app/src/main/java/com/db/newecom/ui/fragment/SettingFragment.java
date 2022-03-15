@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.db.newecom.BuildConfig;
 import com.db.newecom.R;
 import com.db.newecom.ui.activity.AboutusActivity;
 import com.db.newecom.ui.activity.ContactusActivity;
@@ -35,6 +37,7 @@ public class SettingFragment extends Fragment {
 
     private RelativeLayout rl_aboutus, rl_shareapp, rl_rateapp, rl_contactus, rl_faq, rl_payment, rl_termsofuse,
             rl_ppolicy, rl_rpolicy, rl_cpolicy;
+    private TextView version;
 
     public SettingFragment() {
         // Required empty public constructor
@@ -83,6 +86,7 @@ public class SettingFragment extends Fragment {
         rl_ppolicy = view.findViewById(R.id.rl_ppolicy);
         rl_rpolicy = view.findViewById(R.id.rl_rpolicy);
         rl_cpolicy = view.findViewById(R.id.rl_cpolicy);
+        version = view.findViewById(R.id.version);
 
         rl_aboutus.setOnClickListener(new ClickListener());
         rl_shareapp.setOnClickListener(new ClickListener());
@@ -94,6 +98,8 @@ public class SettingFragment extends Fragment {
         rl_ppolicy.setOnClickListener(new ClickListener());
         rl_rpolicy.setOnClickListener(new ClickListener());
         rl_cpolicy.setOnClickListener(new ClickListener());
+
+        version.setText(BuildConfig.VERSION_NAME);
 
         return view;
     }

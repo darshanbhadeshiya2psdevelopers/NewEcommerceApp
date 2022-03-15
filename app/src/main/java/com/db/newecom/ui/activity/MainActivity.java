@@ -106,22 +106,25 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.getOrCreateBadge(R.id.nav_cart).setBackgroundColor(getResources().getColor(R.color.red));
 
         bottomNavigationView.setOnNavigationItemReselectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.nav_home:
-                    navController.navigate(R.id.nav_home);
-                    break;
-                case R.id.search_fragment:
-                    navController.navigate(R.id.search_fragment);
-                    break;
-                case R.id.nav_wishlist:
-                    navController.navigate(R.id.nav_wishlist);
-                    break;
-                case R.id.nav_compare:
-                    navController.navigate(R.id.nav_compare);
-                    break;
-                case R.id.nav_cart:
-                    navController.navigate(R.id.nav_cart);
-                    break;
+
+            if (item.getItemId() != bottomNavigationView.getSelectedItemId()){
+                switch (item.getItemId()){
+                    case R.id.nav_home:
+                        navController.navigate(R.id.nav_home);
+                        break;
+                    case R.id.search_fragment:
+                        navController.navigate(R.id.search_fragment);
+                        break;
+                    case R.id.nav_wishlist:
+                        navController.navigate(R.id.nav_wishlist);
+                        break;
+                    case R.id.nav_compare:
+                        navController.navigate(R.id.nav_compare);
+                        break;
+                    case R.id.nav_cart:
+                        navController.navigate(R.id.nav_cart);
+                        break;
+                }
             }
         });
 

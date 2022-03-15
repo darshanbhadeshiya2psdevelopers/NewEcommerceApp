@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
         pref = getSharedPreferences(myPreference, 0);
         editor = pref.edit();
 
-        progressDialog = new ProgressDialog(LoginActivity.this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
         method = new Method(LoginActivity.this);
 
         close_btn.setOnClickListener(view -> onBackPressed());

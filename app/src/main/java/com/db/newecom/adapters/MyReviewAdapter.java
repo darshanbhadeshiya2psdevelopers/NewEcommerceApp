@@ -58,7 +58,7 @@ public class MyReviewAdapter extends RecyclerView.Adapter<MyReviewAdapter.ViewHo
         this.isProfile = isProfile;
         this.myReviewsList = myReviewsList;
         method = new Method(activity);
-        progressDialog = new ProgressDialog(activity);
+        progressDialog = new ProgressDialog(activity, R.style.ProgressDialogStyle);
     }
 
     @NonNull

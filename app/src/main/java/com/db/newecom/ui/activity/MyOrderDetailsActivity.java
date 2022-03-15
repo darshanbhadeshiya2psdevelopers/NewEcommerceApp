@@ -83,7 +83,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
     private Button invoice_download_btn, cancel_order_btn, claim_order_btn, claim_pro_btn,
             dialog_cancel_pro_btn, dialog_cancel_order_btn, rate_dialog_btn, return_order_btn;
     private TextView order_count, tv_order_id, order_pro_name1, order_pro_desc1, order_pro_price1, order_pro_qty1,
-            tv_placed_status, tv_packed_status, tv_packed_status_dt, tv_shipped_status, tv_shipped_status_dt,
+            tv_placed_status, tv_out_delivery_status, tv_out_delivery_status_dt, tv_shipped_status, tv_shipped_status_dt,
             tv_delivered_status, tv_delivered_status_dt, tv_address_username, tv_address_user_email, tv_address,
             tv_address_user_mobile, tv_total_amount, tv_discount, discount, tv_delivery_charge, tv_amount_payable,
             tv_payment_mode, payment_id, tv_payment_id, tv_cancel_return_reason, tv_refundStatus, cancel_return_this_pro,
@@ -91,7 +91,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
             order_cancel_return_title, cancel_dialog_title, cancel_dialog_msg;
     private RatingBar rate_dialog_ratingbar;
     private ImageView order_pro_img1, pro_img, rate_dialog_pro_image;
-    private View line_packed_status, round_packed_status, line_shipped_status, round_shipped_status,
+    private View line_out_delivery_status, round_out_delivery_status, line_shipped_status, round_shipped_status,
             line_delivery_status, round_delivery_status, line_return_status, round_return_status;
     private MaterialCardView cardView_otheritems_in_order, cardView_cancel_return_order_detail;
     private String orderUniqueId, productId, sign, reason, review_msg;
@@ -112,7 +112,7 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
         productId = getIntent().getStringExtra("product_id");
 
         method = new Method(this);
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
         sign = ConstantApi.currency + " ";
 
         initializeIDs();
@@ -221,8 +221,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
         order_pro_price1 = findViewById(R.id.order_pro_price1);
         order_pro_qty1 = findViewById(R.id.order_pro_qty1);
         tv_placed_status = findViewById(R.id.tv_placed_status);
-        tv_packed_status = findViewById(R.id.tv_packed_status);
-        tv_packed_status_dt = findViewById(R.id.tv_packed_status_dt);
+        tv_out_delivery_status = findViewById(R.id.tv_out_delivery_status);
+        tv_out_delivery_status_dt = findViewById(R.id.tv_out_delivery_status_dt);
         tv_shipped_status = findViewById(R.id.tv_shipped_status);
         tv_shipped_status_dt = findViewById(R.id.tv_shipped_status_dt);
         tv_delivered_status= findViewById(R.id.tv_delivered_status);
@@ -258,8 +258,8 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
         claim_pro_btn = findViewById(R.id.claim_pro_btn);
         claim_order_btn = findViewById(R.id.claim_order_btn);
         order_pro_img1 = findViewById(R.id.order_pro_img1);
-        line_packed_status = findViewById(R.id.line_packed_status);
-        round_packed_status = findViewById(R.id.round_packed_status);
+        line_out_delivery_status = findViewById(R.id.line_out_delivery_status);
+        round_out_delivery_status = findViewById(R.id.round_out_delivery_status);
         line_shipped_status = findViewById(R.id.line_shipped_status);
         line_delivery_status = findViewById(R.id.line_delivery_status);
         line_return_status = findViewById(R.id.line_return_status);
@@ -425,21 +425,21 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                             tv_placed_status.setText(myOrderDetailRP.getOrderTrackingLists().get(0).getDatetime());
                             tv_delivered_status_dt.setText("Exp. " + myOrderDetailRP.getDelivery_datetime());
 
-                            if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Packed")) {
-                                line_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-                                round_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-                                tv_packed_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
-                            }
-                            else if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Shipped")) {
-                                line_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-                                round_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                            if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Shipped")) {
                                 line_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 round_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 tv_shipped_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
                             }
+                            else if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Out For Delivery")) {
+                                line_out_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                round_out_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                line_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                round_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                tv_out_delivery_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
+                            }
                             else if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Delivered")) {
-                                line_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-                                round_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                line_out_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                round_out_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 line_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 round_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 line_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
@@ -449,18 +449,17 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                                 rl_add_review.setVisibility(View.VISIBLE);
                             }
                             else if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Cancelled")) {
-                                line_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-                                round_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.red)));
-                                tv_delivered_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
-                                tv_packed_status.setText("Cancelled");
-                                tv_packed_status_dt.setVisibility(View.GONE);
+                                line_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                round_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.red)));
+                                tv_shipped_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());
+                                tv_shipped_status.setText("Cancelled");
                                 cardView_cancel_return_order_detail.setVisibility(View.VISIBLE);
-                                line_shipped_status.setVisibility(View.GONE);
+                                line_out_delivery_status.setVisibility(View.GONE);
+                                round_out_delivery_status.setVisibility(View.GONE);
+                                tv_out_delivery_status.setVisibility(View.GONE);
+                                tv_out_delivery_status_dt.setVisibility(View.GONE);
                                 line_delivery_status.setVisibility(View.GONE);
-                                round_shipped_status.setVisibility(View.GONE);
                                 round_delivery_status.setVisibility(View.GONE);
-                                tv_shipped_status.setVisibility(View.GONE);
-                                tv_shipped_status_dt.setVisibility(View.GONE);
                                 tv_delivered_status.setVisibility(View.GONE);
                                 tv_delivered_status_dt.setVisibility(View.GONE);
                                 tv_cancel_return_reason.setText(myOrderDetailRP.getReason());
@@ -469,10 +468,10 @@ public class MyOrderDetailsActivity extends AppCompatActivity {
                             }
                             else if (myOrderDetailRP.getOrderTrackingLists().get(1).getStatus_title().equals("Returned")){
 
-                                line_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-                                round_packed_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 line_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 round_shipped_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                line_out_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+                                round_out_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 line_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 round_delivery_status.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
                                 tv_delivered_status_dt.setText(myOrderDetailRP.getOrderTrackingLists().get(1).getDatetime());

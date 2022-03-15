@@ -148,7 +148,7 @@ public class WishlistItemAdapter extends RecyclerView.Adapter<WishlistItemAdapte
 
     private void addToCart(String product_id, String user_id, String product_size){
 
-        ProgressDialog progressDialog = new ProgressDialog(activity);
+        ProgressDialog progressDialog = new ProgressDialog(activity, R.style.ProgressDialogStyle);
         progressDialog.show();
         progressDialog.setMessage(activity.getResources().getString(R.string.processing));
         progressDialog.setCancelable(false);

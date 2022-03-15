@@ -98,6 +98,7 @@
         <entry key="..\:/EcommerceApp_by_DB/imagepicker/src/main/res/drawable/imagepicker_image_placeholder.xml" value="0.10885416666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable-hdpi/ic_add.xml" value="0.1" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable-hdpi/ic_remove.xml" value="0.1" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable-v24/spinner_all_bg.xml" value="0.1" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable/bg_search.xml" value="0.1" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable/bordered_bg.xml" value="0.1" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/drawable/circle_background.xml" value="0.1" />
@@ -116,7 +117,7 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_filter.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_my_order_details.xml" value="0.17223198594024605" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_my_order_details.xml" value="0.2" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_order_summary.xml" value="0.2" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_payment.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/activity_policy.xml" value="0.10104166666666667" />
@@ -148,7 +149,7 @@
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_profile.xml" value="0.18" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_profile_image_picker.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_search.xml" value="0.22" />
-        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_setting.xml" value="0.10104166666666667" />
+        <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_setting.xml" value="0.24074074074074073" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/fragment_sub_category.xml" value="0.10104166666666667" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_address.xml" value="0.20416666666666666" />
         <entry key="..\:/New Ecommerce/EcomApp_by_DB/app/src/main/res/layout/item_bank_account.xml" value="0.20416666666666666" />

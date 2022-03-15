@@ -59,7 +59,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         this.showBtns = showBtns;
         this.cartLists = cartLists;
         method = new Method(activity);
-        progressDialog = new ProgressDialog(activity);
+        progressDialog = new ProgressDialog(activity, R.style.ProgressDialogStyle);
         sign = ConstantApi.currency + " ";
     }
 

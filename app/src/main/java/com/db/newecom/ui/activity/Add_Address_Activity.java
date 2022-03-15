@@ -83,7 +83,7 @@ public class Add_Address_Activity extends AppCompatActivity {
         method = new Method(this);
         countryLists = new ArrayList<>();
         selectCountry = getResources().getString(R.string.select_country);
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
 
         et_name_address = findViewById(R.id.et_name_address);
         et_email_address = findViewById(R.id.et_email_address);

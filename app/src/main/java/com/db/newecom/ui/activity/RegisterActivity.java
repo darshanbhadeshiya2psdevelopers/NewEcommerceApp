@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         method = new Method(RegisterActivity.this);
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
 
         close_btn.setOnClickListener(view -> onBackPressed());
         login_txt.setOnClickListener(view -> {

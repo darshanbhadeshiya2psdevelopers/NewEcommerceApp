@@ -69,7 +69,7 @@ public class Add_Bank_Activity extends AppCompatActivity {
         }
 
         method = new Method(this);
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
 
         et_bankName_add_bank = findViewById(R.id.et_bankName_add_bank);
         et_ifsc_add_bank = findViewById(R.id.et_ifsc_add_bank);
@@ -97,8 +97,8 @@ public class Add_Bank_Activity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ((TextView) parent.getChildAt(0)).setTextColor(getResources()
-                        .getColor(R.color.colorPrimary));
+                    ((TextView) parent.getChildAt(0)).setTextColor(getResources()
+                            .getColor(R.color.colorPrimary));
                 if (position == 0) {
                     accountType = "select";
                 } else if (position == 1) {

@@ -76,7 +76,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
 
         method = new Method(this);
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
 
         cartLists = new ArrayList<>();
 

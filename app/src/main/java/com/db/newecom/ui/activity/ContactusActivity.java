@@ -57,7 +57,7 @@ public class ContactusActivity extends AppCompatActivity {
         method = new Method(this);
         contactSubjects = new ArrayList<>();
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this, R.style.ProgressDialogStyle);
 
         et_contact_name = findViewById(R.id.et_contact_name);
         et_contact_email = findViewById(R.id.et_contact_email);

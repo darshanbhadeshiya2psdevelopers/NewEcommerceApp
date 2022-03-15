@@ -117,7 +117,7 @@ public class EditProfileFragment extends Fragment {
 
         GlobalBus.getBus().register(this);
         method = new Method(getActivity());
-        progressDialog = new ProgressDialog(getActivity());
+        progressDialog = new ProgressDialog(getActivity(), R.style.ProgressDialogStyle);
 
         empty_layout = view.findViewById(R.id.empty_layout);
         progressBar = view.findViewById(R.id.ll_progress_edit_profile);

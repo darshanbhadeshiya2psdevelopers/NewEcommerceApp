@@ -270,19 +270,6 @@
                                 android:backgroundTint="@color/green"/>
 
                             <View
-                                android:id="@+id/line_packed_status"
-                                android:layout_width="3dp"
-                                android:layout_height="47dp"
-                                android:background="@color/grey" />
-
-                            <View
-                                android:id="@+id/round_packed_status"
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:background="@drawable/circle_background"
-                                android:backgroundTint="@color/grey" />
-
-                            <View
                                 android:id="@+id/line_shipped_status"
                                 android:layout_width="3dp"
                                 android:layout_height="47dp"
@@ -290,6 +277,19 @@
 
                             <View
                                 android:id="@+id/round_shipped_status"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:background="@drawable/circle_background"
+                                android:backgroundTint="@color/grey" />
+
+                            <View
+                                android:id="@+id/line_out_delivery_status"
+                                android:layout_width="3dp"
+                                android:layout_height="47dp"
+                                android:background="@color/grey" />
+
+                            <View
+                                android:id="@+id/round_out_delivery_status"
                                 android:layout_width="15dp"
                                 android:layout_height="15dp"
                                 android:background="@drawable/circle_background"
@@ -364,17 +364,17 @@
                                 android:orientation="vertical">
 
                                 <TextView
-                                    android:id="@+id/tv_packed_status"
+                                    android:id="@+id/tv_shipped_status"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:maxLines="1"
-                                    android:text="@string/packed"
+                                    android:text="@string/shipped"
                                     android:textColor="@color/dark_grey"
                                     android:textSize="14sp"
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/tv_packed_status_dt"
+                                    android:id="@+id/tv_shipped_status_dt"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:maxLines="1"
@@ -390,17 +390,17 @@
                                 android:orientation="vertical">
 
                                 <TextView
-                                    android:id="@+id/tv_shipped_status"
+                                    android:id="@+id/tv_out_delivery_status"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:maxLines="1"
-                                    android:text="@string/shipped"
+                                    android:text="@string/out_for_delivery"
                                     android:textColor="@color/dark_grey"
                                     android:textSize="14sp"
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/tv_shipped_status_dt"
+                                    android:id="@+id/tv_out_delivery_status_dt"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:maxLines="1"

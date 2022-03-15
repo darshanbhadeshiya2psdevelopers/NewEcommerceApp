@@ -121,7 +121,7 @@ public class BankAccountAdapter extends RecyclerView.Adapter<BankAccountAdapter.
 
     private void deleteBankDetail(String bankId, String userId, int position) {
 
-        ProgressDialog progressDialog = new ProgressDialog(activity);
+        ProgressDialog progressDialog = new ProgressDialog(activity, R.style.ProgressDialogStyle);
         progressDialog.show();
         progressDialog.setMessage(activity.getResources().getString(R.string.processing));
         progressDialog.setCancelable(false);

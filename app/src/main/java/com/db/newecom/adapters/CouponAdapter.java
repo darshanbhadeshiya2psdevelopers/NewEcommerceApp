@@ -49,7 +49,7 @@ public class CouponAdapter extends RecyclerView.Adapter<CouponAdapter.ViewHolder
         this.couponsLists = couponsLists;
         this.cart_ids = cart_ids;
         method = new Method(activity);
-        progressDialog = new ProgressDialog(activity);
+        progressDialog = new ProgressDialog(activity, R.style.ProgressDialogStyle);
     }
 
     @NonNull
