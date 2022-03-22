@@ -128,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Glide.with(MainActivity.this).load(method.userImage())
+                .placeholder(R.drawable.default_profile).into(user_image_home);
+
         if (method.isNetworkAvailable(this)) {
             if (method.isLogin()) {
                 appDetail(method.userId());

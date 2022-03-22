@@ -321,6 +321,7 @@ public class LoginActivity extends AppCompatActivity {
                         method.editor.putString(method.userEmail, email);
                         method.editor.putString(method.loginType, normal);
                         method.editor.putString(method.userName, loginRP.getName());
+                        method.editor.putString(method.userImage, loginRP.getUser_image());
                         method.editor.commit();
 
                         et_email.setText("");

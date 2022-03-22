@@ -37,6 +37,7 @@ public class Method {
     public String profileId = "profileId";
     public String userEmail = "userEmail";
     public String userName = "userName";
+    public String userImage = "userImage";
 
     public static boolean goToLogin() {
         return loginBack;
@@ -94,6 +95,11 @@ public class Method {
     //get user name
     public String userName() {
         return pref.getString(userName, null);
+    }
+
+    //get user image
+    public String userImage() {
+        return pref.getString(userImage, null);
     }
 
     //get screen width

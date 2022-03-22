@@ -73,7 +73,7 @@ public class EditProfileFragment extends Fragment {
     private Button save_btn, cancel_btn, change_btn;
     private EditText et_old_pass, et_new_pass, et_cnew_pass;
     private String old_pass, new_pass, cnew_pass, imageProfile;
-    private CircleImageView user_img;
+    private CircleImageView user_img, user_img_home;
     private ImageView edit_profileimg_btn;
     private EditText et_editprofile_name, et_editprofile_email, et_editprofile_mobile;
     private boolean isProfile = false, isRemove = false;
@@ -136,6 +136,8 @@ public class EditProfileFragment extends Fragment {
         et_editprofile_name = view.findViewById(R.id.et_editprofile_name);
         et_editprofile_email = view.findViewById(R.id.et_editprofile_email);
         et_editprofile_mobile = view.findViewById(R.id.et_editprofile_mobile);
+
+        user_img_home = getActivity().findViewById(R.id.user_image_home);
 
         et_editprofile_email.setEnabled(false);
 
@@ -360,6 +362,10 @@ public class EditProfileFragment extends Fragment {
                             if (userProfileUpdateRP.getStatus().equals("1")) {
 
                                 if (userProfileUpdateRP.getSuccess().equals("1")) {
+
+                                    method.editor.putString(method.userImage, userProfileUpdateRP.getUser_image());
+                                    method.editor.commit();
+
                                     Toast.makeText(getActivity(), userProfileUpdateRP.getMsg(), Toast.LENGTH_SHORT).show();
                                     Events.Login loginNotify = new Events.Login(userProfileUpdateRP.getUser_name(), userProfileUpdateRP.getUser_email(), userProfileUpdateRP.getUser_image());
                                     GlobalBus.getBus().post(loginNotify);
@@ -489,6 +495,11 @@ public class EditProfileFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+
+        if (!method.getLoginType().equals("facebook") || !method.getLoginType().equals("google"))
+            Glide.with(getActivity().getApplicationContext()).load(method.userImage())
+                .placeholder(R.drawable.default_profile).into(user_img_home);
+
         // Unregister the registered event.
         GlobalBus.getBus().unregister(this);
     }
